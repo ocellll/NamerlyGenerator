@@ -1,0 +1,890 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Title Generator | Viral Video Titles & Ideas - Namerly</title>
+  <meta name="description"
+    content="Generate catchy YouTube video titles that get clicks! Create viral titles, thumbnails ideas, and engaging content for your YouTube channel." />
+  <meta name="keywords"
+    content="youtube title generator, viral video titles, youtube titles, catchy titles, video title ideas, youtube content creator, clickbait titles, youtube seo" />
+  <meta name="author" content="Namerly" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://namerlygenerator.netlify.app/youtube/" />
+  <meta property="og:title" content="YouTube Title Generator | Viral Video Titles & Ideas - Namerly" />
+  <meta property="og:description"
+    content="Generate catchy YouTube video titles that get clicks! Create viral titles and engaging content." />
+  <meta property="og:image" content="https://namerlygenerator.netlify.app/assets/images/youtube-titles-og.jpg" />
+  <meta property="og:site_name" content="Namerly" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://namerlygenerator.netlify.app/youtube/" />
+  <meta name="twitter:title" content="YouTube Title Generator | Viral Video Titles & Ideas - Namerly" />
+  <meta name="twitter:description"
+    content="Generate catchy YouTube video titles that get clicks! Create viral titles and engaging content." />
+  <meta name="twitter:image" content="https://namerlygenerator.netlify.app/assets/images/youtube-titles-og.jpg" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://namerlygenerator.netlify.app/youtube/" />
+
+  <!-- Language alternates -->
+  <link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/youtube/" />
+  <link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/youtube/" />
+  <link rel="alternate" hreflang="x-default" href="https://namerlygenerator.netlify.app/youtube/" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- Google Analytics 4 -->
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated background particles */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/></circle></svg>') repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    main {
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      letter-spacing: 0.5px;
+    }
+
+    select,
+    button {
+      margin: 1rem;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      border: 2px solid #e2e8f0;
+      border-radius: 15px;
+      background: white;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    select:hover,
+    button:hover {
+      border-color: #dc2626;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+    }
+
+    button {
+      background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+      color: white;
+      border: none;
+      font-weight: 600;
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s;
+    }
+
+    button:hover::before {
+      left: 100%;
+    }
+
+    #output {
+      margin-top: 3rem;
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-family: 'Roboto', 'Inter', sans-serif;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.6;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: all 0.5s ease;
+    }
+
+    .copy-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, #17a2b8, #138496);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(23, 162, 184, 0.3);
+      font-weight: 500;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(23, 162, 184, 0.4);
+      background: linear-gradient(135deg, #138496, #17a2b8);
+    }
+
+    .share-section {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 2px dashed rgba(220, 38, 38, 0.3);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .share-title {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #333;
+      font-size: 1.2rem;
+    }
+
+    .main-share-btn {
+      margin-left: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+      font-weight: 500;
+    }
+
+    .main-share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(16, 185, 129, 0.4);
+      background: linear-gradient(135deg, #059669, #10b981);
+    }
+
+    .share-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .share-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .twitter {
+      background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+      color: white;
+    }
+
+    .instagram {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+    }
+
+    .tiktok {
+      background: linear-gradient(135deg, #000, #333);
+      color: white;
+    }
+
+    .whatsapp {
+      background: linear-gradient(135deg, #25d366, #20c157);
+      color: white;
+    }
+
+    .telegram {
+      background: linear-gradient(135deg, #0088cc, #0066aa);
+      color: white;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      main {
+        padding: 2rem 1rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        letter-spacing: 0.3px;
+      }
+
+      #output {
+        padding: 2rem;
+        font-size: 1.2rem;
+      }
+
+      .share-buttons {
+        gap: 10px;
+      }
+
+      .share-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Loading animation */
+    .loading {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Animations */
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .emoji-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">🎥 Namerly</h1>
+    <div>
+      <button id="lang-toggle"
+        style="margin-right: 1rem; padding: 0.4rem 0.8rem; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">🌐
+        ES</button>
+      <a href="../index.html" style="text-decoration:none;">← Home</a>
+    </div>
+  </header>
+  <main>
+    <h2 id="subtitle">YouTube Video Titles</h2>
+    <div class="control-section">
+      <label for="style">Choose a category:</label>
+      <select id="style">
+        <option value="viral">🔥 Viral Titles</option>
+        <option value="gaming">🎮 Gaming</option>
+        <option value="lifestyle">✨ Lifestyle</option>
+        <option value="educational">📚 Educational</option>
+        <option value="random">🎲 Random</option>
+      </select>
+      <br>
+      <button onclick="generateTitle()" class="generate-btn">
+        <span id="btn-text">Generate</span>
+      </button>
+    </div>
+    <div id="output">🎥</div>
+    <div id="share-section" style="display: none;">
+      <div class="share-section">
+        <div class="share-title" id="share-title">📱 Share on Social Media</div>
+        <div class="share-buttons">
+          <button class="share-btn twitter" onclick="shareOnTwitter()">🐦 Twitter</button>
+          <button class="share-btn instagram" onclick="shareOnInstagram()">📸 Instagram</button>
+          <button class="share-btn tiktok" onclick="shareOnTikTok()">🎵 TikTok</button>
+          <button class="share-btn whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>
+          <button class="share-btn telegram" onclick="shareOnTelegram()">✈️ Telegram</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    let currentLang = localStorage.getItem('namerly-lang') || (navigator.language.startsWith("es") ? "es" : "en");
+    let recentTitles = []; // Array para recordar títulos recientes
+    const MAX_RECENT = 8; // Recordar últimos 8 elementos para evitar repeticiones
+
+    const translations = {
+      en: {
+        subtitle: "YouTube Video Titles",
+        chooseCategory: "Choose a category:",
+        generate: "Generate",
+        copy: "Copy",
+        copied: "Copied!",
+        share: "Share",
+        shareTitle: "📱 Share on Social Media",
+        viral: "🔥 Viral Titles",
+        gaming: "🎮 Gaming",
+        lifestyle: "✨ Lifestyle",
+        educational: "📚 Educational",
+        random: "🎲 Random"
+      },
+      es: {
+        subtitle: "Títulos para Videos de YouTube",
+        chooseCategory: "Elige una categoría:",
+        generate: "Generar",
+        copy: "Copiar",
+        copied: "¡Copiado!",
+        share: "Compartir",
+        shareTitle: "📱 Compartir en Redes Sociales",
+        viral: "🔥 Títulos Virales",
+        gaming: "🎮 Gaming",
+        lifestyle: "✨ Lifestyle",
+        educational: "📚 Educativo",
+        random: "🎲 Aleatorio"
+      }
+    };
+
+    function updateUI() {
+      const t = translations[currentLang];
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.querySelector("label[for='style']").textContent = t.chooseCategory;
+      document.querySelector("button[onclick='generateTitle()']").textContent = t.generate;
+
+      // Update select options
+      const select = document.getElementById("style");
+      const options = select.querySelectorAll("option");
+      if (currentLang === "es") {
+        options[0].textContent = t.viral;
+        options[1].textContent = t.gaming;
+        options[2].textContent = t.lifestyle;
+        options[3].textContent = t.educational;
+        options[4].textContent = t.random;
+      } else {
+        options[0].textContent = "🔥 Viral Titles";
+        options[1].textContent = "🎮 Gaming";
+        options[2].textContent = "✨ Lifestyle";
+        options[3].textContent = "📚 Educational";
+        options[4].textContent = "🎲 Random";
+      }
+
+      const nextLang = currentLang === "en" ? "ES" : "EN";
+      document.getElementById("lang-toggle").innerHTML = `🌐 ${nextLang}`;
+    }
+
+    const titles = {
+      en: {
+        viral: [
+          "I Can't Believe This Actually Happened...",
+          "This Changed My Life Forever",
+          "You Won't Believe What Happened Next",
+          "The Truth About [Topic] Nobody Tells You",
+          "I Tried [Something] For 30 Days - Here's What Happened",
+          "This Video Will Change Your Mind About Everything",
+          "The Shocking Reality Behind [Topic]",
+          "Why Everyone is Talking About This",
+          "I Spent $10,000 So You Don't Have To",
+          "The Secret That Companies Don't Want You to Know",
+          "This Is Why You're Failing At [Topic]",
+          "I Broke The Internet With This Video",
+          "The Most Viral Thing I've Ever Done",
+          "Everyone Said This Was Impossible... Until Now",
+          "This Will Make You Question Everything",
+          "The Mistake That Cost Me Everything",
+          "I Wish I Knew This 10 Years Ago",
+          "This Video Got Me Banned From [Place]",
+          "The Life-Changing Advice Nobody Gives You",
+          "I Exposed The Truth And This Happened",
+          "This Simple Trick Changed Everything",
+          "The Real Reason Why [Topic] Doesn't Work",
+          "I Can't Show You Everything In This Video",
+          "This Is The Future (And It's Scary)"
+        ],
+        gaming: [
+          "I Beat The World's Hardest Game",
+          "Playing [Game] Until I Win",
+          "The Most Overpowered Build In [Game]",
+          "I Broke [Game] With This Strategy",
+          "Speedrunning [Game] In Under 10 Minutes",
+          "I Played [Game] For 24 Hours Straight",
+          "The Secret To Getting Good At [Game]",
+          "Pro Player Reacts To My Gameplay",
+          "I Challenged A Pro And This Happened",
+          "The Most Epic Comeback Ever",
+          "Can You Beat [Game] Without [Thing]?",
+          "I Found A Game Breaking Glitch",
+          "The Ultimate [Game] Guide For Beginners",
+          "Ranking Every [Game Character/Item] From Worst To Best",
+          "I Tried The Most Toxic Strategy In [Game]",
+          "What Happens If You Do This In [Game]?",
+          "The Rarest Achievement In Gaming History",
+          "I Recreated [Famous Scene] In [Game]",
+          "The Most Satisfying Victory Ever",
+          "Every [Game] Player Needs To See This",
+          "I Discovered A Hidden Feature In [Game]",
+          "The Funniest Moments In [Game]",
+          "Can AI Beat The Best Human Player?",
+          "I Spent 1000 Hours Learning This Game"
+        ],
+        lifestyle: [
+          "My Perfect Morning Routine (Life Changed)",
+          "I Tried Living Like A Millionaire For A Week",
+          "The Minimalist Lifestyle: 30 Day Challenge",
+          "How I Make $10K A Month From Home",
+          "My Biggest Life Lessons At Age [Age]",
+          "I Quit Social Media For 365 Days",
+          "The Productivity System That Changed My Life",
+          "Living On $1 A Day For A Month",
+          "I Tried Every Self-Help Trend For A Year",
+          "The Truth About Work-Life Balance",
+          "How I Wake Up At 5AM Every Day",
+          "My Journey From Broke To Financial Freedom",
+          "I Organized My Entire Life In One Day",
+          "The Habit That Made Me Successful",
+          "What I Wish I Knew In My 20s",
+          "My Night Routine For Better Sleep",
+          "I Decluttered My Entire Life",
+          "The Simple Life Philosophy That Works",
+          "How I Stay Motivated Every Single Day",
+          "My Biggest Failures And What I Learned",
+          "The 5 Books That Changed My Perspective",
+          "Why I Stopped Caring What Others Think",
+          "My Unconventional Path To Happiness",
+          "The Real Cost Of Living Your Dreams"
+        ],
+        educational: [
+          "The Science Behind [Topic] Explained Simply",
+          "Everything You Need To Know About [Subject]",
+          "How [Process] Actually Works",
+          "The History Of [Topic] In 10 Minutes",
+          "Why [Phenomenon] Happens (Science Explained)",
+          "The Complete Beginner's Guide To [Topic]",
+          "Debunking Common Myths About [Subject]",
+          "How To Master [Skill] In 30 Days",
+          "The Psychology Behind [Behavior]",
+          "What They Don't Teach You In School About [Topic]",
+          "The Future Of [Industry/Technology]",
+          "Understanding [Complex Topic] Made Easy",
+          "The Hidden Patterns In [Subject]",
+          "Why [Common Belief] Is Actually Wrong",
+          "The Step-by-Step Process To [Achievement]",
+          "How [Innovation] Changed The World",
+          "The Mathematical Beauty Of [Concept]",
+          "Exploring The Mysteries Of [Topic]",
+          "The Art And Science Of [Subject]",
+          "Why [Question] Matters More Than You Think",
+          "The Evolution Of [Technology/Concept]",
+          "Breaking Down [Complex System]",
+          "The Fundamental Principles Of [Field]",
+          "How To Think Like A [Professional]"
+        ]
+      },
+      es: {
+        viral: [
+          "No Puedo Creer Que Esto Realmente Pasó...",
+          "Esto Cambió Mi Vida Para Siempre",
+          "No Vas A Creer Lo Que Pasó Después",
+          "La Verdad Sobre [Tema] Que Nadie Te Dice",
+          "Probé [Algo] Por 30 Días - Esto Es Lo Que Pasó",
+          "Este Video Va A Cambiar Tu Mente Sobre Todo",
+          "La Realidad Impactante Detrás De [Tema]",
+          "Por Qué Todo El Mundo Está Hablando De Esto",
+          "Gasté $10,000 Para Que Tú No Tengas Que Hacerlo",
+          "El Secreto Que Las Empresas No Quieren Que Sepas",
+          "Por Esto Es Que Estás Fallando En [Tema]",
+          "Rompí El Internet Con Este Video",
+          "Lo Más Viral Que He Hecho Jamás",
+          "Todos Dijeron Que Era Imposible... Hasta Ahora",
+          "Esto Te Hará Cuestionar Todo",
+          "El Error Que Me Costó Todo",
+          "Ojalá Hubiera Sabido Esto Hace 10 Años",
+          "Este Video Me Prohibieron De [Lugar]",
+          "El Consejo Que Cambia Tu Vida Y Nadie Te Da",
+          "Expuse La Verdad Y Esto Pasó",
+          "Este Truco Simple Cambió Todo",
+          "La Verdadera Razón Por La Que [Tema] No Funciona",
+          "No Puedo Mostrarte Todo En Este Video",
+          "Este Es El Futuro (Y Da Miedo)"
+        ],
+        gaming: [
+          "Vencí El Juego Más Difícil Del Mundo",
+          "Jugando [Juego] Hasta Que Gane",
+          "La Build Más Rota De [Juego]",
+          "Rompí [Juego] Con Esta Estrategia",
+          "Speedrun De [Juego] En Menos De 10 Minutos",
+          "Jugué [Juego] Por 24 Horas Seguidas",
+          "El Secreto Para Ser Bueno En [Juego]",
+          "Jugador Pro Reacciona A Mi Gameplay",
+          "Desafié A Un Pro Y Esto Pasó",
+          "La Remontada Más Épica De La Historia",
+          "¿Puedes Vencer [Juego] Sin [Cosa]?",
+          "Encontré Un Glitch Que Rompe El Juego",
+          "La Guía Definitiva De [Juego] Para Principiantes",
+          "Rankeando Cada [Personaje/Item] De Peor A Mejor",
+          "Probé La Estrategia Más Tóxica De [Juego]",
+          "¿Qué Pasa Si Haces Esto En [Juego]?",
+          "El Logro Más Raro En La Historia Del Gaming",
+          "Recreé [Escena Famosa] En [Juego]",
+          "La Victoria Más Satisfactoria De Todas",
+          "Todo Jugador De [Juego] Necesita Ver Esto",
+          "Descubrí Una Función Oculta En [Juego]",
+          "Los Momentos Más Divertidos En [Juego]",
+          "¿Puede La IA Vencer Al Mejor Jugador Humano?",
+          "Pasé 1000 Horas Aprendiendo Este Juego"
+        ],
+        lifestyle: [
+          "Mi Rutina Matutina Perfecta (Cambió Mi Vida)",
+          "Probé Vivir Como Millonario Por Una Semana",
+          "El Estilo De Vida Minimalista: Reto De 30 Días",
+          "Cómo Gano $10K Al Mes Desde Casa",
+          "Mis Mayores Lecciones De Vida A Los [Edad] Años",
+          "Dejé Las Redes Sociales Por 365 Días",
+          "El Sistema De Productividad Que Cambió Mi Vida",
+          "Viviendo Con $1 Al Día Por Un Mes",
+          "Probé Cada Tendencia De Autoayuda Por Un Año",
+          "La Verdad Sobre El Balance Vida-Trabajo",
+          "Cómo Me Levanto A Las 5AM Todos Los Días",
+          "Mi Viaje De Pobre A Libertad Financiera",
+          "Organicé Toda Mi Vida En Un Día",
+          "El Hábito Que Me Hizo Exitoso",
+          "Lo Que Ojalá Hubiera Sabido En Mis 20s",
+          "Mi Rutina Nocturna Para Dormir Mejor",
+          "Organicé Toda Mi Vida",
+          "La Filosofía De Vida Simple Que Funciona",
+          "Cómo Me Mantengo Motivado Todos Los Días",
+          "Mis Mayores Fracasos Y Lo Que Aprendí",
+          "Los 5 Libros Que Cambiaron Mi Perspectiva",
+          "Por Qué Dejé De Importarme Lo Que Piensen Otros",
+          "Mi Camino No Convencional A La Felicidad",
+          "El Costo Real De Vivir Tus Sueños"
+        ],
+        educational: [
+          "La Ciencia Detrás De [Tema] Explicada Simple",
+          "Todo Lo Que Necesitas Saber Sobre [Materia]",
+          "Cómo [Proceso] Realmente Funciona",
+          "La Historia De [Tema] En 10 Minutos",
+          "Por Qué [Fenómeno] Sucede (Ciencia Explicada)",
+          "La Guía Completa Para Principiantes De [Tema]",
+          "Desmintiendo Mitos Comunes Sobre [Materia]",
+          "Cómo Dominar [Habilidad] En 30 Días",
+          "La Psicología Detrás De [Comportamiento]",
+          "Lo Que No Te Enseñan En La Escuela Sobre [Tema]",
+          "El Futuro De [Industria/Tecnología]",
+          "Entendiendo [Tema Complejo] Hecho Fácil",
+          "Los Patrones Ocultos En [Materia]",
+          "Por Qué [Creencia Común] En Realidad Está Mal",
+          "El Proceso Paso A Paso Para [Logro]",
+          "Cómo [Innovación] Cambió El Mundo",
+          "La Belleza Matemática De [Concepto]",
+          "Explorando Los Misterios De [Tema]",
+          "El Arte Y Ciencia De [Materia]",
+          "Por Qué [Pregunta] Importa Más De Lo Que Piensas",
+          "La Evolución De [Tecnología/Concepto]",
+          "Desglosando [Sistema Complejo]",
+          "Los Principios Fundamentales De [Campo]",
+          "Cómo Pensar Como Un [Profesional]"
+        ]
+      }
+    };
+
+    function generateTitle() {
+      const style = document.getElementById("style").value;
+      const set = titles[currentLang];
+      const options = style === "random"
+        ? [...set.viral, ...set.gaming, ...set.lifestyle, ...set.educational]
+        : set[style];
+
+      // Filtrar títulos que NO estén en la lista de recientes
+      const availableOptions = options.filter(title => !recentTitles.includes(title));
+
+      // Si quedan muy pocas opciones disponibles, resetear la memoria
+      if (availableOptions.length < 3) {
+        recentTitles = [];
+        availableOptions.push(...options);
+      }
+
+      // Seleccionar título aleatorio de las opciones disponibles
+      const random = availableOptions[Math.floor(Math.random() * availableOptions.length)];
+
+      // Agregar el título a la lista de recientes
+      recentTitles.push(random);
+
+      // Mantener solo los últimos MAX_RECENT elementos
+      if (recentTitles.length > MAX_RECENT) {
+        recentTitles.shift(); // Remover el más antiguo
+      }
+
+      const t = translations[currentLang];
+      document.getElementById("output").innerHTML = `"${random}"<br><button class="copy-btn" onclick="copyToClipboard('${random}')">${t.copy}</button> <button class="main-share-btn" onclick="toggleShareSection()">${t.share}</button>`;
+
+      // Ocultar sección de compartir al generar nuevo contenido
+      document.getElementById("share-section").style.display = "none";
+    }
+
+    function toggleShareSection() {
+      const shareSection = document.getElementById("share-section");
+      const isVisible = shareSection.style.display !== "none";
+      shareSection.style.display = isVisible ? "none" : "block";
+
+      // Actualizar título según idioma
+      const t = translations[currentLang];
+      document.getElementById("share-title").textContent = t.shareTitle;
+    }
+
+    function shareOnTwitter() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`💡 YouTube Title Idea: ${content} #YouTube #ContentCreator #Namerly`);
+      window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
+    }
+
+    function shareOnInstagram() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      navigator.clipboard.writeText(`💡 YouTube Title Idea: ${content} - Generated by Namerly`);
+      alert("Content copied! Open Instagram and paste it in your story or post.");
+    }
+
+    function shareOnTikTok() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      navigator.clipboard.writeText(`${content} #YouTube #ContentCreator #VideoIdeas #Namerly`);
+      alert("Content copied! Open TikTok and paste it in your video description.");
+    }
+
+    function shareOnWhatsApp() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`💡 Check out this YouTube title idea: ${content} 🎥`);
+      window.open(`https://wa.me/?text=${text}`, "_blank");
+    }
+
+    function shareOnTelegram() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`💡 YouTube Title Idea: ${content} 🎥`);
+      window.open(`https://t.me/share/url?text=${text}`, "_blank");
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const t = translations[currentLang];
+        alert(t.copied);
+      });
+    }
+
+    document.getElementById("lang-toggle").addEventListener("click", () => {
+      currentLang = currentLang === "en" ? "es" : "en";
+      localStorage.setItem('namerly-lang', currentLang);
+      updateUI();
+      document.getElementById("output").innerHTML = "🎥";
+      // Limpiar memoria de títulos recientes al cambiar idioma
+      recentTitles = [];
+      // Ocultar sección de compartir al cambiar idioma
+      document.getElementById("share-section").style.display = "none";
+    });
+
+    updateUI();
+  </script>
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner"
+    style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+    <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+      mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+    <br>
+    <button id="accept-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+      analítica</button>
+    <button id="reject-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+      analítica</button>
+    <button onclick="openCookieSettings()"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+      cookies</button>
+    <a href="/cookie-policy.html"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem;">Política de cookies</a>
+  </div>
+
+  <div id="cookie-settings-modal" class="cookie-settings-modal" style="display:none;">
+    <div class="cookie-settings-content">
+      <h2>Configuración de cookies</h2>
+      <div class="cookie-category">
+        <h3>🍪 Esenciales</h3>
+        <p>Estas cookies son necesarias para el funcionamiento básico del sitio y no se pueden desactivar.</p>
+      </div>
+      <div class="cookie-category">
+        <h3>📊 Analítica</h3>
+        <p>Permiten medir el uso del sitio y mejorar la experiencia. Puedes aceptar o rechazar estas cookies.</p>
+        <div>
+          <label>
+            <input type="checkbox" id="analytics-consent-checkbox" />
+            Permitir cookies de analítica
+          </label>
+        </div>
+      </div>
+      <div class="cookie-settings-buttons">
+        <button onclick="saveCookieSettings()">Guardar</button>
+        <button onclick="closeCookieSettings()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+    function showCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+    function hideCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function openCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'flex';
+      document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+    }
+    function closeCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'none';
+    }
+    function saveCookieSettings() {
+      const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+      setCookie('namerly_analytics_consent', consent, 365);
+      closeCookieSettings();
+      window.location.reload();
+    }
+    document.getElementById('accept-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'accepted', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    document.getElementById('reject-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'rejected', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    window.addEventListener('DOMContentLoaded', function () {
+      var consent = getCookie('namerly_analytics_consent');
+      if (!consent) showCookieBanner();
+      else hideCookieBanner();
+      if (consent === 'accepted') loadAnalytics();
+    });
+    function loadAnalytics() {
+      if (window.gtagLoaded) return;
+      window.gtagLoaded = true;
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21';
+      document.head.appendChild(script);
+      script.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-ZCBGMRHJ21', {
+          cookie_domain: 'namerlygenerator.netlify.app',
+          anonymize_ip: true
+        });
+      };
+    }
+  </script>
+<script type="module" src="../../assets/js/premium-features.js"></script>
+</body>
+
+</html>

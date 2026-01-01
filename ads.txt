@@ -1,0 +1,12 @@
+# ads.txt file for Namerly website
+# This file authorizes Google AdSense to sell ads on this website
+# Publisher ID: ca-pub-8550109275788235
+
+# Google AdSense
+google.com, ca-pub-8550109275788235, DIRECT, f08c47fec0942fa0
+
+# Google Ad Manager (if needed in the future)
+# google.com, ca-pub-8550109275788235, DIRECT
+
+# Note: Only add other ad networks here if you actually use them
+# Each line should follow the format: domain, publisher_id, relationship, certification_authority_id

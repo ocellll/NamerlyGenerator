@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bio Generator | Instagram, TikTok & Social Media Bios - Namerly</title>
+  <meta name="description"
+    content="Generate perfect bios for Instagram, TikTok, Twitter, and other social media platforms. Create aesthetic, funny, and professional bios instantly!" />
+  <meta name="keywords"
+    content="bio generator, instagram bio, tiktok bio, social media bio, aesthetic bio, funny bio, professional bio, twitter bio, bio ideas" />
+  <meta name="author" content="Namerly" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://namerlygenerator.netlify.app/bios/" />
+  <meta property="og:title" content="Bio Generator | Instagram, TikTok & Social Media Bios - Namerly" />
+  <meta property="og:description"
+    content="Generate perfect bios for Instagram, TikTok, Twitter, and other social media platforms." />
+  <meta property="og:image" content="https://namerlygenerator.netlify.app/assets/images/bio-generator-og.jpg" />
+  <meta property="og:site_name" content="Namerly" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://namerlygenerator.netlify.app/bios/" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- Google Analytics 4 -->
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      /* Instagram/Social Gradient */
+      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    /* Animated background particles */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/></circle></svg>') repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #title {
+      font-size: 1.8rem;
+      color: white;
+      margin: 0;
+    }
+
+    main {
+      padding: 3rem 2rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .control-section {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    select,
+    button {
+      margin: 0.5rem;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 50px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    button.generate-btn {
+      background: linear-gradient(135deg, #e1306c 0%, #c13584 100%);
+      color: white;
+      border: none;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
+      transition: transform 0.2s;
+    }
+
+    button.generate-btn:hover {
+      transform: scale(1.05);
+    }
+
+    #output {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #333;
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      white-space: pre-wrap;
+    }
+
+    .copy-btn {
+      margin-top: 1rem;
+      background: #405de6;
+      color: white;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      #output {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">🧬 Namerly</h1>
+    <div>
+      <button id="lang-toggle" style="background: rgba(255,255,255,0.2); color: white; border: none;">🌐 ES</button>
+      <a href="../index.html" style="color: white; text-decoration:none; margin-left: 1rem; font-weight: 500;">←
+        Home</a>
+    </div>
+  </header>
+
+  <main>
+    <h2 id="subtitle">Instagram Bios</h2>
+
+    <div class="control-section">
+      <label for="style" style="display: block; margin-bottom: 1rem; font-weight: 600; color: #444;">Choose
+        Style:</label>
+      <select id="style">
+        <option value="aesthetic">✨ Aesthetic</option>
+        <option value="funny">😂 Funny</option>
+        <option value="motivational">💪 Motivational</option>
+        <option value="cool">😎 Cool</option>
+        <option value="creative">🎨 Creative</option>
+        <option value="random">🎲 Random</option>
+      </select>
+      <br>
+      <button onclick="generateName()" class="generate-btn">
+        <span id="btn-text">Generate Bio</span>
+      </button>
+    </div>
+
+    <div id="output">
+      <span>Ready!</span>
+    </div>
+  </main>
+
+  <script>
+    let currentLang = localStorage.getItem('namerly-lang') || (navigator.language.startsWith("es") ? "es" : "en");
+
+    const translations = {
+      en: {
+        subtitle: "Instagram Bios",
+        chooseStyle: "Choose Style:",
+        generate: "Generate Bio",
+        copy: "Copy",
+        copied: "Copied!",
+        ready: "Ready!",
+        types: {
+          aesthetic: "✨ Aesthetic",
+          funny: "😂 Funny",
+          motivational: "💪 Motivational",
+          cool: "😎 Cool",
+          creative: "🎨 Creative",
+          random: "🎲 Random"
+        }
+      },
+      es: {
+        subtitle: "Biografías para Instagram",
+        chooseStyle: "Estilo:",
+        generate: "Generar Bio",
+        copy: "Copiar",
+        copied: "¡Copiado!",
+        ready: "¡Listo!",
+        types: {
+          aesthetic: "✨ Estético",
+          funny: "😂 Gracioso",
+          motivational: "💪 Motivacional",
+          cool: "😎 Genial",
+          creative: "🎨 Creativo",
+          random: "🎲 Aleatorio"
+        }
+      }
+    };
+
+    const names = {
+      en: {
+        aesthetic: [
+          "✨ Living my best life ✨",
+          "🌙 Moon child with sun dreams ☀️",
+          "🦋 Creating my own magic 🦋",
+          "💫 Stardust in human form 💫",
+          "🌸 Bloom where you are planted 🌸",
+          "🌊 Salt water heals everything 🌊",
+          "🍃 Wild & free 🍃",
+          "🌻 Sunshine mixed with a little hurricane 🌻",
+          "💎 Rare like a diamond 💎",
+          "🌈 Life in full color 🌈"
+        ],
+        funny: [
+          "Professional overthinker 🤔",
+          "I put the 'Pro' in procrastination 😴",
+          "CEO of bad decisions 📈",
+          "Part-time superhero, full-time mess 🦸‍♀️",
+          "Running on coffee and sarcasm ☕",
+          "My hobbies include eating and complaining about being tired 😂",
+          "I speak fluent sarcasm and movie quotes 🎬",
+          "Recovering perfectionist 🙃",
+          "Life's too short to be serious all the time 🤪",
+          "Warning: May contain traces of awesomeness ⚠️"
+        ],
+        motivational: [
+          "💪 Stronger than yesterday 💪",
+          "🎯 Focused on my goals 🎯",
+          "✨ Creating my own opportunities ✨",
+          "🚀 Sky is not the limit 🚀",
+          "🔥 Hustle in silence, let success make the noise 🔥",
+          "💎 Pressure makes diamonds 💎",
+          "⚡ Turning dreams into plans ⚡",
+          "🌟 Be your own inspiration 🌟",
+          "🏆 Champions train, losers complain 🏆",
+          "💯 Progress over perfection 💯"
+        ],
+        cool: [
+          "😎 Too cool for school 😎",
+          "🔥 Setting trends, not following them 🔥",
+          "⚡ Electric personality ⚡",
+          "🎸 Rock and roll soul 🎸",
+          "🌙 Night owl vibes 🌙",
+          "❄️ Ice cold confidence ❄️",
+          "🚀 Out of this world 🚀",
+          "🎭 Living life like it's art 🎭",
+          "🔮 Mysterious and magical 🔮",
+          "⚠️ Handle with care ⚠️"
+        ],
+        creative: [
+          "🎨 Artist by day, dreamer by night 🎨",
+          "✏️ Writing my own story ✏️",
+          "🖌️ Life is my canvas 🖌️",
+          "🎭 Drama-free, creativity-full 🎭",
+          "📸 Capturing moments, creating memories 📸",
+          "🎵 Music is my therapy 🎵",
+          "✨ Imagination over knowledge ✨",
+          "🌈 Coloring outside the lines 🌈",
+          "🎪 Life's a circus, enjoy the show 🎪",
+          "💡 Ideas are my superpower 💡"
+        ],
+        random: [
+          "🍕 Pizza is my love language 🍕",
+          "🎮 Game over? I don't think so 🎮",
+          "📚 Bookworm and proud 📚",
+          "🌮 Taco 'bout a good life 🌮",
+          "🦄 Unicorns are real, just rare 🦄",
+          "🍦 Sweet like ice cream 🍦",
+          "🐱 Cat person obviously 🐱",
+          "⭐ Made of star stuff ⭐",
+          "🌺 Tropical state of mind 🌺",
+          "🎯 Living life one adventure at a time 🎯"
+        ]
+      },
+      es: {
+        aesthetic: [
+          "✨ Viviendo mi mejor vida ✨",
+          "🌙 Niña luna con sueños de sol ☀️",
+          "🦋 Creando mi propia magia 🦋",
+          "💫 Polvo de estrellas en forma humana 💫",
+          "🌸 Florece donde estés plantada 🌸",
+          "🌊 El agua salada lo cura todo 🌊",
+          "🍃 Salvaje y libre 🍃",
+          "🌻 Sol mezclado con un poco de huracán 🌻",
+          "💎 Rara como un diamante 💎",
+          "🌈 La vida a todo color 🌈"
+        ],
+        funny: [
+          "Pensadora profesional 🤔",
+          "Le pongo el 'Pro' a la procrastinación 😴",
+          "CEO de malas decisiones 📈",
+          "Superhéroe de medio tiempo, desastre de tiempo completo 🦸‍♀️",
+          "Funcionando con café y sarcasmo ☕",
+          "Mis hobbies incluyen comer y quejarme de estar cansada 😂",
+          "Hablo sarcasmo fluido y citas de películas 🎬",
+          "Perfeccionista en recuperación 🙃",
+          "La vida es muy corta para ser seria todo el tiempo 🤪",
+          "Advertencia: Puede contener trazas de genialidad ⚠️"
+        ],
+        motivational: [
+          "💪 Más fuerte que ayer 💪",
+          "🎯 Enfocada en mis metas 🎯",
+          "✨ Creando mis propias oportunidades ✨",
+          "🚀 El cielo no es el límite 🚀",
+          "🔥 Trabajar en silencio, dejar que el éxito haga ruido 🔥",
+          "💎 La presión hace diamantes 💎",
+          "⚡ Convirtiendo sueños en planes ⚡",
+          "🌟 Sé tu propia inspiración 🌟",
+          "🏆 Los campeones entrenan, los perdedores se quejan 🏆",
+          "💯 Progreso sobre perfección 💯"
+        ],
+        cool: [
+          "😎 Demasiado genial para la escuela 😎",
+          "🔥 Marcando tendencias, no siguiéndolas 🔥",
+          "⚡ Personalidad eléctrica ⚡",
+          "🎸 Alma de rock and roll 🎸",
+          "🌙 Vibras de búho nocturno 🌙",
+          "❄️ Confianza helada ❄️",
+          "🚀 Fuera de este mundo 🚀",
+          "🎭 Viviendo la vida como si fuera arte 🎭",
+          "🔮 Misteriosa y mágica 🔮",
+          "⚠️ Manejar con cuidado ⚠️"
+        ],
+        creative: [
+          "🎨 Artista de día, soñadora de noche 🎨",
+          "✏️ Escribiendo mi propia historia ✏️",
+          "🖌️ La vida es mi lienzo 🖌️",
+          "🎭 Sin drama, llena de creatividad 🎭",
+          "📸 Capturando momentos, creando recuerdos 📸",
+          "🎵 La música es mi terapia 🎵",
+          "✨ Imaginación sobre conocimiento ✨",
+          "🌈 Coloreando fuera de las líneas 🌈",
+          "🎪 La vida es un circo, disfruta el show 🎪",
+          "💡 Las ideas son mi superpoder 💡"
+        ],
+        random: [
+          "🍕 La pizza es mi lenguaje del amor 🍕",
+          "🎮 ¿Game over? No lo creo 🎮",
+          "📚 Ratón de biblioteca y orgullosa 📚",
+          "🌮 Hablemos de una buena vida 🌮",
+          "🦄 Los unicornios son reales, solo raros 🦄",
+          "🍦 Dulce como helado 🍦",
+          "🐱 Persona de gatos obviamente 🐱",
+          "⭐ Hecha de material estelar ⭐",
+          "🌺 Estado mental tropical 🌺",
+          "🎯 Viviendo la vida una aventura a la vez 🎯"
+        ]
+      }
+    };
+
+    function updateUI() {
+      const t = translations[currentLang];
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.querySelector("label[for='style']").textContent = t.chooseStyle;
+      document.getElementById("btn-text").textContent = t.generate;
+      document.getElementById("output").querySelector("span").textContent = t.ready;
+
+      // Update options
+      const select = document.getElementById("style");
+      select.innerHTML = "";
+      for (const [key, value] of Object.entries(t.types)) {
+        const option = document.createElement("option");
+        option.value = key;
+        option.textContent = value;
+        select.appendChild(option);
+      }
+
+      const nextLang = currentLang === "en" ? "ES" : "EN";
+      document.getElementById("lang-toggle").innerHTML = `🌐 ${nextLang}`;
+    }
+
+    function generateName() {
+      const style = document.getElementById("style").value;
+      const set = names[currentLang];
+      let options = [];
+
+      if (style === "random") {
+        options = [...set.aesthetic, ...set.funny, ...set.motivational, ...set.cool, ...set.creative];
+      } else {
+        options = set[style];
+      }
+
+      const random = options[Math.floor(Math.random() * options.length)];
+
+      const t = translations[currentLang];
+      document.getElementById("output").innerHTML = `${random} <button class="copy-btn" onclick="copyToClipboard('${random.replace(/'/g, "\\'")}')">${t.copy}</button>`;
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const t = translations[currentLang];
+        alert(t.copied);
+      });
+    }
+
+    document.getElementById("lang-toggle").addEventListener("click", () => {
+      currentLang = currentLang === "en" ? "es" : "en";
+      localStorage.setItem('namerly-lang', currentLang);
+      updateUI();
+    });
+
+    updateUI();
+  </script>
+
+  <!-- Legal Footer -->
+  <footer class="legal-footer"
+    style="margin-top: 3rem; padding: 2rem; text-align: center; color: rgba(255,255,255,0.8); position: relative; z-index: 10;">
+    <div class="footer-content">
+      <div class="footer-links" style="margin-bottom: 1rem;">
+        <a href="../privacy-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Privacy
+          Policy</a>
+        <span class="separator">|</span>
+        <a href="../terms-of-service.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Terms of
+          Service</a>
+        <span class="separator">|</span>
+        <a href="../cookie-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Cookie Policy</a>
+        <span class="separator">|</span>
+        <a href="../disclaimer.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Disclaimer</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 Namerly. All rights reserved.</p>
+        <p>🔒 Your privacy is protected. We don't store personal data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner"
+    style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e1306c; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+    <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+      mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+    <br>
+    <button id="accept-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e1306c; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+      analítica</button>
+    <button id="reject-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+      analítica</button>
+    <button onclick="openCookieSettings()"
+      style="margin-left:1.2rem; color:#e1306c; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+      cookies</button>
+    <a href="../cookie-policy.html"
+      style="margin-left:1.2rem; color:#e1306c; text-decoration:underline; font-size:0.95rem;">Política de cookies</a>
+  </div>
+
+  <div id="cookie-settings-modal" class="cookie-settings-modal"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:10000; justify-content:center; align-items:center;">
+    <div class="cookie-settings-content"
+      style="background:#fff; padding:2rem; border-radius:8px; max-width:500px; width:90%;">
+      <h2 style="margin-bottom:1rem; color:#333;">Configuración de cookies</h2>
+      <div class="cookie-category" style="margin-bottom:1rem;">
+        <h3 style="color:#e1306c;">🍪 Esenciales</h3>
+        <p style="font-size:0.9rem; color:#666;">Estas cookies son necesarias para el funcionamiento básico del sitio y
+          no se pueden desactivar.</p>
+      </div>
+      <div class="cookie-category" style="margin-bottom:1rem;">
+        <h3 style="color:#e1306c;">📊 Analítica</h3>
+        <p style="font-size:0.9rem; color:#666;">Permiten medir el uso del sitio y mejorar la experiencia. Puedes
+          aceptar o rechazar estas cookies.</p>
+        <div style="margin-top:0.5rem;">
+          <label style="display:flex; align-items:center; cursor:pointer;">
+            <input type="checkbox" id="analytics-consent-checkbox" style="margin-right:8px;" />
+            <span style="color:#333;">Permitir cookies de analítica</span>
+          </label>
+        </div>
+      </div>
+      <div class="cookie-settings-buttons" style="display:flex; justify-content:flex-end; gap:10px; margin-top:1.5rem;">
+        <button onclick="saveCookieSettings()"
+          style="padding:0.5rem 1rem; background:#e1306c; color:white; border:none; border-radius:4px; cursor:pointer;">Guardar</button>
+        <button onclick="closeCookieSettings()"
+          style="padding:0.5rem 1rem; background:#ddd; color:#333; border:none; border-radius:4px; cursor:pointer;">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+    function showCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+    function hideCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function openCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'flex';
+      document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+    }
+    function closeCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'none';
+    }
+    function saveCookieSettings() {
+      const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+      setCookie('namerly_analytics_consent', consent, 365);
+      closeCookieSettings();
+      window.location.reload();
+    }
+    document.getElementById('accept-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'accepted', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    document.getElementById('reject-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'rejected', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    window.addEventListener('DOMContentLoaded', function () {
+      var consent = getCookie('namerly_analytics_consent');
+      if (!consent) showCookieBanner();
+      else hideCookieBanner();
+      if (consent === 'accepted') loadAnalytics();
+    });
+    function loadAnalytics() {
+      if (window.gtagLoaded) return;
+      window.gtagLoaded = true;
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21';
+      document.head.appendChild(script);
+      script.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-ZCBGMRHJ21', {
+          cookie_domain: 'namerlygenerator.netlify.app',
+          anonymize_ip: true
+        });
+      };
+    }
+  </script>
+</body>
+
+</html>

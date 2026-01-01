@@ -1,0 +1,513 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team & Clan Name Generator | Cool Gaming & Sports Names - Namerly</title>
+    <meta name="description"
+        content="Generate cool, badass, and unique names for your team, clan, club, or squad! Perfect for gaming, sports, eSports, and competitions." />
+    <meta name="keywords"
+        content="team name generator, clan name generator, squad names, gaming names, esports team names, cool team names, sports team names" />
+    <meta name="author" content="Namerly" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://namerlygenerator.netlify.app/teams/" />
+    <meta property="og:title" content="Team & Clan Name Generator - Namerly" />
+    <meta property="og:description"
+        content="Generate cool, badass, and unique names for your team, clan, club, or squad!" />
+    <meta property="og:image" content="https://namerlygenerator.netlify.app/assets/images/teams-og.jpg" />
+    <meta property="og:site_name" content="Namerly" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://namerlygenerator.netlify.app/teams/" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!-- Google Analytics 4 -->
+    <!-- Google Analytics 4 removed (loaded via cookie consent) -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            /* Gaming Dark Theme */
+            background: #0f172a;
+            background-image: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+            min-height: 100vh;
+            color: #e2e8f0;
+        }
+
+        header {
+            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: #38bdf8;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        main {
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .control-section {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        select,
+        button {
+            margin: 0.5rem;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        select {
+            background: #0f172a;
+            color: white;
+            border: 1px solid #38bdf8;
+        }
+
+        button.generate-btn {
+            background: linear-gradient(135deg, #0ea5e9, #2563eb);
+            color: white;
+            border: none;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button.generate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(14, 165, 233, 0.6);
+        }
+
+        #output {
+            margin-top: 2rem;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #38bdf8;
+            background: rgba(15, 23, 42, 0.9);
+            padding: 3rem;
+            border-radius: 10px;
+            border: 2px solid #38bdf8;
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .copy-btn {
+            margin-top: 1.5rem;
+            background: transparent;
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+            font-size: 0.8rem;
+            padding: 0.5rem 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .copy-btn:hover {
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            #output {
+                font-size: 1.5rem;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="title">🏆 Namerly Teams</h1>
+        <div>
+            <button id="lang-toggle"
+                style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.5);">🌐
+                ES</button>
+            <a href="../index.html"
+                style="color: #94a3b8; text-decoration:none; margin-left: 1rem; font-weight: 500; font-family: 'Orbitron', sans-serif;">←
+                HOME</a>
+        </div>
+    </header>
+
+    <main>
+        <h2 id="subtitle">Team Name Generator</h2>
+
+        <div class="control-section">
+            <label for="style"
+                style="display: block; margin-bottom: 1rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Choose
+                Style:</label>
+            <select id="style">
+                <option value="esports">🎮 eSports / Gaming</option>
+                <option value="sports">⚽ Sports Club</option>
+                <option value="badass">🔥 Badass / Intimidating</option>
+                <option value="funny">🤡 Funny / Meme</option>
+                <option value="animals">🦁 Animal Themed</option>
+                <option value="random">🎲 Random</option>
+            </select>
+            <br>
+            <button onclick="generateName()" class="generate-btn">
+                <span id="btn-text">DEPLOY SQUAD NAME</span>
+            </button>
+        </div>
+
+        <div id="output">
+            <span>AWAITING INPUT...</span>
+        </div>
+    </main>
+
+    <script>
+        let currentLang = localStorage.getItem('namerly-lang') || (navigator.language.startsWith("es") ? "es" : "en");
+
+        const translations = {
+            en: {
+                subtitle: "Team Name Generator",
+                chooseStyle: "Choose Style:",
+                generate: "Deploy Squad Name",
+                copy: "Copy ID",
+                copied: "ID Copied!",
+                ready: "AWAITING INPUT...",
+                types: {
+                    esports: "🎮 eSports / Gaming",
+                    sports: "⚽ Sports Club",
+                    badass: "🔥 Badass / Intimidating",
+                    funny: "🤡 Funny / Meme",
+                    animals: "🦁 Animal Themed",
+                    random: "🎲 Random"
+                }
+            },
+            es: {
+                subtitle: "Generador de Nombres de Equipo",
+                chooseStyle: "Elige Estilo:",
+                generate: "Desplegar Nombre",
+                copy: "Copiar ID",
+                copied: "¡Copiado!",
+                ready: "ESPERANDO ORDEN...",
+                types: {
+                    esports: "🎮 eSports / Gaming",
+                    sports: "⚽ Club Deportivo",
+                    badass: "🔥 Rudos / Intimidantes",
+                    funny: "🤡 Gracioso / Meme",
+                    animals: "🦁 Temática Animal",
+                    random: "🎲 Aleatorio"
+                }
+            }
+        };
+
+        const names = {
+            en: {
+                esports: [
+                    "Cloud9", "Team Liquid", "FaZe Clan", "Optic Gaming", "Fnatic", "G2 Esports", "TSM", "100 Thieves",
+                    "Sentinels", "Ghost Gaming", "Shadow Legends", "Pixel Warriors", "Cyber Ninjas", "Neon Knights",
+                    "Virtual Vipers", "Lag Switchers", "Frame Perfect", "Respawn Rangers", "Killstreakers", "GG EZ"
+                ],
+                sports: [
+                    "United FC", "City Strikers", "Golden Warriors", "Red Devils", "Blue Sharks", "Thunderbolts",
+                    "Titans", "Spartans", "Vikings", "Eagles", "Lions", "Tigers", "Bears", "Wolves", "Dragons",
+                    "Phoenix", "Storm", "Hurricanes", "Cyclones", "Tornadoes"
+                ],
+                badass: [
+                    "Apex Predators", "Silent Assassins", "Grim Reapers", "Black Ops", "Shadow Syndicate", "Vengeance",
+                    "Ruthless", "Mercenaries", "Outlaws", "Renegades", "Dominators", "Executioners", "Terminators",
+                    "Destroyers", "Annihilators", "Immortal", "Invincible", "Unstoppable", "Savage Squad", "Brutal Force"
+                ],
+                funny: [
+                    "Noob Team", "We Tried", "Lagging Legends", "Ctrl Alt Defeat", "Error 404", "Loading...", "AFK Gaming",
+                    "Insert Name Here", "Winning by Accident", "Please Carry Us", "Potato Aim", "Bronze Tier Heroes",
+                    "Screaming Goats", "Tactical Feeders", "Keyboard Smashers", "Discount Squad", "Budget Gamers",
+                    "Wifi Warriors", "Ping Pong Pros", "Button Mashers"
+                ],
+                animals: [
+                    "Mad Dogs", "Crazy Cats", "Wild Wolves", "Savage Sharks", "Raging Rhinos", "Furious Falcons",
+                    "Mighty Mammoths", "Golden Gorillas", "Silver Snakes", "Black Panthers", "White Tigers",
+                    "Red Bulls", "Blue Bears", "Green Gators", "Yellow Yaks", "Purple Penguins", "Orange Orangutans",
+                    "Pink Pandas", "Brown Beavers", "Grey Geese"
+                ]
+            },
+            es: {
+                esports: [
+                    "Cloud9", "Team Liquid", "FaZe Clan", "Optic Gaming", "Fnatic", "G2 Esports", "TSM", "100 Thieves",
+                    "Centinelas", "Fantasmas Gaming", "Leyendas Sombra", "Guerreros Pixel", "Ninjas Cyber", "Caballeros Neón",
+                    "Viboras Virtuales", "Lag Switchers", "Respawn Rangers", "Racha de Bajas", "GG EZ", "Elite Gamers"
+                ],
+                sports: [
+                    "Real FC", "Atlético Strikers", "Guerreros Dorados", "Diablos Rojos", "Tiburones Azules", "Rayos",
+                    "Titanes", "Espartanos", "Vikingos", "Águilas", "Leones", "Tigres", "Osos", "Lobos", "Dragones",
+                    "Fénix", "Tormenta", "Huracanes", "Ciclones", "Tornados"
+                ],
+                badass: [
+                    "Depredadores Apex", "Asesinos Silenciosos", "La Parca", "Operaciones Negras", "Sindicato Sombra", "Venganza",
+                    "Sin Piedad", "Mercenarios", "Forajidos", "Renegados", "Dominadores", "Verdugos", "Terminators",
+                    "Destructores", "Aniquiladores", "Inmortales", "Invencibles", "Imparables", "Escuadrón Salvaje", "Fuerza Brutal"
+                ],
+                funny: [
+                    "Equipo Noob", "Lo Intentamos", "Leyendas del Lag", "Ctrl Alt Suprimir", "Error 404", "Cargando...", "AFK Gaming",
+                    "Inserte Nombre", "Ganamos por Accidente", "Carreados por El Bot", "Puntería de Papa", "Héroes de Bronce",
+                    "Cabras Gritonas", "Alimentadores Tácticos", "Aporrea Teclados", "Escuadrón Descuento", "Gamers de Presupuesto",
+                    "Guerreros del WiFi", "Ping Alto", "Machaca Botones"
+                ],
+                animals: [
+                    "Perros Locos", "Gatos Furiosos", "Lobos Salvajes", "Tiburones Asesinos", "Rinocerontes", "Halcones",
+                    "Mamuts Poderosos", "Gorilas Dorados", "Serpientes Plata", "Panteras Negras", "Tigres Blancos",
+                    "Toros Rojos", "Osos Azules", "Caimanes Verdes", "Yaks Amarillos", "Pingüinos", "Orangutanes",
+                    "Pandas Rosa", "Castores", "Gansos Grises"
+                ]
+            }
+        };
+
+        function updateUI() {
+            const t = translations[currentLang];
+            document.getElementById("subtitle").textContent = t.subtitle;
+            document.querySelector("label[for='style']").textContent = t.chooseStyle;
+            document.getElementById("btn-text").textContent = t.generate;
+            document.getElementById("output").querySelector("span").textContent = t.ready;
+
+            // Update options
+            const select = document.getElementById("style");
+            select.innerHTML = "";
+            for (const [key, value] of Object.entries(t.types)) {
+                const option = document.createElement("option");
+                option.value = key;
+                option.textContent = value;
+                select.appendChild(option);
+            }
+
+            const nextLang = currentLang === "en" ? "ES" : "EN";
+            document.getElementById("lang-toggle").innerHTML = `🌐 ${nextLang}`;
+        }
+
+        function generateName() {
+            const style = document.getElementById("style").value;
+            const set = names[currentLang];
+            let options = [];
+
+            if (style === "random") {
+                options = [...set.esports, ...set.sports, ...set.badass, ...set.funny, ...set.animals];
+            } else {
+                options = set[style];
+            }
+
+            // Simple mix algorithm for clearer "team" names if needed, but for now just picking from lists
+            const random = options[Math.floor(Math.random() * options.length)];
+
+            const t = translations[currentLang];
+            document.getElementById("output").innerHTML = `${random} <button class="copy-btn" onclick="copyToClipboard('${random}')">${t.copy}</button>`;
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const t = translations[currentLang];
+                alert(t.copied);
+            });
+        }
+
+        document.getElementById("lang-toggle").addEventListener("click", () => {
+            currentLang = currentLang === "en" ? "es" : "en";
+            localStorage.setItem('namerly-lang', currentLang);
+            updateUI();
+        });
+
+        updateUI();
+    </script>
+
+    <!-- Legal Footer -->
+    <footer class="legal-footer"
+        style="padding: 2rem; text-align: center; color: rgba(255,255,255,0.8); position: relative; z-index: 10;">
+        <div class="footer-content">
+            <div class="footer-links" style="margin-bottom: 1rem;">
+                <a href="../privacy-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Privacy
+                    Policy</a>
+                <span class="separator">|</span>
+                <a href="../terms-of-service.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Terms
+                    of Service</a>
+                <span class="separator">|</span>
+                <a href="../cookie-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Cookie
+                    Policy</a>
+                <span class="separator">|</span>
+                <a href="../disclaimer.html"
+                    style="color: white; text-decoration: none; margin: 0 0.5rem;">Disclaimer</a>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 Namerly. All rights reserved.</p>
+                <p>🔒 Your privacy is protected. We don't store personal data.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner"
+        style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+        <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b>
+            para
+            mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+        <br>
+        <button id="accept-analytics"
+            style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+            analítica</button>
+        <button id="reject-analytics"
+            style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+            analítica</button>
+        <button onclick="openCookieSettings()"
+            style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+            cookies</button>
+        <a href="/cookie-policy.html"
+            style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem;">Política de
+            cookies</a>
+    </div>
+
+    <div id="cookie-settings-modal" class="cookie-settings-modal" style="display:none;">
+        <div class="cookie-settings-content">
+            <h2>Configuración de cookies</h2>
+            <div class="cookie-category">
+                <h3>🍪 Esenciales</h3>
+                <p>Estas cookies son necesarias para el funcionamiento básico del sitio y no se pueden desactivar.</p>
+            </div>
+            <div class="cookie-category">
+                <h3>📊 Analítica</h3>
+                <p>Permiten medir el uso del sitio y mejorar la experiencia. Puedes aceptar o rechazar estas cookies.
+                </p>
+                <div>
+                    <label>
+                        <input type="checkbox" id="analytics-consent-checkbox" />
+                        Permitir cookies de analítica
+                    </label>
+                </div>
+            </div>
+            <div class="cookie-settings-buttons">
+                <button onclick="saveCookieSettings()">Guardar</button>
+                <button onclick="closeCookieSettings()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+        function showCookieBanner() {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+        function hideCookieBanner() {
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+        function openCookieSettings() {
+            document.getElementById('cookie-settings-modal').style.display = 'flex';
+            document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+        }
+        function closeCookieSettings() {
+            document.getElementById('cookie-settings-modal').style.display = 'none';
+        }
+        function saveCookieSettings() {
+            const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+            setCookie('namerly_analytics_consent', consent, 365);
+            closeCookieSettings();
+            window.location.reload();
+        }
+        document.getElementById('accept-analytics').onclick = function () {
+            setCookie('namerly_analytics_consent', 'accepted', 365);
+            hideCookieBanner();
+            window.location.reload();
+        };
+        document.getElementById('reject-analytics').onclick = function () {
+            setCookie('namerly_analytics_consent', 'rejected', 365);
+            hideCookieBanner();
+            window.location.reload();
+        };
+        window.addEventListener('DOMContentLoaded', function () {
+            var consent = getCookie('namerly_analytics_consent');
+            if (!consent) showCookieBanner();
+            else hideCookieBanner();
+            if (consent === 'accepted') loadAnalytics();
+        });
+        function loadAnalytics() {
+            if (window.gtagLoaded) return;
+            window.gtagLoaded = true;
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21';
+            document.head.appendChild(script);
+            script.onload = function () {
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                window.gtag = gtag;
+                gtag('js', new Date());
+                gtag('config', 'G-ZCBGMRHJ21', {
+                    cookie_domain: 'namerlygenerator.netlify.app',
+                    anonymize_ip: true
+                });
+            };
+        }
+    </script>
+<script type="module" src="../../assets/js/premium-features.js"></script>
+</body>
+
+</html>

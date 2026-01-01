@@ -1,0 +1,82 @@
+/* AdSense Ads Styling */
+.ad-container {
+  max-width: 100%;
+  overflow: hidden;
+  margin: 1.5rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.ad-container.ad-header {
+  margin: 1rem auto 2rem auto;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.ad-container.ad-afterResults {
+  margin: 2rem auto;
+  padding: 1rem 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ad-placeholder {
+  transition: opacity 0.3s ease;
+}
+
+.ad-placeholder:hover {
+  opacity: 1 !important;
+}
+
+/* Mobile ad styles */
+@media (max-width: 768px) {
+  .ad-container {
+    margin: 1rem auto;
+  }
+  
+  .ad-container.ad-header {
+    margin: 0.5rem auto 1rem auto;
+  }
+  
+  .ad-container.ad-mobile {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+    padding: 5px 0;
+  }
+}
+
+/* Hide ads on very small screens */
+@media (max-width: 320px) {
+  .ad-container:not(.ad-mobile) {
+    display: none;
+  }
+}
+
+/* Responsive ad sizing */
+.adsbygoogle {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Ad labels for compliance */
+.ad-container::before {
+  content: "Advertisement";
+  display: block;
+  font-size: 11px;
+  color: #999;
+  text-align: center;
+  margin-bottom: 5px;
+  font-family: Arial, sans-serif;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .ad-placeholder {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+    border-color: #555 !important;
+    color: #ccc !important;
+  }
+}

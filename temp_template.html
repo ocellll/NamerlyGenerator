@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Namerly – Pickup Lines</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    main { padding: 2rem; text-align: center; }
+    select, button { margin: 1rem; padding: 0.5rem 1rem; font-size: 1rem; }
+    #output { margin-top: 2rem; font-size: 1.1rem; max-width: 400px; margin-left: auto; margin-right: auto; font-style: italic; }
+    .copy-btn { margin-top: 10px; padding: 0.5rem 1rem; font-size: 0.9rem; background: #e91e63; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    .share-section { margin-top: 15px; padding: 15px; background: #f5f5f5; border-radius: 10px; border: 2px dashed #ddd; }
+    .share-title { font-weight: bold; margin-bottom: 10px; color: #333; font-size: 1rem; }
+    .main-share-btn { margin-left: 8px; padding: 0.3rem 0.8rem; font-size: 0.9rem; background: #10b981; color: white; border: none; border-radius: 20px; cursor: pointer; transition: all 0.2s; }
+    .main-share-btn:hover { background: #059669; transform: scale(1.05); }
+    .share-buttons { margin-top: 15px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .share-btn { padding: 8px 15px; border: none; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
+    .twitter { background: #1da1f2; color: white; }
+    .instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color: white; }
+    .tiktok { background: #000; color: white; }
+    .whatsapp { background: #25d366; color: white; }
+    .telegram { background: #0088cc; color: white; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">💕 Namerly</h1>
+    <div>
+      <button id="lang-toggle" style="margin-right: 1rem; padding: 0.4rem 0.8rem; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">🌐 ES</button>
+      <a href="../index.html" style="text-decoration:none;">← Home</a>
+    </div>
+  </header>
+  <main>
+    <h2 id="subtitle">Pickup Lines</h2>
+    <label for="style">Choose a style:</label>
+    <select id="style">
+      <option value="direct">🔥 Direct</option>
+      <option value="creative">🎨 Creative</option>
+      <option value="subtle">😊 Subtle</option>
+      <option value="funny">😂 Funny</option>
+      <option value="random">🎲 Random</option>
+    </select>
+    <br>
+    <button onclick="generateLine()">Generate</button>
+    <div id="output">💕</div>
+    <div id="share-section" style="display: none;">
+      <div class="share-section">
+        <div class="share-title" id="share-title">📱 Share on Social Media</div>
+        <div class="share-buttons">
+          <button class="share-btn twitter" onclick="shareOnTwitter()">🐦 Twitter</button>
+          <button class="share-btn instagram" onclick="shareOnInstagram()">📸 Instagram</button>
+          <button class="share-btn tiktok" onclick="shareOnTikTok()">🎵 TikTok</button>
+          <button class="share-btn whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>
+          <button class="share-btn telegram" onclick="shareOnTelegram()">✈️ Telegram</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    let currentLang = localStorage.getItem('namerly-lang') || (navigator.language.startsWith("es") ? "es" : "en");
+    let recentLines = []; // Array para recordar frases recientes
+    const MAX_RECENT = 8; // Recordar últimos 8 elementos para evitar repeticiones
+    
+    const translations = {
+      en: {
+        subtitle: "Pickup Lines",
+        chooseStyle: "Choose a style:",
+        generate: "Generate",
+        copy: "Copy",
+        copied: "Copied!",
+        share: "Share",
+        shareTitle: "📱 Share on Social Media"
+      },
+      es: {
+        subtitle: "Frases para Ligar",
+        chooseStyle: "Elige un estilo:",
+        generate: "Generar",
+        copy: "Copiar",
+        copied: "¡Copiado!",
+        share: "Compartir",
+        shareTitle: "📱 Compartir en Redes Sociales"
+      }
+    };
+
+    function updateUI() {
+      const t = translations[currentLang];
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.querySelector("label[for='style']").textContent = t.chooseStyle;
+      document.querySelector("button[onclick='generateLine()']").textContent = t.generate;
+      
+      const nextLang = currentLang === "en" ? "ES" : "EN";
+      document.getElementById("lang-toggle").innerHTML = `🌐 ${nextLang}`;
+    }
+
+    const lines = {
+      en: {
+        direct: [
+          "Are you WiFi? Because I'm feeling a connection.",
+          "Do you have a map? I just got lost in your eyes.",
+          "Are you a magician? Because every time I look at you, everyone else disappears.",
+          "Is your name Google? Because you have everything I've been searching for.",
+          "Are you a time traveler? Because I can see you in my future.",
+          "Do you believe in love at first sight, or should I walk by again?",
+          "Are you made of copper and tellurium? Because you're Cu-Te.",
+          "If you were a vegetable, you'd be a cute-cumber."
+        ],
+        creative: [
+          "If you were a triangle, you'd be acute one.",
+          "Are you a camera? Because every time I look at you, I smile.",
+          "Do you have a Band-Aid? Because I just scraped my knee falling for you.",
+          "Are you a parking ticket? Because you've got 'fine' written all over you.",
+          "Is your dad a boxer? Because you're a knockout!",
+          "Are you French? Because Eiffel for you.",
+          "Do you have a name, or can I call you mine?",
+          "Are you a loan from a bank? Because you have my interest."
+        ],
+        subtle: [
+          "I was wondering if you have a moment to talk about something important... us.",
+          "I couldn't help but notice you from across the room.",
+          "You have such a beautiful smile, it made my day.",
+          "I'd love to know more about what makes you tick.",
+          "There's something about you that I find really intriguing.",
+          "I hope you don't mind me saying, but you have great taste.",
+          "I was just thinking how nice it would be to get to know you better.",
+          "You seem like someone who has interesting stories to tell."
+        ],
+        funny: [
+          "Are you my homework? Because I should be doing you right now.",
+          "Do you work at Starbucks? Because I like you a latte.",
+          "Are you a beaver? Because daaaaam.",
+          "Do you like Star Wars? Because Yoda one for me!",
+          "Are you a dictionary? Because you add meaning to my life.",
+          "Do you have a sunburn, or are you always this hot?",
+          "Are you Netflix? Because I could watch you for hours.",
+          "Do you like raisins? How do you feel about a date?"
+        ]
+      },
+      es: {
+        direct: [
+          "¿Eres WiFi? Porque siento una conexión.",
+          "¿Tienes un mapa? Me perdí en tus ojos.",
+          "¿Eres mago? Porque cada vez que te miro, todos los demás desaparecen.",
+          "¿Te llamas Google? Porque tienes todo lo que he estado buscando.",
+          "¿Eres viajero del tiempo? Porque te veo en mi futuro.",
+          "¿Crees en el amor a primera vista, o paso otra vez?",
+          "¿Estás hecho de cobre y telurio? Porque eres Cu-Te.",
+          "Si fueras un vegetal, serías un guapito."
+        ],
+        creative: [
+          "Si fueras un triángulo, serías un ángulo agudo.",
+          "¿Eres una cámara? Porque cada vez que te miro, sonrío.",
+          "¿Tienes una curita? Me raspé la rodilla al caer por ti.",
+          "¿Eres una multa de tráfico? Porque tienes 'multa' escrito por todas partes.",
+          "¿Tu papá es boxeador? ¡Porque eres un nocaut!",
+          "¿Eres francés? Porque me enamoré de ti.",
+          "¿Tienes nombre, o puedo llamarte mío?",
+          "¿Eres un préstamo del banco? Porque tienes mi interés."
+        ],
+        subtle: [
+          "Me preguntaba si tienes un momento para hablar de algo importante... nosotros.",
+          "No pude evitar notarte desde el otro lado de la habitación.",
+          "Tienes una sonrisa tan hermosa, me alegró el día.",
+          "Me encantaría saber más sobre lo que te hace ser como eres.",
+          "Hay algo sobre ti que encuentro realmente intrigante.",
+          "Espero que no te moleste que te diga, pero tienes muy buen gusto.",
+          "Estaba pensando lo lindo que sería conocerte mejor.",
+          "Pareces alguien que tiene historias interesantes que contar."
+        ],
+        funny: [
+          "¿Eres mi tarea? Porque debería estarte haciendo ahora mismo.",
+          "¿Trabajas en Starbucks? Porque me gustas un montón.",
+          "¿Eres un castor? Porque ¡daaaaamn!",
+          "¿Te gusta Star Wars? ¡Porque Yoda eres para mí!",
+          "¿Eres un diccionario? Porque le das significado a mi vida.",
+          "¿Tienes quemadura de sol, o siempre estás así de caliente?",
+          "¿Eres Netflix? Porque podría verte por horas.",
+          "¿Te gustan las pasas? ¿Qué tal una cita?"
+        ]
+      }
+    };
+
+    function generateLine() {
+      const style = document.getElementById("style").value;
+      const set = lines[currentLang];
+      const options = style === "random"
+        ? [...set.direct, ...set.creative, ...set.subtle, ...set.funny]
+        : set[style];
+      
+      // Filtrar líneas que NO estén en la lista de recientes
+      const availableOptions = options.filter(line => !recentLines.includes(line));
+      
+      // Si quedan muy pocas opciones disponibles, resetear la memoria
+      if (availableOptions.length < 3) {
+        recentLines = [];
+        availableOptions.push(...options);
+      }
+      
+      // Seleccionar línea aleatoria de las opciones disponibles
+      const random = availableOptions[Math.floor(Math.random() * availableOptions.length)];
+      
+      // Agregar la línea a la lista de recientes
+      recentLines.push(random);
+      
+      // Mantener solo los últimos MAX_RECENT elementos
+      if (recentLines.length > MAX_RECENT) {
+        recentLines.shift(); // Remover el más antiguo
+      }
+      
+      const t = translations[currentLang];
+      document.getElementById("output").innerHTML = `"${random}"<br><button class="copy-btn" onclick="copyToClipboard('${random}')">${t.copy}</button> <button class="main-share-btn" onclick="toggleShareSection()">${t.share}</button>`;
+      
+      // Ocultar sección de compartir al generar nuevo contenido
+      document.getElementById("share-section").style.display = "none";
+    }
+
+    function toggleShareSection() {
+      const shareSection = document.getElementById("share-section");
+      const isVisible = shareSection.style.display !== "none";
+      shareSection.style.display = isVisible ? "none" : "block";
+      
+      // Actualizar título según idioma
+      const t = translations[currentLang];
+      document.getElementById("share-title").textContent = t.shareTitle;
+    }
+
+    function shareOnTwitter() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`Check out this pickup line from Namerly: ${content} #Namerly #PickupLines`);
+      window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
+    }
+
+    function shareOnInstagram() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      navigator.clipboard.writeText(`${content} - Generated by Namerly`);
+      alert("Content copied! Open Instagram and paste it in your story or post.");
+    }
+
+    function shareOnTikTok() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      navigator.clipboard.writeText(`${content} #Namerly #PickupLines #Viral`);
+      alert("Content copied! Open TikTok and paste it in your video description.");
+    }
+
+    function shareOnWhatsApp() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`Check this pickup line out: ${content} 💕`);
+      window.open(`https://wa.me/?text=${text}`, "_blank");
+    }
+
+    function shareOnTelegram() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`Check this pickup line out: ${content} 💕`);
+      window.open(`https://t.me/share/url?text=${text}`, "_blank");
+    }
+    
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const t = translations[currentLang];
+        alert(t.copied);
+      });
+    }
+
+    document.getElementById("lang-toggle").addEventListener("click", () => {
+      currentLang = currentLang === "en" ? "es" : "en";
+      localStorage.setItem('namerly-lang', currentLang);
+      updateUI();
+      document.getElementById("output").innerHTML = "💕";
+      // Limpiar memoria de líneas recientes al cambiar idioma
+      recentLines = [];
+      // Ocultar sección de compartir al cambiar idioma
+      document.getElementById("share-section").style.display = "none";
+    });
+
+    updateUI();
+  </script>
+</body>
+</html>

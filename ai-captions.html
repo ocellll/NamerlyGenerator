@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>AI Instagram Caption Generator - Free Smart Captions | Namerly</title>
+  <meta name="description"
+    content="Generate AI-powered Instagram captions instantly! Smart, engaging, viral captions for any photo. Free AI caption generator with hashtags. Perfect for influencers!" />
+  <meta name="keywords"
+    content="AI Instagram captions, caption generator, AI captions, Instagram caption ideas, social media captions, viral captions, AI hashtags, influencer captions" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Instagram Caption Generator - Smart Viral Captions" />
+  <meta property="og:description"
+    content="Generate perfect Instagram captions with AI! Engaging, viral-ready captions with hashtags." />
+  <meta property="og:type" content="website" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI Instagram Caption Generator",
+    "description": "Generate AI-powered Instagram captions instantly! Smart, engaging, viral captions for any photo.",
+    "url": "https://namerlygenerator.netlify.app/ai-captions.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/ai-pages.css" />
+  <link rel="stylesheet" href="assets/css/adsense.css" />
+
+
+
+  <script src="assets/js/ai-common.js"></script>
+  <script src="assets/js/adsense-manager.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h1><a href="index.html" style="text-decoration: none; color: inherit;">🔥 Namerly</a></h1>
+    </div>
+    <nav>
+      <button onclick="toggleLanguage()" class="lang-btn" id="langBtn">ES</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="ai-container ai-captions">
+      <div class="ai-badge">🤖 AI POWERED</div>
+
+      <h1 id="title">AI Instagram Caption Generator</h1>
+      <p id="subtitle">Generate engaging, viral-ready Instagram captions with AI</p>
+
+      <div class="photo-tips">
+        💡 <strong>Pro Tip:</strong> Describe your photo in detail for the best AI captions!
+      </div>
+
+      <div class="input-group">
+        <label for="photoDesc" id="photoDescLabel">Describe your photo/post:</label>
+        <textarea id="photoDesc"
+          data-placeholder-en="e.g., Sunset beach photo with friends, coffee shop selfie, workout at gym, travel landscape..."
+          data-placeholder-es="ej., Foto de atardecer en playa con amigos, selfie en cafetería, ejercicio en gym, paisaje de viaje..."
+          placeholder="e.g., Sunset beach photo with friends, coffee shop selfie, workout at gym, travel landscape..."></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="mood" id="moodLabel">Caption Mood:</label>
+        <select id="mood">
+          <option value="inspirational" data-en="Inspirational/Motivational" data-es="Inspiracional/Motivacional">
+            Inspirational/Motivational</option>
+          <option value="funny" data-en="Funny/Humorous" data-es="Divertido/Gracioso">Funny/Humorous</option>
+          <option value="casual" data-en="Casual/Chill" data-es="Casual/Relajado">Casual/Chill</option>
+          <option value="aesthetic" data-en="Aesthetic/Artsy" data-es="Estético/Artístico">Aesthetic/Artsy</option>
+          <option value="sassy" data-en="Sassy/Confident" data-es="Descarado/Confiado">Sassy/Confident</option>
+          <option value="grateful" data-en="Grateful/Thankful" data-es="Agradecido/Reconocido">Grateful/Thankful
+          </option>
+          <option value="adventurous" data-en="Adventurous/Travel" data-es="Aventurero/Viajes">Adventurous/Travel
+          </option>
+          <option value="romantic" data-en="Romantic/Love" data-es="Romántico/Amor">Romantic/Love</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="length" id="lengthLabel">Caption Length:</label>
+        <select id="length">
+          <option value="short" data-en="Short (1-2 lines)" data-es="Corto (1-2 líneas)">Short (1-2 lines)</option>
+          <option value="medium" data-en="Medium (2-4 lines)" data-es="Medio (2-4 líneas)">Medium (2-4 lines)</option>
+          <option value="long" data-en="Long (4+ lines)" data-es="Largo (4+ líneas)">Long (4+ lines)</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="hashtags" id="hashtagsLabel">Include hashtags:</label>
+        <select id="hashtags">
+          <option value="yes" data-en="Yes (10-15 relevant hashtags)" data-es="Sí (10-15 hashtags relevantes)">Yes
+            (10-15 relevant hashtags)</option>
+          <option value="minimal" data-en="Minimal (3-5 hashtags)" data-es="Mínimos (3-5 hashtags)">Minimal (3-5
+            hashtags)</option>
+          <option value="no" data-en="No hashtags" data-es="Sin hashtags">No hashtags</option>
+        </select>
+      </div>
+
+      <button class="generate-btn" onclick="generateAICaption()" id="generateBtn">
+        Generate AI Caption 📸
+      </button>
+
+      <div class="loading" id="loading">
+        <p>AI is creating your perfect caption...</p>
+      </div>
+
+      <div class="result-container" id="resultContainer">
+        <div class="result-text" id="resultText"></div>
+
+        <div class="hashtags-section" id="hashtagsSection" style="display: none;">
+          <h4 style="margin: 0 0 0.5rem 0; opacity: 0.9; font-size: 0.9rem;">📱 Suggested Hashtags</h4>
+          <div class="hashtags" id="resultHashtags"></div>
+        </div>
+
+        <div class="caption-stats" id="captionStats">
+          <div class="stat">
+            <div><strong id="charCount">0</strong></div>
+            <div>Characters</div>
+          </div>
+          <div class="stat">
+            <div><strong id="wordCount">0</strong></div>
+            <div>Words</div>
+          </div>
+          <div class="stat">
+            <div><strong id="hashtagCount">0</strong></div>
+            <div>Hashtags</div>
+          </div>
+        </div>
+
+        <div class="social-share">
+          <h3 id="shareTitle">Share Your AI Caption</h3>
+          <div class="share-buttons">
+            <button onclick="shareToInstagram()" class="share-btn instagram">Instagram</button>
+            <button onclick="shareToTwitter()" class="share-btn twitter">Twitter</button>
+            <button onclick="shareToTikTok()" class="share-btn tiktok">TikTok</button>
+            <button onclick="shareToWhatsApp()" class="share-btn whatsapp">WhatsApp</button>
+            <button onclick="copyToClipboard()" class="share-btn copy">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin: 2rem 0;">
+        <a href="index.html" style="color: #667eea; text-decoration: none; font-weight: bold; font-size: 1.1rem;">
+          ← Back to All Generators
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Legal Footer -->
+  <footer class="legal-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+        <span class="separator">|</span>
+        <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+        <span class="separator">|</span>
+        <a href="cookie-policy.html" class="footer-link">Cookie Policy</a>
+        <span class="separator">|</span>
+        <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 Namerly. All rights reserved.</p>
+        <p>🔒 Your privacy is protected. We don't store personal data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize language system
+    currentLanguage = initializeLanguage();
+
+    let currentResult = '';
+    let currentHashtags = '';
+    const category = 'aiCaption';
+    const MAX_DAILY_USES = 3;
+
+    // Get usage data
+    const { dailyUses } = getDailyUsage(category);
+    let remainingUses = Math.max(0, MAX_DAILY_USES - dailyUses);
+
+    // Update button if no uses left
+    if (remainingUses === 0) {
+      document.getElementById('generateBtn').disabled = true;
+    } else {
+      document.getElementById('generateBtn').disabled = false;
+    }
+
+    // Translations for this specific page
+    const translations = {
+      en: {
+        title: 'AI Instagram Caption Generator',
+        subtitle: 'Generate engaging, viral-ready Instagram captions with AI',
+        photoDescLabel: 'Describe your photo/post:',
+        moodLabel: 'Caption Mood:',
+        lengthLabel: 'Caption Length:',
+        hashtagsLabel: 'Include hashtags:',
+        generateBtn: 'Generate AI Caption 📸',
+        shareTitle: 'Share Your AI Caption'
+      },
+      es: {
+        title: 'Generador IA de Captions Instagram',
+        subtitle: 'Genera captions atractivos y virales para Instagram con IA',
+        photoDescLabel: 'Describe tu foto/post:',
+        moodLabel: 'Mood del Caption:',
+        lengthLabel: 'Longitud del Caption:',
+        hashtagsLabel: 'Incluir hashtags:',
+        generateBtn: 'Generar Caption IA 📸',
+        shareTitle: 'Comparte Tu Caption IA'
+      }
+    };
+
+    async function generateAICaption() {
+      if (!checkUsageOrShowReward(category, MAX_DAILY_USES)) {
+        return;
+      }
+
+      const photoDesc = document.getElementById('photoDesc').value;
+      const mood = document.getElementById('mood').value;
+      const length = document.getElementById('length').value;
+      const includeHashtags = document.getElementById('hashtags').value;
+
+      if (!photoDesc.trim()) {
+        showAlert('Please describe your photo first!');
+        return;
+      }
+
+      // Show loading
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('resultContainer').style.display = 'none';
+      document.getElementById('generateBtn').disabled = true;
+
+      try {
+        // Create AI prompt based on current language
+        let prompt;
+        if (currentLanguage === 'es') {
+          prompt = `Crea un caption de Instagram ${mood} ${length} para: ${photoDesc}. Hazlo atractivo y auténtico. Responde solo en español.`;
+        } else {
+          prompt = `Create a ${mood} ${length} Instagram caption for: ${photoDesc}. Make it engaging and authentic. Respond only in English.`;
+        }
+
+        // Use shared API call
+        const result = await callAIAPI(prompt, length === 'long' ? 150 : length === 'medium' ? 100 : 50);
+
+        // Clean and format result or use fallback
+        if (result) {
+          currentResult = cleanAIResult(result);
+          document.getElementById('resultText').innerHTML = `<strong>✨ Gemini AI Says:</strong><br>${currentResult}`;
+        } else {
+          console.warn("Gemini API failed or was blocked. Using fallback.");
+          currentResult = generateFallbackCaption(photoDesc, mood, length, currentLanguage);
+          document.getElementById('resultText').textContent = currentResult;
+        }
+
+        // Generate hashtags if needed
+        if (includeHashtags !== 'no') {
+          currentHashtags = generateHashtags(photoDesc, mood, includeHashtags);
+        } else {
+          currentHashtags = '';
+        }
+
+        // Update usage using shared function
+        updateUsageTracking('ai-captions');
+
+        if (currentHashtags) {
+          displayHashtags(currentHashtags);
+          document.getElementById('hashtagsSection').style.display = 'block';
+        } else {
+          document.getElementById('hashtagsSection').style.display = 'none';
+        }
+
+        // Update stats
+        updateCaptionStats();
+
+        document.getElementById('resultContainer').style.display = 'block';
+
+        // Update button
+        const updatedUsage = getUsageCount('ai-captions');
+        remainingUses = MAX_DAILY_USES - updatedUsage;
+
+        if (remainingUses <= 0) {
+          document.getElementById('generateBtn').textContent = currentLanguage === 'en'
+            ? 'Daily limit reached 😴'
+            : 'Límite diario alcanzado 😴';
+        } else {
+          document.getElementById('generateBtn').disabled = false;
+        }
+
+      } catch (error) {
+        // Fallback to generated content on error
+        currentResult = generateFallbackCaption(photoDesc, mood, length, currentLanguage);
+        document.getElementById('resultText').textContent = currentResult;
+
+        if (includeHashtags !== 'no') {
+          currentHashtags = generateHashtags(photoDesc, mood, includeHashtags);
+          displayHashtags(currentHashtags);
+          document.getElementById('hashtagsSection').style.display = 'block';
+        }
+
+        updateCaptionStats();
+        document.getElementById('resultContainer').style.display = 'block';
+        document.getElementById('generateBtn').disabled = false;
+      }
+
+      document.getElementById('loading').style.display = 'none';
+    }
+
+    function generateFallbackCaption(photoDesc, mood, length, language = 'en') {
+      const englishCaptions = {
+        inspirational: ["Living my best life ✨", "Dream big, shine bright 🌟", "Creating my own sunshine ☀️"],
+        funny: ["Just winging it 🐧", "Main character energy 💅", "Plot twist incoming 🎭"],
+        casual: ["Just vibes 🌊", "Living in the moment 📸", "Good times ahead 🌈"],
+        aesthetic: ["Minimalist mood 🤍", "Clean lines, clear mind 📐", "Less is more ⚪"],
+        sassy: ["Confidence level: Selfie with no filter 💁‍♀️", "Sorry, can't hear you over my success 👑", "Main character vibes only 💅"],
+        grateful: ["Blessed and grateful 🙏", "Counting my blessings ✨", "Gratitude is my attitude 💕"],
+        adventurous: ["Adventure awaits 🗺️", "Life begins outside your comfort zone 🌍", "Collect moments, not things 📸"],
+        romantic: ["Love is in the air 💕", "Heart full of love ❤️", "Romance never goes out of style �"]
+      };
+
+      const spanishCaptions = {
+        inspirational: ["Viviendo mi mejor vida ✨", "Sueña grande, brilla fuerte 🌟", "Creando mi propio sol ☀️"],
+        funny: ["Solo improvisando 🐧", "Energía de protagonista 💅", "Giro inesperado llegando �"],
+        casual: ["Solo buenas vibras 🌊", "Viviendo el momento 📸", "Buenos tiempos por delante 🌈"],
+        aesthetic: ["Mood minimalista 🤍", "Líneas limpias, mente clara 📐", "Menos es más ⚪"],
+        sassy: ["Nivel de confianza: Selfie sin filtro 💁‍♀️", "Perdón, no te escucho por mi éxito 👑", "Solo vibras de protagonista �"],
+        grateful: ["Bendecido/a y agradecido/a 🙏", "Contando mis bendiciones ✨", "La gratitud es mi actitud �"],
+        adventurous: ["La aventura espera 🗺️", "La vida empieza fuera de tu zona de confort 🌍", "Colecciona momentos, no cosas �"],
+        romantic: ["El amor está en el aire 💕", "Corazón lleno de amor ❤️", "El romance nunca pasa de moda �"]
+      };
+
+      const selectedCaptions = language === 'es' ? spanishCaptions : englishCaptions;
+      const captions = selectedCaptions[mood] || selectedCaptions.casual;
+      const randomCaption = captions[Math.floor(Math.random() * captions.length)];
+
+      // Add hashtags if requested
+      let result = randomCaption;
+      const includeHashtags = document.getElementById('hashtags').value;
+
+      if (includeHashtags === 'yes') {
+        const hashtagsEN = ['#instadaily', '#photooftheday', '#instagood', '#love', '#beautiful', '#happy', '#fun', '#nature', '#style', '#life'];
+        const hashtagsES = ['#instadaily', '#fotodeldia', '#instagood', '#amor', '#hermoso', '#feliz', '#diversion', '#naturaleza', '#estilo', '#vida'];
+        const hashtags = language === 'es' ? hashtagsES : hashtagsEN;
+        const randomHashtags = hashtags.sort(() => 0.5 - Math.random()).slice(0, 8);
+        result += '\n\n' + randomHashtags.join(' ');
+      } else if (includeHashtags === 'minimal') {
+        const simpleHashtags = language === 'es' ? ['#mood', '#vida', '#momento'] : ['#mood', '#life', '#moment'];
+        result += '\n\n' + simpleHashtags.join(' ');
+      }
+
+      const prefix = language === 'es' ? '🤖 IA Creó: ' : '🤖 AI Generated: ';
+      return prefix + result;
+    }
+
+    function generateHashtags(photoDesc, mood, amount) {
+      const hashtagPools = {
+        general: ['#photooftheday', '#instagood', '#instadaily', '#love', '#life', '#happy', '#style', '#beautiful', '#amazing', '#fun'],
+        inspirational: ['#motivation', '#inspiration', '#goals', '#mindset', '#success', '#blessed', '#grateful', '#positivevibes', '#dreambig', '#believe'],
+        funny: ['#funny', '#lol', '#mood', '#relatable', '#humor', '#comedy', '#jokes', '#laughing', '#silly', '#entertainment'],
+        travel: ['#travel', '#wanderlust', '#adventure', '#explore', '#vacation', '#trip', '#traveling', '#instatravel', '#photography', '#nature'],
+        food: ['#food', '#foodie', '#delicious', '#yummy', '#instafood', '#cooking', '#foodporn', '#hungry', '#tasty', '#eat'],
+        fitness: ['#fitness', '#workout', '#gym', '#health', '#fit', '#training', '#exercise', '#motivation', '#strong', '#healthy']
+      };
+
+      // Validate inputs
+      if (!photoDesc || !mood || !amount) {
+        return '';
+      }
+
+      // Detect content type
+      let relevantTags = [...hashtagPools.general];
+
+      const photoDescLower = photoDesc.toLowerCase();
+      if (photoDescLower.includes('travel') || photoDescLower.includes('vacation')) {
+        relevantTags = [...relevantTags, ...hashtagPools.travel];
+      }
+      if (photoDescLower.includes('food') || photoDescLower.includes('coffee')) {
+        relevantTags = [...relevantTags, ...hashtagPools.food];
+      }
+      if (photoDescLower.includes('gym') || photoDescLower.includes('workout')) {
+        relevantTags = [...relevantTags, ...hashtagPools.fitness];
+      }
+
+      // Add mood-specific tags
+      if (hashtagPools[mood]) {
+        relevantTags = [...relevantTags, ...hashtagPools[mood]];
+      }
+
+      // Select random hashtags
+      const count = amount === 'minimal' ? 5 : 12;
+      const selectedTags = [];
+
+      for (let i = 0; i < count && relevantTags.length > 0; i++) {
+        const randomIndex = Math.floor(Math.random() * relevantTags.length);
+        selectedTags.push(relevantTags[randomIndex]);
+        relevantTags.splice(randomIndex, 1);
+      }
+
+      return selectedTags.join(' ');
+    }
+
+    function cleanAIResult(text) {
+      // Clean and format AI response
+      return text.replace(/^(Generated|Output|Result):?\s*/i, '')
+        .replace(/["\[\]]/g, '')
+        .trim();
+    }
+
+    function displayHashtags(hashtagsText) {
+      const hashtagsContainer = document.getElementById('resultHashtags');
+      if (!hashtagsText) {
+        hashtagsContainer.innerHTML = '';
+        return;
+      }
+
+      // Split hashtags and create individual chips
+      const hashtags = hashtagsText.split(' ').filter(tag => tag.startsWith('#'));
+      hashtagsContainer.innerHTML = hashtags.map(hashtag =>
+        `<span class="hashtag">${hashtag}</span>`
+      ).join('');
+    }
+
+    function updateCaptionStats() {
+      const fullText = currentResult + (currentHashtags ? '\n\n' + currentHashtags : '');
+      const charCount = fullText.length;
+      const wordCount = fullText.split(/\s+/).filter(word => word.length > 0).length;
+      const hashtagCount = (currentHashtags.match(/#/g) || []).length;
+
+      document.getElementById('charCount').textContent = charCount;
+      document.getElementById('wordCount').textContent = wordCount;
+      document.getElementById('hashtagCount').textContent = hashtagCount;
+    }
+
+    // Social sharing functions
+    function shareToInstagram() {
+      const fullCaption = currentResult + (currentHashtags ? '\n\n' + currentHashtags : '');
+      shareToInstagramShared(fullCaption);
+    }
+
+    function shareToTwitter() {
+      shareToTwitterShared(currentResult, 'AICaption', 'AI generated this Instagram caption');
+    }
+
+    function shareToTikTok() {
+      const fullCaption = currentResult + (currentHashtags ? '\n\n' + currentHashtags : '');
+      shareToTikTokShared(fullCaption);
+    }
+
+    function shareToWhatsApp() {
+      shareToWhatsAppShared(currentResult, 'Check out this AI caption', '🤖📸 Generated with Namerly!');
+    }
+
+    function copyToClipboard() {
+      const fullCaption = currentResult + (currentHashtags ? '\n\n' + currentHashtags : '');
+      copyToClipboardShared(fullCaption, 'Caption copied to clipboard! 📋✨', 'Error copying caption');
+    }
+
+    // Language toggle
+    function toggleLanguage() {
+      toggleLanguageShared();
+      updateLanguage();
+    }
+
+    function updateLanguage() {
+      // Update page text elements using cached DOM elements
+      const elements = domCache.getElements(['title', 'subtitle', 'photoDescLabel', 'moodLabel', 'lengthLabel', 'hashtagsLabel', 'shareTitle', 'generateBtn', 'photoDesc']);
+
+      elements.title.textContent = translations[currentLanguage].title;
+      elements.subtitle.textContent = translations[currentLanguage].subtitle;
+      elements.photoDescLabel.textContent = translations[currentLanguage].photoDescLabel;
+      elements.moodLabel.textContent = translations[currentLanguage].moodLabel;
+      elements.lengthLabel.textContent = translations[currentLanguage].lengthLabel;
+      elements.hashtagsLabel.textContent = translations[currentLanguage].hashtagsLabel;
+      elements.shareTitle.textContent = translations[currentLanguage].shareTitle;
+
+      // Update button based on usage status
+      if (remainingUses === 0) {
+        elements.generateBtn.textContent = currentLanguage === 'en'
+          ? 'Daily limit reached 😴'
+          : 'Límite diario alcanzado 😴';
+        elements.generateBtn.disabled = true;
+      } else {
+        elements.generateBtn.textContent = translations[currentLanguage].generateBtn;
+        elements.generateBtn.disabled = false;
+      }
+
+      // Update textarea placeholder
+      const placeholderText = currentLanguage === 'en' ?
+        elements.photoDesc.getAttribute('data-placeholder-en') :
+        elements.photoDesc.getAttribute('data-placeholder-es');
+      elements.photoDesc.placeholder = placeholderText;
+
+      // Update dropdown options
+      updateDropdownOptions('mood', currentLanguage);
+      updateDropdownOptions('length', currentLanguage);
+      updateDropdownOptions('hashtags', currentLanguage);
+
+      // Update common elements using shared function
+      updateCommonElements(currentLanguage);
+    }
+
+    function updateDropdownOptions(selectId, language) {
+      const select = domCache.getElement(selectId);
+      const options = select.querySelectorAll('option');
+
+      options.forEach(option => {
+        if (option.value === '') return; // Skip placeholder option
+
+        const text = language === 'en' ?
+          option.getAttribute('data-en') :
+          option.getAttribute('data-es');
+
+        if (text) {
+          option.textContent = text;
+        }
+      });
+    }
+
+    // Initialize
+    updateLanguage();
+  </script>
+</body>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner"
+  style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+  <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+    mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+  <br>
+  <button id="accept-analytics"
+    style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+    analítica</button>
+  <button id="reject-analytics"
+    style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+    analítica</button>
+  <button onclick="openCookieSettings()"
+    style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+    cookies</button>
+  <a href="/cookie-policy.html"
+    style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem;">Política de cookies</a>
+</div>
+
+<div id="cookie-settings-modal" class="cookie-settings-modal" style="display:none;">
+  <div class="cookie-settings-content">
+    <h2>Configuración de cookies</h2>
+    <div class="cookie-category">
+      <h3>🍪 Esenciales</h3>
+      <p>Estas cookies son necesarias para el funcionamiento básico del sitio y no se pueden desactivar.</p>
+    </div>
+    <div class="cookie-category">
+      <h3>📊 Analítica</h3>
+      <p>Permiten medir el uso del sitio y mejorar la experiencia. Puedes aceptar o rechazar estas cookies.</p>
+      <div>
+        <label>
+          <input type="checkbox" id="analytics-consent-checkbox" />
+          Permitir cookies de analítica
+        </label>
+      </div>
+    </div>
+    <div class="cookie-settings-buttons">
+      <button onclick="saveCookieSettings()">Guardar</button>
+      <button onclick="closeCookieSettings()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      const date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  }
+  function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+  function showCookieBanner() {
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+  function hideCookieBanner() {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+  function openCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'flex';
+    document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+  }
+  function closeCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'none';
+  }
+  function saveCookieSettings() {
+    const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+    setCookie('namerly_analytics_consent', consent, 365);
+    closeCookieSettings();
+    window.location.reload();
+  }
+  document.getElementById('accept-analytics').onclick = function () {
+    setCookie('namerly_analytics_consent', 'accepted', 365);
+    hideCookieBanner();
+    window.location.reload();
+  };
+  document.getElementById('reject-analytics').onclick = function () {
+    setCookie('namerly_analytics_consent', 'rejected', 365);
+    hideCookieBanner();
+    window.location.reload();
+  };
+  window.addEventListener('DOMContentLoaded', function () {
+    var consent = getCookie('namerly_analytics_consent');
+    if (!consent) showCookieBanner();
+    else hideCookieBanner();
+    if (consent === 'accepted') loadAnalytics();
+  });
+  function loadAnalytics() {
+    if (window.gtagLoaded) return;
+    window.gtagLoaded = true;
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21';
+    document.head.appendChild(script);
+    script.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-ZCBGMRHJ21', {
+        cookie_domain: 'namerlygenerator.netlify.app',
+        anonymize_ip: true
+      });
+    };
+  }
+</script>
+
+</html>

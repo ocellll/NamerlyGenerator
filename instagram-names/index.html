@@ -1,0 +1,824 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Instagram Username Generator Free 2025 - Aesthetic, Cool & Unique Names | NamerlyGenerator</title>
+  <meta name="description"
+    content="Generate perfect Instagram usernames instantly! Free tool with 1000+ aesthetic, cool, unique username ideas. Available usernames checker included. Perfect for influencers & content creators." />
+  <meta name="keywords"
+    content="instagram username generator, aesthetic usernames, cool instagram names, unique usernames, instagram handle generator, available usernames, influencer names, social media usernames" />
+  <meta name="author" content="NamerlyGenerator" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://namerlygenerator.netlify.app/instagram-names/" />
+  <meta property="og:title" content="Free Instagram Username Generator 2025 - Create Perfect Handle" />
+  <meta property="og:description"
+    content="Generate viral Instagram usernames instantly! Aesthetic, cool, unique names for influencers. Available username checker included. 100% Free!" />
+  <meta property="og:image" content="https://namerlygenerator.netlify.app/assets/images/instagram-generator-og.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Instagram Username Generator - Free Aesthetic Names" />
+  <meta property="twitter:description"
+    content="Create perfect Instagram usernames! Aesthetic, cool, unique handles for content creators. Free username generator tool." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://namerlygenerator.netlify.app/instagram-names/" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8550109275788235"
+    crossorigin="anonymous"></script>
+
+  <style>
+    .instagram-container {
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      font-family: 'Inter', sans-serif;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Animated background particles */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/></circle></svg>') repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .instagram-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+    }
+
+    .instagram-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .instagram-header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .generator-section {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .input-group {
+      margin-bottom: 2rem;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e1e5e9;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .input-group input:focus,
+    .input-group select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .style-card {
+      padding: 1rem;
+      border: 2px solid #e1e5e9;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .style-card:hover,
+    .style-card.active {
+      border-color: #667eea;
+      background: #f8f9ff;
+    }
+
+    .generate-btn {
+      width: 100%;
+      padding: 1.2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .generate-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .results-section {
+      margin-top: 2rem;
+    }
+
+    .username-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .username-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .username-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .username-text {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 1rem;
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+    }
+
+    .check-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .tips-section {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 15px;
+      margin-top: 2rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .tip-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .tip-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .instagram-header h1 {
+        font-size: 2rem;
+      }
+
+      .username-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .style-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Ad -->
+  <div class="ad-container" id="header-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8550109275788235" data-ad-slot="1234567890"
+      data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </div>
+
+  <header>
+    <div class="logo">
+      <a href="../index.html" style="text-decoration: none; color: inherit;">
+        <h1>🎯 NamerlyGenerator</h1>
+      </a>
+    </div>
+    <div class="language-toggle">
+      <a href="../index.html" style="text-decoration:none; margin-right: 1rem; color: #333;">← Home</a>
+      <button onclick="toggleLanguage()" id="languageBtn">🇪🇸 ES</button>
+    </div>
+  </header>
+
+  <div class="instagram-container">
+    <!-- Hero Section -->
+    <div class="instagram-header">
+      <h1 id="heroTitle">Instagram Username Generator</h1>
+      <p id="heroSubtitle">Create the perfect Instagram handle that stands out! Generate aesthetic, cool, and unique
+        usernames that are perfect for your brand, business, or personal profile.</p>
+    </div>
+
+    <!-- Generator Section -->
+    <div class="generator-section">
+      <div class="input-group">
+        <label for="nameInput" id="nameLabel">Your Name or Keywords:</label>
+        <input type="text" id="nameInput" placeholder="Enter your name, interests, or keywords">
+      </div>
+
+      <div class="input-group">
+        <label for="categorySelect" id="categoryLabel">Category:</label>
+        <select id="categorySelect">
+          <option value="aesthetic">✨ Aesthetic</option>
+          <option value="cool">😎 Cool</option>
+          <option value="cute">🥰 Cute</option>
+          <option value="business">💼 Business</option>
+          <option value="fitness">💪 Fitness</option>
+          <option value="photography">📸 Photography</option>
+          <option value="travel">✈️ Travel</option>
+          <option value="food">🍕 Food</option>
+          <option value="fashion">👗 Fashion</option>
+          <option value="gaming">🎮 Gaming</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label id="styleLabel">Style Preferences:</label>
+        <div class="style-grid">
+          <div class="style-card" data-style="short">
+            <div class="tip-icon">📱</div>
+            <strong id="shortStyle">Short</strong>
+            <p id="shortDesc">Easy to remember</p>
+          </div>
+          <div class="style-card" data-style="creative">
+            <div class="tip-icon">🎨</div>
+            <strong id="creativeStyle">Creative</strong>
+            <p id="creativeDesc">Unique combinations</p>
+          </div>
+          <div class="style-card" data-style="numbers">
+            <div class="tip-icon">🔢</div>
+            <strong id="numbersStyle">With Numbers</strong>
+            <p id="numbersDesc">Add cool numbers</p>
+          </div>
+          <div class="style-card active" data-style="mixed">
+            <div class="tip-icon">🌟</div>
+            <strong id="mixedStyle">Mixed</strong>
+            <p id="mixedDesc">Best of all</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="generate-btn" onclick="generateInstagramNames()" id="generateBtn">
+        🚀 Generate Instagram Usernames
+      </button>
+
+      <!-- Content Ad -->
+      <div class="ad-container" id="content-ad" style="margin: 2rem 0;">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8550109275788235"
+          data-ad-slot="9876543210" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-section" id="resultsSection" style="display: none;">
+      <h2 id="resultsTitle">Your Instagram Username Ideas:</h2>
+      <div class="username-grid" id="usernameGrid"></div>
+
+      <!-- Results Ad -->
+      <div class="ad-container" id="results-ad" style="margin: 2rem 0;">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8550109275788235"
+          data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </div>
+    </div>
+
+    <!-- Tips Section -->
+    <div class="tips-section">
+      <h2 id="tipsTitle">Pro Tips for Instagram Usernames</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">💡</div>
+          <h3 id="tip1Title">Keep it Simple</h3>
+          <p id="tip1Text">Choose usernames that are easy to spell and remember. Avoid complex combinations that confuse
+            followers.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🎯</div>
+          <h3 id="tip2Title">Brand Consistency</h3>
+          <p id="tip2Text">Use the same username across all social platforms to build brand recognition and make it
+            easier for people to find you.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🔍</div>
+          <h3 id="tip3Title">Check Availability</h3>
+          <p id="tip3Text">Always verify username availability on Instagram before settling on your choice. Popular
+            variations fill up quickly.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">📈</div>
+          <h3 id="tip4Title">SEO Friendly</h3>
+          <p id="tip4Text">Include relevant keywords that describe your niche or content to help people discover your
+            profile through search.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer with back navigation -->
+  <!-- Legal Footer -->
+  <footer class="legal-footer"
+    style="padding: 2rem; text-align: center; color: rgba(255,255,255,0.8); position: relative; z-index: 10;">
+    <div class="footer-content">
+      <div class="footer-links" style="margin-bottom: 1rem;">
+        <a href="../privacy-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Privacy
+          Policy</a>
+        <span class="separator">|</span>
+        <a href="../terms-of-service.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Terms of
+          Service</a>
+        <span class="separator">|</span>
+        <a href="../cookie-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Cookie Policy</a>
+        <span class="separator">|</span>
+        <a href="../disclaimer.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Disclaimer</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 Namerly. All rights reserved.</p>
+        <p>🔒 Your privacy is protected. We don't store personal data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/adsense-config.js"></script>
+  <script>
+    let currentLanguage = 'en';
+    let selectedStyle = 'mixed';
+
+    // Translation object
+    const translations = {
+      en: {
+        heroTitle: "Instagram Username Generator",
+        heroSubtitle: "Create the perfect Instagram handle that stands out! Generate aesthetic, cool, and unique usernames that are perfect for your brand, business, or personal profile.",
+        nameLabel: "Your Name or Keywords:",
+        categoryLabel: "Category:",
+        styleLabel: "Style Preferences:",
+        shortStyle: "Short",
+        shortDesc: "Easy to remember",
+        creativeStyle: "Creative",
+        creativeDesc: "Unique combinations",
+        numbersStyle: "With Numbers",
+        numbersDesc: "Add cool numbers",
+        mixedStyle: "Mixed",
+        mixedDesc: "Best of all",
+        generateBtn: "🚀 Generate Instagram Usernames",
+        resultsTitle: "Your Instagram Username Ideas:",
+        tipsTitle: "Pro Tips for Instagram Usernames",
+        tip1Title: "Keep it Simple",
+        tip1Text: "Choose usernames that are easy to spell and remember. Avoid complex combinations that confuse followers.",
+        tip2Title: "Brand Consistency",
+        tip2Text: "Use the same username across all social platforms to build brand recognition and make it easier for people to find you.",
+        tip3Title: "Check Availability",
+        tip3Text: "Always verify username availability on Instagram before settling on your choice. Popular variations fill up quickly.",
+        tip4Title: "SEO Friendly",
+        tip4Text: "Include relevant keywords that describe your niche or content to help people discover your profile through search.",
+        backHome: "← Back to All Generators",
+        crushLink: "Crush Messages",
+        privacyLink: "Privacy",
+        termsLink: "Terms",
+        footerText: "© 2025 NamerlyGenerator. Free Instagram username generator tool for content creators and influencers.",
+        copyBtn: "Copy",
+        checkBtn: "Check",
+        copied: "Copied!"
+      },
+      es: {
+        heroTitle: "Generador de Nombres para Instagram",
+        heroSubtitle: "¡Crea el nombre de usuario perfecto para Instagram que destaque! Genera nombres estéticos, geniales y únicos perfectos para tu marca, negocio o perfil personal.",
+        nameLabel: "Tu Nombre o Palabras Clave:",
+        categoryLabel: "Categoría:",
+        styleLabel: "Preferencias de Estilo:",
+        shortStyle: "Corto",
+        shortDesc: "Fácil de recordar",
+        creativeStyle: "Creativo",
+        creativeDesc: "Combinaciones únicas",
+        numbersStyle: "Con Números",
+        numbersDesc: "Añadir números geniales",
+        mixedStyle: "Mixto",
+        mixedDesc: "Lo mejor de todo",
+        generateBtn: "🚀 Generar Nombres para Instagram",
+        resultsTitle: "Tus Ideas de Nombres para Instagram:",
+        tipsTitle: "Consejos Pro para Nombres de Instagram",
+        tip1Title: "Manténlo Simple",
+        tip1Text: "Elige nombres de usuario fáciles de escribir y recordar. Evita combinaciones complejas que confundan a los seguidores.",
+        tip2Title: "Consistencia de Marca",
+        tip2Text: "Usa el mismo nombre de usuario en todas las plataformas sociales para construir reconocimiento de marca.",
+        tip3Title: "Verificar Disponibilidad",
+        tip3Text: "Siempre verifica la disponibilidad del nombre de usuario en Instagram antes de decidirte. Las variaciones populares se llenan rápidamente.",
+        tip4Title: "Amigable con SEO",
+        tip4Text: "Incluye palabras clave relevantes que describan tu nicho o contenido para ayudar a que la gente descubra tu perfil.",
+        backHome: "← Volver a Todos los Generadores",
+        crushLink: "Mensajes de Crush",
+        privacyLink: "Privacidad",
+        termsLink: "Términos",
+        footerText: "© 2025 NamerlyGenerator. Herramienta gratuita de generador de nombres para Instagram para creadores de contenido e influencers.",
+        copyBtn: "Copiar",
+        checkBtn: "Verificar",
+        copied: "¡Copiado!"
+      }
+    };
+
+    // Instagram username data
+    const instagramData = {
+      aesthetic: {
+        prefixes: ['moon', 'star', 'cosmic', 'dreamy', 'golden', 'silver', 'velvet', 'silk', 'pearl', 'crystal'],
+        suffixes: ['vibes', 'glow', 'aura', 'magic', 'dreams', 'soul', 'spirit', 'essence', 'bliss', 'zen']
+      },
+      cool: {
+        prefixes: ['cyber', 'neon', 'shadow', 'storm', 'blaze', 'frost', 'steel', 'rebel', 'wild', 'fierce'],
+        suffixes: ['edge', 'force', 'wave', 'strike', 'bolt', 'fire', 'rush', 'blade', 'storm', 'rebel']
+      },
+      cute: {
+        prefixes: ['sweet', 'tiny', 'baby', 'little', 'soft', 'fluffy', 'cozy', 'sugar', 'honey', 'cherry'],
+        suffixes: ['paw', 'bean', 'bug', 'pie', 'cake', 'bear', 'bunny', 'kitten', 'dove', 'angel']
+      },
+      business: {
+        prefixes: ['pro', 'elite', 'prime', 'executive', 'premium', 'corporate', 'business', 'professional', 'expert', 'master'],
+        suffixes: ['hub', 'solutions', 'group', 'ventures', 'corp', 'enterprises', 'consulting', 'services', 'network', 'agency']
+      },
+      fitness: {
+        prefixes: ['fit', 'strong', 'power', 'muscle', 'iron', 'steel', 'active', 'energy', 'vital', 'dynamic'],
+        suffixes: ['gains', 'strength', 'fitness', 'gym', 'workout', 'training', 'muscle', 'power', 'beast', 'warrior']
+      },
+      photography: {
+        prefixes: ['lens', 'focus', 'snap', 'capture', 'frame', 'visual', 'pixel', 'shutter', 'aperture', 'exposure'],
+        suffixes: ['shots', 'frames', 'captures', 'visuals', 'photos', 'pics', 'gallery', 'studio', 'lens', 'focus']
+      },
+      travel: {
+        prefixes: ['wander', 'explore', 'journey', 'adventure', 'roam', 'nomad', 'globe', 'voyage', 'quest', 'discover'],
+        suffixes: ['traveler', 'explorer', 'wanderer', 'nomad', 'journey', 'adventures', 'tales', 'stories', 'vibes', 'soul']
+      },
+      food: {
+        prefixes: ['tasty', 'yummy', 'delicious', 'savory', 'sweet', 'spicy', 'fresh', 'crispy', 'juicy', 'flavor'],
+        suffixes: ['kitchen', 'chef', 'cook', 'foodie', 'eats', 'bites', 'flavors', 'taste', 'dish', 'recipe']
+      },
+      fashion: {
+        prefixes: ['style', 'chic', 'trendy', 'elegant', 'glamour', 'fashion', 'vogue', 'haute', 'designer', 'boutique'],
+        suffixes: ['style', 'fashion', 'trends', 'chic', 'elegance', 'glamour', 'boutique', 'closet', 'wardrobe', 'looks']
+      },
+      gaming: {
+        prefixes: ['game', 'play', 'pixel', 'arcade', 'retro', 'pro', 'elite', 'legendary', 'epic', 'ultimate'],
+        suffixes: ['gamer', 'player', 'gaming', 'games', 'play', 'squad', 'clan', 'team', 'pro', 'legend']
+      }
+    };
+
+    // Style configurations
+    const styleConfigs = {
+      short: { maxLength: 12, useNumbers: false, useSeparators: false },
+      creative: { maxLength: 20, useNumbers: true, useSeparators: true, useSymbols: true },
+      numbers: { maxLength: 15, useNumbers: true, useSeparators: false },
+      mixed: { maxLength: 18, useNumbers: true, useSeparators: true, useSymbols: false }
+    };
+
+    function toggleLanguage() {
+      currentLanguage = currentLanguage === 'en' ? 'es' : 'en';
+      updateLanguage();
+      document.getElementById('languageBtn').textContent = currentLanguage === 'en' ? '🇪🇸 ES' : '🇬🇧 EN';
+    }
+
+    function updateLanguage() {
+      const texts = translations[currentLanguage];
+      Object.keys(texts).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+          if (element.tagName === 'INPUT' && element.placeholder) {
+            element.placeholder = texts[key];
+          } else {
+            element.textContent = texts[key];
+          }
+        }
+      });
+    }
+
+    // Style selection
+    document.querySelectorAll('.style-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.style-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        selectedStyle = card.dataset.style;
+      });
+    });
+
+    function generateInstagramNames() {
+      const nameInput = document.getElementById('nameInput').value.trim();
+      const category = document.getElementById('categorySelect').value;
+
+      if (!nameInput) {
+        alert(currentLanguage === 'en' ? 'Please enter your name or keywords!' : '¡Por favor ingresa tu nombre o palabras clave!');
+        return;
+      }
+
+      const usernames = createInstagramUsernames(nameInput, category, selectedStyle);
+      displayUsernames(usernames);
+
+      // Show ads after generation
+      if (window.adsenseManager) {
+        window.adsenseManager.showResultsAds();
+      }
+    }
+
+    function createInstagramUsernames(input, category, style) {
+      const config = styleConfigs[style];
+      const data = instagramData[category];
+      const usernames = [];
+      const cleanInput = input.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+      // Generate different types of usernames
+      for (let i = 0; i < 12; i++) {
+        let username = '';
+
+        switch (i % 4) {
+          case 0: // Prefix + Input + Suffix
+            username = generatePrefixInputSuffix(cleanInput, data, config);
+            break;
+          case 1: // Input + Suffix + Numbers
+            username = generateInputSuffixNumbers(cleanInput, data, config);
+            break;
+          case 2: // Creative combinations
+            username = generateCreativeCombination(cleanInput, data, config);
+            break;
+          case 3: // Simple variations
+            username = generateSimpleVariation(cleanInput, config);
+            break;
+        }
+
+        if (username && username.length <= config.maxLength && !usernames.includes(username)) {
+          usernames.push(username);
+        }
+      }
+
+      return usernames.slice(0, 8); // Return top 8 usernames
+    }
+
+    function generatePrefixInputSuffix(input, data, config) {
+      const prefix = data.prefixes[Math.floor(Math.random() * data.prefixes.length)];
+      const suffix = data.suffixes[Math.floor(Math.random() * data.suffixes.length)];
+      let username = prefix + input + suffix;
+
+      if (config.useSeparators && Math.random() > 0.5) {
+        const separators = ['_', '.'];
+        const sep = separators[Math.floor(Math.random() * separators.length)];
+        username = prefix + sep + input + sep + suffix;
+      }
+
+      if (config.useNumbers && Math.random() > 0.6) {
+        username += Math.floor(Math.random() * 999) + 1;
+      }
+
+      return username;
+    }
+
+    function generateInputSuffixNumbers(input, data, config) {
+      const suffix = data.suffixes[Math.floor(Math.random() * data.suffixes.length)];
+      let username = input + suffix;
+
+      if (config.useNumbers) {
+        const numbers = ['_' + (Math.floor(Math.random() * 99) + 1), Math.floor(Math.random() * 999) + 1, '_2024', '_official'];
+        username += numbers[Math.floor(Math.random() * numbers.length)];
+      }
+
+      return username;
+    }
+
+    function generateCreativeCombination(input, data, config) {
+      const variations = [
+        'the' + input,
+        input + 'official',
+        'real' + input,
+        input + 'vibes',
+        input + 'world'
+      ];
+
+      let username = variations[Math.floor(Math.random() * variations.length)];
+
+      if (config.useSymbols && Math.random() > 0.7) {
+        username = username.replace(/./g, (char, index) => {
+          if (index > 0 && Math.random() > 0.8) {
+            return '_' + char;
+          }
+          return char;
+        });
+      }
+
+      return username;
+    }
+
+    function generateSimpleVariation(input, config) {
+      const variations = [
+        input + Math.floor(Math.random() * 999) + 1,
+        input + '_' + Math.floor(Math.random() * 99) + 1,
+        input + '_official',
+        'the_' + input,
+        input + '_real'
+      ];
+
+      return variations[Math.floor(Math.random() * variations.length)];
+    }
+
+    function displayUsernames(usernames) {
+      const resultsSection = document.getElementById('resultsSection');
+      const usernameGrid = document.getElementById('usernameGrid');
+
+      usernameGrid.innerHTML = '';
+
+      usernames.forEach(username => {
+        const card = document.createElement('div');
+        card.className = 'username-card';
+        card.innerHTML = `
+          <div class="username-text">@${username}</div>
+          <button class="copy-btn" onclick="copyUsername('${username}')">${translations[currentLanguage].copyBtn}</button>
+          <button class="check-btn" onclick="checkAvailability('${username}')">${translations[currentLanguage].checkBtn}</button>
+        `;
+        usernameGrid.appendChild(card);
+      });
+
+      resultsSection.style.display = 'block';
+      resultsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function copyUsername(username) {
+      navigator.clipboard.writeText(username).then(() => {
+        alert(translations[currentLanguage].copied);
+      });
+    }
+
+    function checkAvailability(username) {
+      // Open Instagram search in new tab
+      window.open(`https://www.instagram.com/${username}/`, '_blank');
+    }
+
+    // Initialize language
+    updateLanguage();
+
+    // Initialize AdSense
+    if (window.adsenseConfig) {
+      window.adsenseConfig.initAds('instagram-names');
+    }
+
+    // Cookie logic
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+    function showCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+    function hideCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function openCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'flex';
+      document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+    }
+    function closeCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'none';
+    }
+    function saveCookieSettings() {
+      const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+      setCookie('namerly_analytics_consent', consent, 365);
+      closeCookieSettings();
+      window.location.reload();
+    }
+
+    // Banner buttons
+    // Note: We need to bind these after DOM load or inline. Using inline in HTML below for simplicity or add event listeners here.
+
+    window.addEventListener('DOMContentLoaded', function () {
+      var consent = getCookie('namerly_analytics_consent');
+      if (!consent) showCookieBanner();
+    });
+  </script>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner"
+    style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem; color: #333;">
+    <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+      mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+    <br>
+    <button
+      onclick="document.getElementById('cookie-banner').style.display='none'; setCookie('namerly_analytics_consent', 'accepted', 365); window.location.reload();"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+      analítica</button>
+    <button
+      onclick="document.getElementById('cookie-banner').style.display='none'; setCookie('namerly_analytics_consent', 'rejected', 365); window.location.reload();"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+      analítica</button>
+    <button onclick="openCookieSettings()"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+      cookies</button>
+    <a href="/cookie-policy.html"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem;">Política de cookies</a>
+  </div>
+
+  <div id="cookie-settings-modal" class="cookie-settings-modal"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:10000; justify-content:center; align-items:center;">
+    <div class="cookie-settings-content"
+      style="background:white; padding:2rem; border-radius:10px; max-width:500px; width:90%;">
+      <h2>Configuración de cookies</h2>
+      <div class="cookie-category">
+        <h3>🍪 Esenciales</h3>
+        <p>Estas cookies son necesarias para el funcionamiento básico del sitio y no se pueden desactivar.</p>
+      </div>
+      <div class="cookie-category">
+        <h3>📊 Analítica</h3>
+        <p>Permiten medir el uso del sitio y mejorar la experiencia. Puedes aceptar o rechazar estas cookies.</p>
+        <div>
+          <label>
+            <input type="checkbox" id="analytics-consent-checkbox" />
+            Permitir cookies de analítica
+          </label>
+        </div>
+      </div>
+      <div class="cookie-settings-buttons" style="margin-top:1rem; text-align:right;">
+        <button onclick="saveCookieSettings()"
+          style="padding:0.5rem 1rem; background:#e11d48; color:white; border:none; border-radius:4px; cursor:pointer;">Guardar</button>
+        <button onclick="closeCookieSettings()"
+          style="padding:0.5rem 1rem; background:#ddd; color:#333; border:none; border-radius:4px; cursor:pointer; margin-left:10px;">Cerrar</button>
+      </div>
+    </div>
+  </div>
+<script type="module" src="../../assets/js/premium-features.js"></script>
+</body>
+
+</html>

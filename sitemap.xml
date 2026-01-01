@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Página Principal -->
+  <url>
+    <loc>https://namerlygenerator.netlify.app/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/"/>
+  </url>
+
+  <!-- Generadores AI - Alta Prioridad -->
+  <url>
+    <loc>https://namerlygenerator.netlify.app/pickup/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/pickup/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/pickup/"/>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/roasts/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/roasts/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/roasts/"/>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/usernames/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/usernames/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/usernames/"/>
+  </url>
+
+  <!-- Categorías Adicionales -->
+  <url>
+    <loc>https://namerlygenerator.netlify.app/crush/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/crush/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/crush/"/>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/whatsapp/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/whatsapp/"/>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/wifi/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/wifi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/wifi/"/>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/pets/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/pets/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/pets/"/>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/sarcastic/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/sarcastic/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/sarcastic/"/>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/phrases/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/phrases/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/phrases/"/>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/pranks/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/pranks/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/pranks/"/>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/social-excuses/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/social-excuses/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/social-excuses/"/>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/icebreakers/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/icebreakers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/icebreakers/"/>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/gym-excuses/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/gym-excuses/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/gym-excuses/"/>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/tiktok/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/tiktok/"/>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/youtube/</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/youtube/"/>
+  </url>
+
+  <!-- Legal & Information Pages -->
+  <url>
+    <loc>https://namerlygenerator.netlify.app/about.html</loc>
+    <lastmod>2025-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/contact.html</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/privacy-policy.html</loc>
+    <lastmod>2025-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/terms-of-service.html</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/cookie-policy.html</loc>
+    <lastmod>2025-10-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/disclaimer.html</loc>
+    <lastmod>2025-07-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Blog Section -->
+  <url>
+    <loc>https://namerlygenerator.netlify.app/blog/</loc>
+    <lastmod>2025-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/blog/how-to-create-viral-instagram-usernames.html</loc>
+    <lastmod>2025-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/blog/tiktok-caption-formulas-that-go-viral.html</loc>
+    <lastmod>2025-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/blog/tiktok-caption-formulas-that-go-viral.html</loc>
+    <lastmod>2025-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://namerlygenerator.netlify.app/blog/100-youtube-video-ideas-by-niche.html</loc>
+    <lastmod>2025-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

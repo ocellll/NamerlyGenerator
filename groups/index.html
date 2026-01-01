@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Group Name Generator | Funny & Creative Group Names - Namerly</title>
+    <meta name="description"
+        content="Generate hilarious and creative WhatsApp group names instantly! Find funny, cool, and unique names for friends, family, and work groups." />
+    <meta name="keywords"
+        content="whatsapp group names, group name generator, funny group names, family group names, friends group names, creative group names, team chat names" />
+    <meta name="author" content="Namerly" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://namerlygenerator.netlify.app/groups/" />
+    <meta property="og:title" content="WhatsApp Group Name Generator - Namerly" />
+    <meta property="og:description"
+        content="Generate the best names for your WhatsApp groups! Friends, family, work, and more." />
+    <meta property="og:image" content="https://namerlygenerator.netlify.app/assets/images/groups-og.jpg" />
+    <meta property="og:site_name" content="Namerly" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://namerlygenerator.netlify.app/groups/" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-ZCBGMRHJ21', {
+            cookie_domain: 'namerlygenerator.netlify.app',
+            custom_map: { 'custom_parameter_1': 'page_category' }
+        });
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            /* WhatsApp Green Gradient */
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        header {
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #title {
+            font-size: 1.8rem;
+            color: white;
+            margin: 0;
+        }
+
+        main {
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .control-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        select,
+        button {
+            margin: 0.5rem;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 50px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        button.generate-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s;
+        }
+
+        button.generate-btn:hover {
+            transform: scale(1.05);
+        }
+
+        #output {
+            margin-top: 2rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #128C7E;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .copy-btn {
+            margin-top: 1rem;
+            background: #128C7E;
+            color: white;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+
+            #output {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="title">👥 Namerly</h1>
+        <div>
+            <button id="lang-toggle" style="background: rgba(255,255,255,0.2); color: white; border: none;">🌐
+                ES</button>
+            <a href="../index.html" style="color: white; text-decoration:none; margin-left: 1rem; font-weight: 500;">←
+                Home</a>
+        </div>
+    </header>
+
+    <main>
+        <h2 id="subtitle">WhatsApp Group Names</h2>
+
+        <div class="control-section">
+            <label for="style" style="display: block; margin-bottom: 1rem; font-weight: 600; color: #444;">Choose Group
+                Type:</label>
+            <select id="style">
+                <option value="friends">👯 Friends / Besties</option>
+                <option value="family">👨‍👩‍👧‍👦 Family</option>
+                <option value="work">💼 Work / Office</option>
+                <option value="party">🎉 Party / Events</option>
+                <option value="funny">😂 Funny / Memes</option>
+                <option value="random">🎲 Random Mix</option>
+            </select>
+            <br>
+            <button onclick="generateName()" class="generate-btn">
+                <span id="btn-text">Generate Name</span>
+            </button>
+        </div>
+
+        <div id="output">
+            <span>Ready to generate!</span>
+        </div>
+    </main>
+
+    <script>
+        let currentLang = localStorage.getItem('namerly-lang') || (navigator.language.startsWith("es") ? "es" : "en");
+
+        const translations = {
+            en: {
+                subtitle: "WhatsApp Group Names",
+                chooseStyle: "Choose Group Type:",
+                generate: "Generate Name",
+                copy: "Copy",
+                copied: "Copied!",
+                ready: "Ready to generate!",
+                types: {
+                    friends: "👯 Friends / Besties",
+                    family: "👨‍👩‍👧‍👦 Family",
+                    work: "💼 Work / Office",
+                    party: "🎉 Party / Events",
+                    funny: "😂 Funny / Memes",
+                    random: "🎲 Random Mix"
+                }
+            },
+            es: {
+                subtitle: "Nombres para Grupos de WhatsApp",
+                chooseStyle: "Tipo de Grupo:",
+                generate: "Generar Nombre",
+                copy: "Copiar",
+                copied: "¡Copiado!",
+                ready: "¡Listo para generar!",
+                types: {
+                    friends: "👯 Amigos / Besties",
+                    family: "👨‍👩‍👧‍👦 Familia",
+                    work: "💼 Trabajo / Oficina",
+                    party: "🎉 Fiesta / Eventos",
+                    funny: "😂 Gracioso / Memes",
+                    random: "🎲 Mix Aleatorio"
+                }
+            }
+        };
+
+        const names = {
+            en: {
+                friends: [
+                    "The Three Musketeers", "Fantastic Four", "Squad Goals", "Besties 4 Life", "Chamber of Secrets",
+                    "The Avengers", "Gossip Girls", "Bro Code", "Sisters by Heart", "Partner in Crime",
+                    "The Circle", "Game of Phones", "Non-Stop Notifications", "We Talk A Lot", "Friendship Goals",
+                    "The Breakfast Club", "F.R.I.E.N.D.S", "Fab Five", "Dream Team", "Ride or Die",
+                    "Spicy Girls", "Backstreet Boys", "The Wolf Pack", "No Snitches", "VIP Section"
+                ],
+                family: [
+                    "Modern Family", "Home Sweet Home", "The Incredibles", "Family Matters", "Full House",
+                    "We Are Family", "Family Ties", "Mom's Favorites", "Dad's Jokes", "Sibling Rivalry",
+                    "Family Circus", "The Godfathers", "Happy House", "Parent Trap", "Crazy Cousins",
+                    "Family Feud", "Keeping Up With Us", "Love & Chaos", "Home Base", "Roots & Wings"
+                ],
+                work: [
+                    "Dream Team", "Office Squad", "Coffee Lovers", "Work Hard Play Hard", "The A-Team",
+                    "Brainstormers", "Business as Usual", "The Office", "Deadline Chasers", "Team Success",
+                    "Creatives", "Marketing Gurus", "Sales Force", "Tech Titans", "HR Heroes",
+                    "Lunch Bunch", "Water Cooler Chat", "Monday Blues", "Friday Feeling", "Boss Mode"
+                ],
+                party: [
+                    "Party Animals", "Weekend Vibes", "Night Owls", "Cheers 🍻", "Hangover Gang",
+                    "Let's Get This Party Started", "Dance Floor Divas", "Beer Buddies", "Wine Not?", "Party Poopers",
+                    "Last Night Was Crazy", "Road Trip Crew", "Festival Squad", "Birthday Bash", "Summer Vibes",
+                    "Spring Breakers", "Holiday Spirit", "New Year New Us", "After Party", "VIP Access"
+                ],
+                funny: [
+                    "Error 404: Group Name Not Found", "Type...ing", "Only Singles", "404 Brain Not Found", "Trash Talk",
+                    "We Need Therapy", "Cereal Killers", "Nonsense Group", "Spam Folder", "Do Not Disturb",
+                    "Delete This Group", "Silence is Golden", "Just for Memes", "No Admins Allowed", "Why are we here?",
+                    "Low Battery", "No WiFi", "Textual Harassment", "Not Fast Just Furious", "Ugly but Funny"
+                ]
+            },
+            es: {
+                friends: [
+                    "Los Tres Mosqueteros", "Cuatro Fantásticos", "Escuadrón Suicida", "Amigos x Siempre", "La Cámara de los Secretos",
+                    "Los Vengadores", "Chicas Superpoderosas", "Código de Hermanos", "Cómplices", "El Círculo",
+                    "Solo Vibras Positivas", "Notificaciones 24/7", "Hablamos Mucho", "Los Inseparables", "El Club del Desayuno",
+                    "VIP", "Los Intocables", "La Manada", "Sin Pruebas", "Gente Cool", "Las Divinas", "Los Populares",
+                    "Sin Filtro", "Los Reales", "Hermanos de Otra Madre"
+                ],
+                family: [
+                    "Familia Peluche", "Hogar Dulce Hogar", "Los Increíbles", "Cosas de Familia", "La Tribu",
+                    "Lazos de Sangre", "Favoritos de Mamá", "Chistes de Papá", "Guerra de Hermanos", "El Circo",
+                    "El Padrino", "Casa Loca", "Primos Lejanos", "Discusión Familiar", "Amor y Caos",
+                    "Grupo Familiar", "Los [Tu Apellido]", "Domingos Familiares", "Chat de la Tía", "Pregúntale a Mamá"
+                ],
+                work: [
+                    "Equipo Soñado", "Escuadrón Oficina", "Amantes del Café", "Trabajo Duro", "El Equipo A",
+                    "Lluvia de Ideas", "Negocios Serios", "The Office (Versión Latina)", "Persigue Plazos", "Éxito Total",
+                    "Creativos", "Gurus del Marketing", "Fuerza de Ventas", "Titanes Tech", "Héroes RRHH",
+                    "Hora del Almuerzo", "Chisme de Pasillo", "Odio los Lunes", "Viernes Social", "Modo Jefe"
+                ],
+                party: [
+                    "Animales de Fiesta", "Vibras de Finde", "Noctámbulos", "Salud 🍻", "La Resaca",
+                    "Que Empiece la Fiesta", "Reyes de la Pista", "Compañeros de Chelas", "¿Por qué no?", "Aguafiestas",
+                    "Lo de Anoche", "Viaje de Locos", "Escuadrón Festival", "Cumpleaños Feliz", "Verano Azul",
+                    "Spring Break", "Espíritu Navideño", "Año Nuevo Vida Nueva", "After Party", "Acceso VIP"
+                ],
+                funny: [
+                    "Error 404: Nombre No Encontrado", "Escribiendo...", "Solo Solteros", "404 Cerebro No Encontrado", "Basurero",
+                    "Necesitamos Terapia", "Asesinos del Cereal", "Grupo Sin Sentido", "Carpeta de Spam", "No Molestar",
+                    "Borra este Grupo", "El Silencio es Oro", "Solo Memes", "No se permiten Admins", "¿Por qué estamos aquí?",
+                    "Batería Baja", "Sin WiFi", "Acoso Textual", "No Rápido Solo Furioso", "Feos pero Graciosos"
+                ]
+            }
+        };
+
+        function updateUI() {
+            const t = translations[currentLang];
+            document.getElementById("subtitle").textContent = t.subtitle;
+            document.querySelector("label[for='style']").textContent = t.chooseStyle;
+            document.getElementById("btn-text").textContent = t.generate;
+            document.getElementById("output").querySelector("span").textContent = t.ready;
+
+            // Update options
+            const select = document.getElementById("style");
+            select.innerHTML = "";
+            for (const [key, value] of Object.entries(t.types)) {
+                const option = document.createElement("option");
+                option.value = key;
+                option.textContent = value;
+                select.appendChild(option);
+            }
+
+            const nextLang = currentLang === "en" ? "ES" : "EN";
+            document.getElementById("lang-toggle").innerHTML = `🌐 ${nextLang}`;
+        }
+
+        function generateName() {
+            const style = document.getElementById("style").value;
+            const set = names[currentLang];
+            let options = [];
+
+            if (style === "random") {
+                options = [...set.friends, ...set.family, ...set.work, ...set.party, ...set.funny];
+            } else {
+                options = set[style];
+            }
+
+            const random = options[Math.floor(Math.random() * options.length)];
+
+            const t = translations[currentLang];
+            document.getElementById("output").innerHTML = `${random} <button class="copy-btn" onclick="copyToClipboard('${random}')">${t.copy}</button>`;
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const t = translations[currentLang];
+                alert(t.copied);
+            });
+        }
+
+        document.getElementById("lang-toggle").addEventListener("click", () => {
+            currentLang = currentLang === "en" ? "es" : "en";
+            localStorage.setItem('namerly-lang', currentLang);
+            updateUI();
+        });
+
+        updateUI();
+    </script>
+
+    <!-- Legal Footer -->
+    <footer class="legal-footer"
+        style="padding: 2rem; text-align: center; color: rgba(255,255,255,0.8); position: relative; z-index: 10;">
+        <div class="footer-content">
+            <div class="footer-links" style="margin-bottom: 1rem;">
+                <a href="../privacy-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Privacy
+                    Policy</a>
+                <span class="separator">|</span>
+                <a href="../terms-of-service.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Terms
+                    of Service</a>
+                <span class="separator">|</span>
+                <a href="../cookie-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Cookie
+                    Policy</a>
+                <span class="separator">|</span>
+                <a href="../disclaimer.html"
+                    style="color: white; text-decoration: none; margin: 0 0.5rem;">Disclaimer</a>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 Namerly. All rights reserved.</p>
+                <p>🔒 Your privacy is protected. We don't store personal data.</p>
+            </div>
+        </div>
+    </footer>
+<script type="module" src="../../assets/js/premium-features.js"></script>
+</body>
+
+</html>

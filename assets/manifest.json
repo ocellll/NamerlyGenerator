@@ -1,0 +1,143 @@
+{
+  "name": "Namerly - Viral Content Generator",
+  "short_name": "Namerly",
+  "description": "Generate viral names, usernames, pickup lines, Instagram bios, YouTube titles & more! Free bilingual name generator with 19+ categories.",
+  "start_url": "/?utm_source=pwa",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["entertainment", "social", "productivity", "lifestyle"],
+  
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  
+  "icons": [
+    {
+      "src": "/assets/images/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  
+  "screenshots": [
+    {
+      "src": "/assets/images/screenshot-mobile.png",
+      "sizes": "320x640",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Namerly mobile interface"
+    },
+    {
+      "src": "/assets/images/screenshot-desktop.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Namerly desktop interface"
+    }
+  ],
+  
+  "shortcuts": [
+    {
+      "name": "🎨 Instagram Bios",
+      "short_name": "Bios",
+      "description": "Generate viral Instagram bio ideas instantly",
+      "url": "/bios/?utm_source=pwa_shortcut",
+      "icons": [{"src": "/assets/images/shortcut-bios.png", "sizes": "96x96"}]
+    },
+    {
+      "name": "👤 Username Generator",
+      "short_name": "Usernames",
+      "description": "Create unique social media usernames",
+      "url": "/usernames/?utm_source=pwa_shortcut",
+      "icons": [{"src": "/assets/images/shortcut-usernames.png", "sizes": "96x96"}]
+    },
+    {
+      "name": "💘 Pickup Lines",
+      "short_name": "Pickup",
+      "description": "Generate clever pickup lines that work",
+      "url": "/pickup/?utm_source=pwa_shortcut",
+      "icons": [{"src": "/assets/images/shortcut-pickup.png", "sizes": "96x96"}]
+    },
+    {
+      "name": "🎬 YouTube Titles",
+      "short_name": "YouTube",
+      "description": "Create viral YouTube video titles",
+      "url": "/youtube/?utm_source=pwa_shortcut",
+      "icons": [{"src": "/assets/images/shortcut-youtube.png", "sizes": "96x96"}]
+    },
+    {
+      "name": "🤖 AI Generators",
+      "short_name": "AI Tools",
+      "description": "Premium AI-powered content generators",
+      "url": "/ai-pickup.html?utm_source=pwa_shortcut",
+      "icons": [{"src": "/assets/images/shortcut-ai.png", "sizes": "96x96"}]
+    }
+  ],
+  
+  "share_target": {
+    "action": "/",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  
+  "protocol_handlers": [
+    {
+      "protocol": "web+namerly",
+      "url": "/?action=%s"
+    }
+  ],
+  
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.namerly.app",
+      "id": "com.namerly.app"
+    }
+  ],
+  
+  "prefer_related_applications": false
+}

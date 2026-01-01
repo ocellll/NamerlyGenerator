@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Username Generator | Cool Aesthetic & Unique Usernames - Namerly</title>
+  <meta name="description"
+    content="Generate cool, aesthetic, and unique usernames for gaming, social media, and online platforms. Find the perfect username instantly!" />
+  <meta name="keywords"
+    content="username generator, cool usernames, aesthetic usernames, gaming usernames, social media usernames, unique usernames, random username, name generator" />
+  <meta name="author" content="Namerly" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://namerlygenerator.netlify.app/usernames/" />
+  <meta property="og:title" content="Username Generator | Cool Aesthetic & Unique Usernames - Namerly" />
+  <meta property="og:description"
+    content="Generate cool, aesthetic, and unique usernames for gaming, social media, and online platforms." />
+  <meta property="og:image" content="https://namerlygenerator.netlify.app/assets/images/usernames-og.jpg" />
+  <meta property="og:site_name" content="Namerly" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://namerlygenerator.netlify.app/usernames/" />
+  <meta name="twitter:title" content="Username Generator | Cool Aesthetic & Unique Usernames - Namerly" />
+  <meta name="twitter:description"
+    content="Generate cool, aesthetic, and unique usernames for gaming, social media, and online platforms." />
+  <meta name="twitter:image" content="https://namerlygenerator.netlify.app/assets/images/usernames-og.jpg" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://namerlygenerator.netlify.app/usernames/" />
+
+  <!-- Language alternates -->
+  <link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/usernames/" />
+  <link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/usernames/" />
+  <link rel="alternate" hreflang="x-default" href="https://namerlygenerator.netlify.app/usernames/" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Username Generator",
+    "description": "Generate cool, aesthetic, and unique usernames for gaming, social media, and online platforms instantly.",
+    "url": "https://namerlygenerator.netlify.app/usernames/",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- Google Analytics 4 -->
+  <!-- Google Analytics 4 removed (loaded via cookie consent) -->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated background particles */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/></circle></svg>') repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    main {
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      letter-spacing: 0.5px;
+    }
+
+    .control-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    label {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    select {
+      width: 100%;
+      max-width: 300px;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      border: 2px solid #e2e8f0;
+      border-radius: 15px;
+      background: white;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    select:hover {
+      border-color: #4f46e5;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    }
+
+    .generate-btn {
+      background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+      color: white;
+      border: none;
+      padding: 1.2rem 3rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
+      margin-top: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .generate-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s;
+    }
+
+    .generate-btn:hover::before {
+      left: 100%;
+    }
+
+    .generate-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(79, 70, 229, 0.5);
+    }
+
+    .generate-btn:active {
+      transform: translateY(-1px);
+    }
+
+    #output {
+      margin-top: 3rem;
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-family: 'Roboto', 'Inter', sans-serif;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.6;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: all 0.5s ease;
+    }
+
+    #output.has-content {
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .phrase-text {
+      font-size: 1.4rem;
+      font-style: normal;
+      margin-bottom: 1.5rem;
+      color: #1a202c;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      line-height: 1.7;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      font-family: 'Roboto', 'Inter', sans-serif;
+      text-align: center;
+    }
+
+    .copy-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, #17a2b8, #138496);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(23, 162, 184, 0.3);
+      margin: 0.5rem;
+      font-weight: 500;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(23, 162, 184, 0.4);
+      background: linear-gradient(135deg, #138496, #17a2b8);
+    }
+
+    .main-share-btn {
+      margin-left: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+      margin: 0.5rem;
+      font-weight: 500;
+    }
+
+    .main-share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(16, 185, 129, 0.4);
+      background: linear-gradient(135deg, #059669, #10b981);
+    }
+
+    .share-section {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 2px dashed rgba(79, 70, 229, 0.3);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .share-title {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #333;
+      font-size: 1.2rem;
+    }
+
+    .share-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .share-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .twitter {
+      background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+      color: white;
+    }
+
+    .instagram {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+    }
+
+    .tiktok {
+      background: linear-gradient(135deg, #000, #333);
+      color: white;
+    }
+
+    .whatsapp {
+      background: linear-gradient(135deg, #25d366, #20c157);
+      color: white;
+    }
+
+    .telegram {
+      background: linear-gradient(135deg, #0088cc, #0066aa);
+      color: white;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      main {
+        padding: 2rem 1rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        letter-spacing: 0.3px;
+      }
+
+      .control-section {
+        padding: 1.5rem;
+      }
+
+      #output {
+        padding: 2rem;
+        font-size: 1.2rem;
+      }
+
+      .phrase-text {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        font-weight: 400;
+        font-family: 'Roboto', 'Inter', sans-serif;
+      }
+
+      .share-buttons {
+        gap: 10px;
+      }
+
+      .share-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Loading animation */
+    .loading {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Emoji animation */
+    .emoji-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">👤 Namerly</h1>
+    <div>
+      <button id="lang-toggle"
+        style="margin-right: 1rem; padding: 0.4rem 0.8rem; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">🌐
+        ES</button>
+      <a href="../index.html" style="text-decoration:none;">← Home</a>
+    </div>
+  </header>
+  <main>
+    <h2 id="subtitle">Social Media Usernames</h2>
+    <div class="control-section">
+      <label for="style">Choose a style:</label>
+      <select id="style">
+        <option value="aesthetic">✨ Aesthetic</option>
+        <option value="edgy">🖤 Edgy/Dark</option>
+        <option value="trendy">🔥 Trendy</option>
+        <option value="unique">🌟 Unique</option>
+        <option value="random">🎲 Random</option>
+      </select>
+      <br>
+      <button onclick="generateUsername()" class="generate-btn">
+        <span id="btn-text">Generate</span>
+      </button>
+    </div>
+    <div id="output">👤</div>
+    <div id="share-section" style="display: none;">
+      <div class="share-section">
+        <div class="share-title" id="share-title">📱 Share on Social Media</div>
+        <div class="share-buttons">
+          <button class="share-btn twitter" onclick="shareOnTwitter()">🐦 Twitter</button>
+          <button class="share-btn instagram" onclick="shareOnInstagram()">📸 Instagram</button>
+          <button class="share-btn tiktok" onclick="shareOnTikTok()">🎵 TikTok</button>
+          <button class="share-btn whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>
+          <button class="share-btn telegram" onclick="shareOnTelegram()">✈️ Telegram</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/kofi-monetization.js"></script>
+  <script type="module" src="../assets/js/premium-features.js"></script>
+  <script>
+    let currentLang = localStorage.getItem('namerly-lang') || (navigator.language.startsWith("es") ? "es" : "en");
+    let recentUsernames = []; // Array para recordar usernames recientes
+    const MAX_RECENT = 8; // Recordar últimos 8 elementos para evitar repeticiones
+
+    const translations = {
+      en: {
+        subtitle: "Social Media Usernames",
+        chooseStyle: "Choose a style:",
+        generate: "Generate",
+        copy: "Copy",
+        copied: "Copied!",
+        share: "Share",
+        shareTitle: "📱 Share on Social Media"
+      },
+      es: {
+        subtitle: "Nombres de Usuario",
+        chooseStyle: "Elige un estilo:",
+        generate: "Generar",
+        copy: "Copiar",
+        copied: "¡Copiado!",
+        share: "Compartir",
+        shareTitle: "📱 Compartir en Redes Sociales"
+      }
+    };
+
+    function updateUI() {
+      const t = translations[currentLang];
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.querySelector("label[for='style']").textContent = t.chooseStyle;
+      document.querySelector("button[onclick='generateUsername()']").textContent = t.generate;
+
+      const nextLang = currentLang === "en" ? "ES" : "EN";
+      document.getElementById("lang-toggle").innerHTML = `🌐 ${nextLang}`;
+    }
+
+    const usernames = {
+      en: {
+        aesthetic: [
+          "moonlit_dreams",
+          "golden_hour_vibes",
+          "soft_pastels",
+          "ethereal_moments",
+          "velvet_skies",
+          "crystal_waters",
+          "amber_sunsets",
+          "pearl_essence",
+          "silk_whispers",
+          "ivory_clouds",
+          "rose_quartz_soul",
+          "lavender_mist",
+          "celestial_being",
+          "opal_dreams",
+          "sage_wisdom",
+          "honey_glow",
+          "vintage_soul",
+          "cotton_candy_skies",
+          "dewdrop_mornings",
+          "starlit_thoughts",
+          "ocean_breeze",
+          "wildflower_child",
+          "aurora_nights",
+          "marble_aesthetic",
+          "porcelain_grace",
+          "butterfly_kisses",
+          "vanilla_dreams",
+          "angel_breath",
+          "sunflower_soul",
+          "peachy_keen",
+          "meadow_whispers",
+          "cloudy_daydreams"
+        ],
+        edgy: [
+          "midnight_rebel",
+          "shadow_hunter",
+          "dark_phoenix",
+          "void_walker",
+          "storm_bringer",
+          "neon_nightmare",
+          "electric_chaos",
+          "crimson_edge",
+          "phantom_pulse",
+          "black_diamond",
+          "steel_heart",
+          "razor_sharp",
+          "silent_storm",
+          "toxic_beauty",
+          "broken_crown",
+          "savage_soul",
+          "cold_fire",
+          "death_wish",
+          "poison_ivy",
+          "blood_moon",
+          "iron_maiden",
+          "dark_matter",
+          "fallen_angel",
+          "ghost_rider",
+          "venom_strike",
+          "skull_crusher",
+          "night_stalker",
+          "chaos_theory",
+          "demon_eyes",
+          "raven_black",
+          "thorned_rose",
+          "arctic_frost"
+        ],
+        trendy: [
+          "main_character",
+          "that_girl_energy",
+          "slay_queen",
+          "vibe_check",
+          "no_cap_zone",
+          "periodt_queen",
+          "its_giving_icon",
+          "understood_assignment",
+          "living_my_best",
+          "hot_girl_summer",
+          "aesthetic_queen",
+          "trendsetter_vibes",
+          "boujee_lifestyle",
+          "serve_looks",
+          "iconic_energy",
+          "stan_material",
+          "culture_reset",
+          "moment_served",
+          "ate_and_left",
+          "slayed_effortlessly",
+          "chefs_kiss",
+          "lived_served_ate",
+          "pop_off_queen",
+          "period_pooh",
+          "besties_only",
+          "soft_launch_era",
+          "clean_girl_aesthetic",
+          "coquette_core",
+          "vanilla_girl_vibes",
+          "pilates_princess",
+          "matcha_moment",
+          "golden_retriever_energy"
+        ],
+        unique: [
+          "cosmic_wanderer",
+          "dream_architect",
+          "soul_collector",
+          "time_traveler",
+          "universe_whisperer",
+          "reality_bender",
+          "dimension_hopper",
+          "star_weaver",
+          "memory_keeper",
+          "thought_painter",
+          "emotion_sculptor",
+          "mind_reader",
+          "heart_decoder",
+          "spirit_guide",
+          "energy_shifter",
+          "frequency_tuner",
+          "vibe_translator",
+          "aura_reader",
+          "chakra_aligner",
+          "quantum_leaper",
+          "parallel_self",
+          "infinite_being",
+          "eternal_wanderer",
+          "consciousness_explorer",
+          "melody_maker",
+          "story_weaver",
+          "pixel_poet",
+          "digital_nomad",
+          "cloud_dancer",
+          "rainbow_architect",
+          "silence_speaker",
+          "echo_collector"
+        ]
+      },
+      es: {
+        aesthetic: [
+          "sueños_lunares",
+          "hora_dorada_vibes",
+          "pasteles_suaves",
+          "momentos_etéreos",
+          "cielos_de_terciopelo",
+          "aguas_cristalinas",
+          "atardeceres_ámbar",
+          "esencia_perla",
+          "susurros_de_seda",
+          "nubes_marfil",
+          "alma_cuarzo_rosa",
+          "niebla_lavanda",
+          "ser_celestial",
+          "sueños_ópalo",
+          "sabiduría_salvia",
+          "brillo_miel",
+          "alma_vintage",
+          "cielos_algodón_dulce",
+          "mañanas_rocío",
+          "pensamientos_estrellados",
+          "brisa_oceánica",
+          "niña_flor_salvaje",
+          "noches_aurora",
+          "estética_mármol",
+          "gracia_porcelana",
+          "besos_mariposa",
+          "sueños_vainilla",
+          "aliento_ángel",
+          "alma_girasol",
+          "dulce_melocotón",
+          "susurros_pradera",
+          "ensueños_nube",
+          "melodía_cristal"
+        ],
+        edgy: [
+          "rebelde_medianoche",
+          "cazador_sombras",
+          "fénix_oscuro",
+          "caminante_vacío",
+          "portador_tormentas",
+          "pesadilla_neón",
+          "caos_eléctrico",
+          "filo_carmesí",
+          "pulso_fantasma",
+          "diamante_negro",
+          "corazón_acero",
+          "afilado_navaja",
+          "tormenta_silenciosa",
+          "belleza_tóxica",
+          "corona_rota",
+          "alma_salvaje",
+          "fuego_frío",
+          "deseo_muerte",
+          "hiedra_venenosa",
+          "luna_sangre",
+          "doncella_hierro",
+          "materia_oscura",
+          "ángel_caído",
+          "jinete_fantasma",
+          "golpe_veneno",
+          "aplasta_cráneos",
+          "acechador_nocturno",
+          "teoría_caos",
+          "ojos_demonio",
+          "negro_cuervo",
+          "rosa_espinas",
+          "escarcha_ártica"
+        ],
+        trendy: [
+          "personaje_principal",
+          "esa_chica_energía",
+          "reina_mata",
+          "chequeo_vibra",
+          "zona_sin_mentiras",
+          "reina_punto",
+          "está_dando_ícono",
+          "entendió_tarea",
+          "viviendo_mi_mejor",
+          "verano_chica_caliente",
+          "reina_estética",
+          "vibes_creadora_tendencias",
+          "estilo_vida_lujoso",
+          "servir_looks",
+          "energía_icónica",
+          "material_fan",
+          "reset_cultural",
+          "momento_servido",
+          "comió_y_se_fue",
+          "mató_sin_esfuerzo",
+          "beso_chef",
+          "vivió_sirvió_comió",
+          "explota_reina",
+          "punto_pooh",
+          "solo_besties",
+          "era_soft_launch",
+          "estética_chica_limpia",
+          "núcleo_coquette",
+          "vibes_chica_vainilla",
+          "princesa_pilates",
+          "momento_matcha",
+          "energía_golden_retriever"
+        ],
+        unique: [
+          "vagabundo_cósmico",
+          "arquitecto_sueños",
+          "coleccionista_almas",
+          "viajero_tiempo",
+          "susurrador_universo",
+          "doblador_realidad",
+          "saltador_dimensiones",
+          "tejedor_estrellas",
+          "guardián_memorias",
+          "pintor_pensamientos",
+          "escultor_emociones",
+          "lector_mentes",
+          "decodificador_corazones",
+          "guía_espiritual",
+          "cambiador_energía",
+          "afinador_frecuencias",
+          "traductor_vibras",
+          "lector_auras",
+          "alineador_chakras",
+          "saltarín_cuántico",
+          "yo_paralelo",
+          "ser_infinito",
+          "vagabundo_eterno",
+          "explorador_consciencia",
+          "creador_melodías",
+          "tejedor_historias",
+          "poeta_píxel",
+          "nómada_digital",
+          "bailarín_nubes",
+          "arquitecto_arcoíris",
+          "hablante_silencio",
+          "coleccionista_ecos"
+        ]
+      }
+    };
+
+    function generateUsername() {
+      const style = document.getElementById("style").value;
+      const set = usernames[currentLang];
+      const options = style === "random"
+        ? [...set.aesthetic, ...set.edgy, ...set.trendy, ...set.unique]
+        : set[style];
+
+      // Filtrar usernames que NO estén en la lista de recientes
+      const availableOptions = options.filter(username => !recentUsernames.includes(username));
+
+      // Si quedan muy pocas opciones disponibles, resetear la memoria
+      if (availableOptions.length < 3) {
+        recentUsernames = [];
+        availableOptions.push(...options);
+      }
+
+      // Seleccionar username aleatorio de las opciones disponibles
+      const random = availableOptions[Math.floor(Math.random() * availableOptions.length)];
+
+      // Agregar el username a la lista de recientes
+      recentUsernames.push(random);
+
+      // Mantener solo los últimos MAX_RECENT elementos
+      if (recentUsernames.length > MAX_RECENT) {
+        recentUsernames.shift(); // Remover el más antiguo
+      }
+
+      const t = translations[currentLang];
+      const resultText = `@${random}`;
+
+      document.getElementById("output").innerHTML = `
+        <div class="phrase-text">${resultText}</div>
+        <div class="result-actions">
+          <button class="action-btn copy-btn" onclick="copyToClipboard('${random}')">📋 ${t.copy}</button>
+          <button class="action-btn save-btn" id="save-result-btn" onclick="premiumFeatures.toggleSave('${resultText}', 'Usernames')">⭐ Save</button>
+          <button class="action-btn main-share-btn" onclick="toggleShareSection()">📤 ${t.share}</button>
+        </div>
+      `;
+
+      // Add to history
+      if (window.premiumFeatures) {
+        premiumFeatures.addToHistory(resultText, 'Usernames');
+      }
+
+      // Ocultar sección de compartir al generar nuevo contenido
+      document.getElementById("share-section").style.display = "none";
+    }
+
+    function toggleShareSection() {
+      const shareSection = document.getElementById("share-section");
+      const isVisible = shareSection.style.display !== "none";
+      shareSection.style.display = isVisible ? "none" : "block";
+
+      // Actualizar título según idioma
+      const t = translations[currentLang];
+      document.getElementById("share-title").textContent = t.shareTitle;
+    }
+
+    function shareOnTwitter() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`Check out this username: ${content} #Namerly #Username #SocialMedia`);
+      window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
+    }
+
+    function shareOnInstagram() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      navigator.clipboard.writeText(`${content} - Generated by Namerly`);
+      alert("Content copied! Open Instagram and paste it in your story or post.");
+    }
+
+    function shareOnTikTok() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      navigator.clipboard.writeText(`${content} #Namerly #Username #SocialMedia #Aesthetic`);
+      alert("Content copied! Open TikTok and paste it in your video description.");
+    }
+
+    function shareOnWhatsApp() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`Check out this cool username: ${content} 👤`);
+      window.open(`https://wa.me/?text=${text}`, "_blank");
+    }
+
+    function shareOnTelegram() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`Check out this cool username: ${content} 👤`);
+      window.open(`https://t.me/share/url?text=${text}`, "_blank");
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const t = translations[currentLang];
+        alert(t.copied);
+      });
+    }
+
+    document.getElementById("lang-toggle").addEventListener("click", () => {
+      currentLang = currentLang === "en" ? "es" : "en";
+      localStorage.setItem('namerly-lang', currentLang);
+      updateUI();
+      document.getElementById("output").innerHTML = "👤";
+      // Limpiar memoria de usernames recientes al cambiar idioma
+      recentUsernames = [];
+      // Ocultar sección de compartir al cambiar idioma
+      document.getElementById("share-section").style.display = "none";
+    });
+
+    updateUI();
+  </script>
+  <!-- Legal Footer -->
+  <footer class="legal-footer"
+    style="padding: 2rem; text-align: center; color: rgba(255,255,255,0.8); position: relative; z-index: 10;">
+    <div class="footer-content">
+      <div class="footer-links" style="margin-bottom: 1rem;">
+        <a href="../privacy-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Privacy
+          Policy</a>
+        <span class="separator">|</span>
+        <a href="../terms-of-service.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Terms of
+          Service</a>
+        <span class="separator">|</span>
+        <a href="../cookie-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Cookie Policy</a>
+        <span class="separator">|</span>
+        <a href="../disclaimer.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Disclaimer</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 Namerly. All rights reserved.</p>
+        <p>🔒 Your privacy is protected. We don't store personal data.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner"
+    style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+    <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+      mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+    <br>
+    <button id="accept-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+      analítica</button>
+    <button id="reject-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+      analítica</button>
+    <button onclick="openCookieSettings()"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+      cookies</button>
+    <a href="/cookie-policy.html"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem;">Política de cookies</a>
+  </div>
+
+  <div id="cookie-settings-modal" class="cookie-settings-modal" style="display:none;">
+    <div class="cookie-settings-content">
+      <h2>Configuración de cookies</h2>
+      <div class="cookie-category">
+        <h3>🍪 Esenciales</h3>
+        <p>Estas cookies son necesarias para el funcionamiento básico del sitio y no se pueden desactivar.</p>
+      </div>
+      <div class="cookie-category">
+        <h3>📊 Analítica</h3>
+        <p>Permiten medir el uso del sitio y mejorar la experiencia. Puedes aceptar o rechazar estas cookies.</p>
+        <div>
+          <label>
+            <input type="checkbox" id="analytics-consent-checkbox" />
+            Permitir cookies de analítica
+          </label>
+        </div>
+      </div>
+      <div class="cookie-settings-buttons">
+        <button onclick="saveCookieSettings()">Guardar</button>
+        <button onclick="closeCookieSettings()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+    function showCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+    function hideCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function openCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'flex';
+      document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+    }
+    function closeCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'none';
+    }
+    function saveCookieSettings() {
+      const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+      setCookie('namerly_analytics_consent', consent, 365);
+      closeCookieSettings();
+      window.location.reload();
+    }
+    document.getElementById('accept-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'accepted', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    document.getElementById('reject-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'rejected', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    window.addEventListener('DOMContentLoaded', function () {
+      var consent = getCookie('namerly_analytics_consent');
+      if (!consent) showCookieBanner();
+      else hideCookieBanner();
+      if (consent === 'accepted') loadAnalytics();
+    });
+    function loadAnalytics() {
+      if (window.gtagLoaded) return;
+      window.gtagLoaded = true;
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21';
+      document.head.appendChild(script);
+      script.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-ZCBGMRHJ21', {
+          cookie_domain: 'namerlygenerator.netlify.app',
+          anonymize_ip: true
+        });
+      };
+    }
+  </script>
+</body>
+
+</html>

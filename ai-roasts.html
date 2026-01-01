@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>AI Roast Generator - Free Savage AI Roasts & Comebacks | Namerly</title>
+  <meta name="description"
+    content="Generate AI-powered roasts and comebacks instantly! Savage, witty, creative roasts for social media. Free AI roast generator. Perfect for TikTok, Twitter!" />
+  <meta name="keywords"
+    content="AI roasts, roast generator, AI comebacks, savage roasts, witty roasts, TikTok roasts, Twitter roasts, AI insults, clever comebacks" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Roast Generator - Savage AI Roasts & Comebacks" />
+  <meta property="og:description"
+    content="Generate savage AI roasts instantly! Perfect for social media and comedy content." />
+  <meta property="og:type" content="website" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI Roast Generator",
+    "description": "Generate AI-powered roasts and comebacks instantly! Savage, witty, creative roasts for social media.",
+    "url": "https://namerlygenerator.netlify.app/ai-roasts.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/ai-pages.css" />
+  <link rel="stylesheet" href="assets/css/adsense.css" />
+
+
+
+  <script src="assets/js/ai-common.js"></script>
+  <script src="assets/js/adsense-manager.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h1><a href="index.html" style="text-decoration: none; color: inherit;">🔥 Namerly</a></h1>
+    </div>
+    <nav>
+      <button onclick="toggleLanguage()" class="lang-btn" id="langBtn">ES</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="ai-container ai-roasts">
+      <div class="ai-badge">🤖 AI POWERED</div>
+
+      <h1 id="title">AI Roast Generator</h1>
+      <p id="subtitle">Generate savage, witty roasts using artificial intelligence</p>
+
+      <div class="warning">
+        ⚠️ <strong>Disclaimer:</strong> These roasts are for entertainment only. Use responsibly and with friends who
+        appreciate humor!
+      </div>
+
+      <div class="input-group">
+        <label for="target" id="targetLabel">Who/What are you roasting?</label>
+        <input type="text" id="target" placeholder="e.g., my friend who's always late, TikTok influencers, myself..."
+          data-placeholder-en="e.g., my friend who's always late, TikTok influencers, myself..."
+          data-placeholder-es="ej., mi amigo que siempre llega tarde, influencers de TikTok, yo mismo..." />
+      </div>
+
+      <div class="input-group">
+        <label for="style" id="styleLabel">Roast Style:</label>
+        <select id="style">
+          <option value="witty" data-en="Witty/Clever" data-es="Ingenioso/Inteligente">Witty/Clever</option>
+          <option value="savage" data-en="Savage/Brutal" data-es="Salvaje/Brutal">Savage/Brutal</option>
+          <option value="playful" data-en="Playful/Friendly" data-es="Juguetón/Amigable">Playful/Friendly</option>
+          <option value="sarcastic" data-en="Sarcastic" data-es="Sarcástico">Sarcastic</option>
+          <option value="creative" data-en="Creative/Unique" data-es="Creativo/Único">Creative/Unique</option>
+          <option value="nerdy" data-en="Nerdy/Smart" data-es="Nerd/Inteligente">Nerdy/Smart</option>
+          <option value="classic" data-en="Classic/Traditional" data-es="Clásico/Tradicional">Classic/Traditional
+          </option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="intensity" id="intensityLabel">Intensity Level:</label>
+        <select id="intensity">
+          <option value="mild" data-en="🔥 Mild (Family friendly)" data-es="🔥 Suave (Familiar)">🔥 Mild (Family
+            friendly)</option>
+          <option value="medium" data-en="🔥🔥 Medium (Spicy)" data-es="🔥🔥 Medio (Picante)">🔥🔥 Medium (Spicy)
+          </option>
+          <option value="hot" data-en="🔥🔥🔥 Hot (Savage)" data-es="🔥🔥🔥 Fuerte (Salvaje)">🔥🔥🔥 Hot (Savage)
+          </option>
+          <option value="extreme" data-en="🔥🔥🔥🔥 Extreme (Nuclear)" data-es="🔥🔥🔥🔥 Extremo (Nuclear)">🔥🔥🔥🔥
+            Extreme (Nuclear)</option>
+        </select>
+      </div>
+
+      <button class="generate-btn" onclick="generateAIRoast()" id="generateBtn">
+        Generate AI Roast 🔥
+      </button>
+
+      <div class="loading" id="loading">
+        <p>AI is crafting the perfect roast...</p>
+      </div>
+
+      <div class="result-container" id="resultContainer">
+        <div class="roast-level" id="roastLevel">
+          <span class="fire-icon">🔥</span>
+          <span class="fire-icon">🔥</span>
+          <span class="fire-icon">🔥</span>
+          <span class="fire-icon">🔥</span>
+          <span class="fire-icon">🔥</span>
+        </div>
+
+        <div class="result-text" id="resultText"></div>
+
+        <div class="social-share">
+          <h3 id="shareTitle">Share Your AI Roast</h3>
+          <div class="share-buttons">
+            <button onclick="shareToTwitter()" class="share-btn twitter">Twitter</button>
+            <button onclick="shareToInstagram()" class="share-btn instagram">Instagram</button>
+            <button onclick="shareToTikTok()" class="share-btn tiktok">TikTok</button>
+            <button onclick="shareToWhatsApp()" class="share-btn whatsapp">WhatsApp</button>
+            <button onclick="copyToClipboard()" class="share-btn copy">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="usage-limit" id="usageLimit">
+        <p>🎯 <span id="remainingUses">5</span> AI generations remaining today</p>
+        <p>Reset at midnight • Free tier</p>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="index.html">← Back to All Generators</a>
+    </div>
+  </main>
+
+  <!-- Legal Footer -->
+  <footer class="legal-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+        <span class="separator">|</span>
+        <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+        <span class="separator">|</span>
+        <a href="cookie-policy.html" class="footer-link">Cookie Policy</a>
+        <span class="separator">|</span>
+        <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 Namerly. All rights reserved.</p>
+        <p>🔒 Your privacy is protected. We don't store personal data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize language system
+    currentLanguage = initializeLanguage();
+
+    let currentResult = '';
+    let currentIntensity = 'mild';
+    const category = 'aiRoast';
+    const MAX_DAILY_USES = 3;
+
+    // Get usage data
+    const { dailyUses } = getDailyUsage(category);
+    let remainingUses = Math.max(0, MAX_DAILY_USES - dailyUses);
+
+    // Update UI
+    if (remainingUses === 0) {
+      document.getElementById('generateBtn').disabled = true;
+    }
+
+    // Translations for this specific page
+    const translations = {
+      en: {
+        title: 'AI Roast Generator',
+        subtitle: 'Generate savage, witty roasts using artificial intelligence',
+        targetLabel: 'Who/What are you roasting?',
+        styleLabel: 'Roast Style:',
+        intensityLabel: 'Intensity Level:',
+        generateBtn: 'Generate AI Roast 🔥',
+        shareTitle: 'Share Your AI Roast'
+      },
+      es: {
+        title: 'Generador IA de Insultos',
+        subtitle: 'Genera insultos ingeniosos y salvajes usando inteligencia artificial',
+        targetLabel: '¿A quién/qué vas a insultar?',
+        styleLabel: 'Estilo de Insulto:',
+        intensityLabel: 'Nivel de Intensidad:',
+        generateBtn: 'Generar Insulto IA 🔥',
+        shareTitle: 'Comparte Tu Insulto IA'
+      }
+    };
+
+    async function generateAIRoast() {
+      if (!checkUsageOrShowReward(category, MAX_DAILY_USES)) {
+        return;
+      }
+
+      const target = document.getElementById('target').value;
+      const style = document.getElementById('style').value;
+      const intensity = document.getElementById('intensity').value;
+
+      if (!target.trim()) {
+        showAlert('Please enter what you want to roast!');
+        return;
+      }
+
+      currentIntensity = intensity;
+
+      // Show loading
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('resultContainer').style.display = 'none';
+      document.getElementById('generateBtn').disabled = true;
+
+      try {
+        // Create AI prompt based on current language
+        let prompt;
+        if (currentLanguage === 'es') {
+          prompt = `Eres un comediante experto en roasts. Haz un roast sarcástico, inteligente y divertido para: ${target}. Estilo: ${style}, Intensidad: ${intensity}. Sé creativo y no uses clichés. Responde solo en español. Máximo 2 frases.`;
+        } else {
+          prompt = `You are an expert roast comedian. Write a sarcastic, clever, and funny roast for: ${target}. Style: ${style}, Intensity: ${intensity}. Be creative and avoid clichés. Respond only in English. Maximum 2 sentences.`;
+        }
+
+        // Use shared API call
+        const result = await callAIAPI(prompt, 80);
+
+        // Clean and format result or use fallback
+        if (result) {
+          currentResult = cleanAIResult(result);
+          document.getElementById('resultText').innerHTML = `<strong>✨ Gemini AI Says:</strong><br>${currentResult}`;
+        } else {
+          currentResult = generateFallbackRoast(target, style, intensity, currentLanguage);
+          document.getElementById('resultText').textContent = currentResult;
+        }
+
+        // Update usage using shared function
+        updateUsageTracking('ai-roasts');
+
+        // Show result with fire animation
+        animateFireLevel(intensity);
+        document.getElementById('resultContainer').style.display = 'block';
+
+        // Update button
+        const updatedUsage = getUsageCount('ai-roasts');
+        remainingUses = MAX_DAILY_USES - updatedUsage;
+        document.getElementById('remainingUses').textContent = Math.max(0, remainingUses);
+
+        if (remainingUses <= 0) {
+          document.getElementById('generateBtn').textContent = currentLanguage === 'en'
+            ? 'Daily limit reached 😴'
+            : 'Límite diario alcanzado 😴';
+        } else {
+          document.getElementById('generateBtn').disabled = false;
+        }
+
+      } catch (error) {
+        // Fallback to generated content on error
+        currentResult = generateFallbackRoast(target, style, intensity, currentLanguage);
+        document.getElementById('resultText').textContent = currentResult;
+        animateFireLevel(intensity);
+        document.getElementById('resultContainer').style.display = 'block';
+        document.getElementById('generateBtn').disabled = false;
+      }
+
+      document.getElementById('loading').style.display = 'none';
+    }
+
+    function generateFallbackRoast(target, style, intensity, language = 'en') {
+      const englishRoasts = {
+        witty: [
+          `${target} is so basic, they think salt is spicy 🧂`,
+          `If ${target} was a spice, they'd be flour 🥄`,
+          `${target} is like a broken pencil - completely pointless ✏️`,
+          `${target} has the energy of a sloth on sedatives 🦥`
+        ],
+        savage: [
+          `${target} is living proof that evolution can go in reverse 🧬`,
+          `${target} is the reason shampoo has instructions 🧴`,
+          `${target} makes onions cry 🧅`,
+          `${target} is like a cloud - when they disappear, it's a beautiful day ☁️`
+        ],
+        playful: [
+          `${target} is like a software update - nobody wants you, but you're still here! 📱`,
+          `${target} is so extra, they charge admission just to be around them 🎫`,
+          `${target} is like a Monday morning - nobody's excited to see you 📅`,
+          `${target} has the personality of a screensaver 💻`
+        ],
+        sarcastic: [
+          `Oh wow, ${target}, your existence is just... remarkable. Really. 👏`,
+          `${target} is so special, they probably think this roast is about someone else 🎯`,
+          `Amazing how ${target} can be so wrong with such confidence 💯`,
+          `${target} is like a participation trophy - everyone gets one, but nobody wants it 🏆`
+        ],
+        creative: [
+          `${target} is like a GPS that only gives wrong directions 🗺️`,
+          `${target} is the human equivalent of a pop-up ad 📰`,
+          `${target} has the social skills of a wifi router in airplane mode ✈️`,
+          `${target} is like a fidget spinner - briefly interesting, now just annoying 🌀`
+        ]
+      };
+
+      const spanishRoasts = {
+        witty: [
+          `${target} es tan básico/a, piensa que la sal pica 🧂`,
+          `Si ${target} fuera una especia, sería harina 🥄`,
+          `${target} es como un lápiz roto - completamente inútil ✏️`,
+          `${target} tiene la energía de un perezoso sedado 🦥`
+        ],
+        savage: [
+          `${target} es prueba viviente de que la evolución puede ir en reversa 🧬`,
+          `${target} es la razón por la que el champú tiene instrucciones 🧴`,
+          `${target} hace llorar a las cebollas 🧅`,
+          `${target} es como una nube - cuando desaparece, es un día hermoso ☁️`
+        ],
+        playful: [
+          `${target} es como una actualización de software - nadie te quiere, ¡pero sigues aquí! 📱`,
+          `${target} es tan exagerado/a, cobra entrada solo por estar cerca 🎫`,
+          `${target} es como un lunes por la mañana - nadie se emociona de verte 📅`,
+          `${target} tiene la personalidad de un protector de pantalla 💻`
+        ],
+        sarcastic: [
+          `Oh wow, ${target}, tu existencia es simplemente... notable. En serio. 👏`,
+          `${target} es tan especial, probablemente piensa que este insulto es sobre alguien más 🎯`,
+          `Increíble cómo ${target} puede estar tan equivocado/a con tanta confianza 💯`,
+          `${target} es como un trofeo de participación - todos tienen uno, pero nadie lo quiere 🏆`
+        ],
+        creative: [
+          `${target} es como un GPS que solo da direcciones equivocadas 🗺️`,
+          `${target} es el equivalente humano de un anuncio pop-up 📰`,
+          `${target} tiene las habilidades sociales de un router en modo avión ✈️`,
+          `${target} es como un fidget spinner - brevemente interesante, ahora solo molesto 🌀`
+        ]
+      };
+
+      const selectedRoasts = language === 'es' ? spanishRoasts : englishRoasts;
+      const templates = selectedRoasts[style] || selectedRoasts.witty;
+      const randomTemplate = templates[Math.floor(Math.random() * templates.length)];
+
+      // Add intensity multiplier with language support
+      const intensityPrefs = language === 'es' ? {
+        mild: '🤖 IA dice: ',
+        medium: '🔥 IA insultó: ',
+        hot: '🌶️ IA quemó: ',
+        extreme: '💀 IA aniquiló: '
+      } : {
+        mild: '🤖 AI says: ',
+        medium: '🔥 AI roasted: ',
+        hot: '🌶️ AI burned: ',
+        extreme: '💀 AI obliterated: '
+      };
+
+      return intensityPrefs[intensity] + randomTemplate;
+    }
+
+    function cleanAIResult(text) {
+      // Clean and format AI response
+      return text.replace(/^(Generated|Output|Result):?\s*/i, '')
+        .replace(/["\[\]]/g, '')
+        .trim();
+    }
+
+    function animateFireLevel(intensity) {
+      const fireIcons = document.querySelectorAll('.fire-icon');
+      const levels = { mild: 1, medium: 2, hot: 3, extreme: 4 };
+      const activeCount = levels[intensity] || 1;
+
+      // Reset all
+      fireIcons.forEach(icon => icon.classList.remove('active'));
+
+      // Animate active ones
+      for (let i = 0; i < activeCount; i++) {
+        setTimeout(() => {
+          fireIcons[i].classList.add('active');
+        }, i * 200);
+      }
+    }
+
+    // Social sharing functions
+    function shareToTwitter() {
+      shareToTwitterShared(currentResult, 'AIRoasts', '🔥 AI Roast Alert!', '#SavageAI');
+    }
+
+    function shareToInstagram() {
+      shareToInstagramShared(currentResult, 'Roast copied! Share it in your Instagram story with 🔥🤖 hashtags!');
+    }
+
+    function shareToTikTok() {
+      shareToTikTokShared(currentResult, 'Roast copied! Perfect for your TikTok comment or video 🎵🔥');
+    }
+
+    function shareToWhatsApp() {
+      shareToWhatsAppShared(currentResult, '🔥 Check out this AI roast', '🤖 Generated with Namerly!');
+    }
+
+    function copyToClipboard() {
+      copyToClipboardShared(currentResult, 'Roast copied to clipboard! 🔥📋', 'Error copying roast');
+    }
+
+    // Language toggle
+    function toggleLanguage() {
+      toggleLanguageShared();
+      updateLanguage();
+    }
+
+    function updateLanguage() {
+      // Update page text elements using cached DOM elements
+      const elements = domCache.getElements(['title', 'subtitle', 'targetLabel', 'styleLabel', 'intensityLabel', 'shareTitle', 'generateBtn', 'target']);
+
+      elements.title.textContent = translations[currentLanguage].title;
+      elements.subtitle.textContent = translations[currentLanguage].subtitle;
+      elements.targetLabel.textContent = translations[currentLanguage].targetLabel;
+      elements.styleLabel.textContent = translations[currentLanguage].styleLabel;
+      elements.intensityLabel.textContent = translations[currentLanguage].intensityLabel;
+      elements.shareTitle.textContent = translations[currentLanguage].shareTitle;
+
+      // Update button based on usage status
+      if (remainingUses === 0) {
+        elements.generateBtn.textContent = currentLanguage === 'en'
+          ? 'Daily limit reached 😴'
+          : 'Límite diario alcanzado 😴';
+      } else {
+        elements.generateBtn.textContent = translations[currentLanguage].generateBtn;
+      }
+
+      // Update input placeholder
+      const placeholderText = currentLanguage === 'en' ?
+        elements.target.getAttribute('data-placeholder-en') :
+        elements.target.getAttribute('data-placeholder-es');
+      elements.target.placeholder = placeholderText;
+
+      // Update dropdown options
+      updateDropdownOptions('style', currentLanguage);
+      updateDropdownOptions('intensity', currentLanguage);
+
+      // Update common elements using shared function
+      updateCommonElements(currentLanguage);
+    }
+
+    function updateDropdownOptions(selectId, language) {
+      const select = domCache.getElement(selectId);
+      const options = select.querySelectorAll('option');
+
+      options.forEach(option => {
+        if (option.value === '') return; // Skip placeholder option
+
+        const text = language === 'en' ?
+          option.getAttribute('data-en') :
+          option.getAttribute('data-es');
+
+        if (text) {
+          option.textContent = text;
+        }
+      });
+    }
+
+    // Initialize
+    updateLanguage();
+  </script>
+</body>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner"
+  style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+  <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+    mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+  <br>
+  <button id="accept-analytics"
+    style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+    analítica</button>
+  <button id="reject-analytics"
+    style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+    analítica</button>
+  <button onclick="openCookieSettings()"
+    style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+    cookies</button>
+  <a href="/cookie-policy.html"
+    style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem;">Política de cookies</a>
+</div>
+
+<div id="cookie-settings-modal" class="cookie-settings-modal" style="display:none;">
+  <div class="cookie-settings-content">
+    <h2>Configuración de cookies</h2>
+    <div class="cookie-category">
+      <h3>🍪 Esenciales</h3>
+      <p>Estas cookies son necesarias para el funcionamiento básico del sitio y no se pueden desactivar.</p>
+    </div>
+    <div class="cookie-category">
+      <h3>📊 Analítica</h3>
+      <p>Permiten medir el uso del sitio y mejorar la experiencia. Puedes aceptar o rechazar estas cookies.</p>
+      <div>
+        <label>
+          <input type="checkbox" id="analytics-consent-checkbox" />
+          Permitir cookies de analítica
+        </label>
+      </div>
+    </div>
+    <div class="cookie-settings-buttons">
+      <button onclick="saveCookieSettings()">Guardar</button>
+      <button onclick="closeCookieSettings()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      const date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  }
+  function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+  function showCookieBanner() {
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+  function hideCookieBanner() {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+  function openCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'flex';
+    document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+  }
+  function closeCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'none';
+  }
+  function saveCookieSettings() {
+    const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+    setCookie('namerly_analytics_consent', consent, 365);
+    closeCookieSettings();
+    window.location.reload();
+  }
+  document.getElementById('accept-analytics').onclick = function () {
+    setCookie('namerly_analytics_consent', 'accepted', 365);
+    hideCookieBanner();
+    window.location.reload();
+  };
+  document.getElementById('reject-analytics').onclick = function () {
+    setCookie('namerly_analytics_consent', 'rejected', 365);
+    hideCookieBanner();
+    window.location.reload();
+  };
+  window.addEventListener('DOMContentLoaded', function () {
+    var consent = getCookie('namerly_analytics_consent');
+    if (!consent) showCookieBanner();
+    else hideCookieBanner();
+    if (consent === 'accepted') loadAnalytics();
+  });
+  function loadAnalytics() {
+    if (window.gtagLoaded) return;
+    window.gtagLoaded = true;
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21';
+    document.head.appendChild(script);
+    script.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-ZCBGMRHJ21', {
+        cookie_domain: 'namerlygenerator.netlify.app',
+        anonymize_ip: true
+      });
+    };
+  }
+</script>
+
+</html>

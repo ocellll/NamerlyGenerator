@@ -1,0 +1,887 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roast Generator | Funny Roasts & Comebacks - Namerly</title>
+  <meta name="description"
+    content="Generate hilarious roasts and clever comebacks! Perfect for friendly banter, jokes, and witty responses. Clean and funny roasts for everyone." />
+  <meta name="keywords"
+    content="roast generator, funny roasts, comebacks, witty responses, roast jokes, clever insults, funny comebacks, roast lines, banter" />
+  <meta name="author" content="Namerly" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://namerlygenerator.netlify.app/roasts/" />
+  <meta property="og:title" content="Roast Generator | Funny Roasts & Comebacks - Namerly" />
+  <meta property="og:description"
+    content="Generate hilarious roasts and clever comebacks! Perfect for friendly banter and jokes." />
+  <meta property="og:image" content="https://namerlygenerator.netlify.app/assets/images/roasts-og.jpg" />
+  <meta property="og:site_name" content="Namerly" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://namerlygenerator.netlify.app/roasts/" />
+  <meta name="twitter:title" content="Roast Generator | Funny Roasts & Comebacks - Namerly" />
+  <meta name="twitter:description"
+    content="Generate hilarious roasts and clever comebacks! Perfect for friendly banter and jokes." />
+  <meta name="twitter:image" content="https://namerlygenerator.netlify.app/assets/images/roasts-og.jpg" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://namerlygenerator.netlify.app/roasts/" />
+
+  <!-- Language alternates -->
+  <link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/roasts/" />
+  <link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/roasts/" />
+  <link rel="alternate" hreflang="x-default" href="https://namerlygenerator.netlify.app/roasts/" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- Google Analytics 4 removed (loaded via cookie consent) -->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #fd7e14 0%, #dc3545 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated background particles */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/></circle></svg>') repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    main {
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      letter-spacing: 0.5px;
+    }
+
+    .control-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    label {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    select {
+      width: 100%;
+      max-width: 300px;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      border: 2px solid #e2e8f0;
+      border-radius: 15px;
+      background: white;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    select:hover {
+      border-color: #fd7e14;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(253, 126, 20, 0.3);
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #fd7e14;
+      box-shadow: 0 0 0 3px rgba(253, 126, 20, 0.2);
+    }
+
+    .generate-btn {
+      background: linear-gradient(135deg, #fd7e14 0%, #dc3545 100%);
+      color: white;
+      border: none;
+      padding: 1.2rem 3rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(253, 126, 20, 0.4);
+      margin-top: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .generate-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s;
+    }
+
+    .generate-btn:hover::before {
+      left: 100%;
+    }
+
+    .generate-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(253, 126, 20, 0.5);
+    }
+
+    .generate-btn:active {
+      transform: translateY(-1px);
+    }
+
+    #output {
+      margin-top: 3rem;
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-family: 'Roboto', 'Inter', sans-serif;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.6;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: all 0.5s ease;
+    }
+
+    #output.has-content {
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .phrase-text {
+      font-size: 1.4rem;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      color: #1a202c;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      line-height: 1.7;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+      font-family: 'Roboto', 'Inter', sans-serif;
+      text-align: center;
+    }
+
+    .copy-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, #17a2b8, #138496);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(23, 162, 184, 0.3);
+      margin: 0.5rem;
+      font-weight: 500;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(23, 162, 184, 0.4);
+      background: linear-gradient(135deg, #138496, #17a2b8);
+    }
+
+    .share-section {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 2px dashed rgba(253, 126, 20, 0.3);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .share-title {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #333;
+      font-size: 1.2rem;
+    }
+
+    .main-share-btn {
+      margin-left: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+      margin: 0.5rem;
+      font-weight: 500;
+    }
+
+    .main-share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(16, 185, 129, 0.4);
+      background: linear-gradient(135deg, #059669, #10b981);
+    }
+
+    .share-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .share-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .twitter {
+      background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+      color: white;
+    }
+
+    .instagram {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+    }
+
+    .tiktok {
+      background: linear-gradient(135deg, #000, #333);
+      color: white;
+    }
+
+    .whatsapp {
+      background: linear-gradient(135deg, #25d366, #20c157);
+      color: white;
+    }
+
+    .telegram {
+      background: linear-gradient(135deg, #0088cc, #0066aa);
+      color: white;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      main {
+        padding: 2rem 1rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        letter-spacing: 0.3px;
+      }
+
+      .control-section {
+        padding: 1.5rem;
+      }
+
+      #output {
+        padding: 2rem;
+        font-size: 1.2rem;
+      }
+
+      .phrase-text {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        font-weight: 400;
+        font-family: 'Roboto', 'Inter', sans-serif;
+      }
+
+      .share-buttons {
+        gap: 10px;
+      }
+
+      .share-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Loading animation */
+    .loading {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Emoji animation */
+    .emoji-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">🔥 Namerly</h1>
+    <div>
+      <button id="lang-toggle"
+        style="margin-right: 1rem; padding: 0.4rem 0.8rem; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">🌐
+        ES</button>
+      <a href="../index.html" style="text-decoration:none;">← Home</a>
+    </div>
+  </header>
+  <main>
+    <h2 id="subtitle">Creative Roasts</h2>
+    <div class="control-section">
+      <label for="style">Choose a style:</label>
+      <select id="style">
+        <option value="clever">🧠 Clever</option>
+        <option value="savage">🔥 Savage</option>
+        <option value="funny">😂 Funny</option>
+        <option value="tech">💻 Tech</option>
+        <option value="random">🎲 Random</option>
+      </select>
+      <br>
+      <button onclick="generateRoast()" class="generate-btn">
+        <span id="btn-text">Generate</span>
+      </button>
+    </div>
+    <div id="output">🔥</div>
+    <div id="share-section" style="display: none;">
+      <div class="share-section">
+        <div class="share-title" id="share-title">📱 Share on Social Media</div>
+        <div class="share-buttons">
+          <button class="share-btn twitter" onclick="shareOnTwitter()">🐦 Twitter</button>
+          <button class="share-btn instagram" onclick="shareOnInstagram()">📸 Instagram</button>
+          <button class="share-btn tiktok" onclick="shareOnTikTok()">🎵 TikTok</button>
+          <button class="share-btn whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>
+          <button class="share-btn telegram" onclick="shareOnTelegram()">✈️ Telegram</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Legal Footer -->
+  <footer class="legal-footer"
+    style="padding: 2rem; text-align: center; color: rgba(255,255,255,0.8); position: relative; z-index: 10;">
+    <div class="footer-content">
+      <div class="footer-links" style="margin-bottom: 1rem;">
+        <a href="../privacy-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Privacy
+          Policy</a>
+        <span class="separator">|</span>
+        <a href="../terms-of-service.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Terms of
+          Service</a>
+        <span class="separator">|</span>
+        <a href="../cookie-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Cookie Policy</a>
+        <span class="separator">|</span>
+        <a href="../disclaimer.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Disclaimer</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 Namerly. All rights reserved.</p>
+        <p>🔒 Your privacy is protected. We don't store personal data.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    let currentLang = localStorage.getItem('namerly-lang') || (navigator.language.startsWith("es") ? "es" : "en");
+    let recentRoasts = []; // Array para recordar roasts recientes
+    const MAX_RECENT = 8; // Recordar últimos 8 elementos para evitar repeticiones
+
+    const translations = {
+      en: {
+        subtitle: "Creative Roasts",
+        chooseStyle: "Choose a style:",
+        generate: "Generate",
+        copy: "Copy",
+        copied: "Copied!",
+        share: "Share",
+        shareTitle: "📱 Share on Social Media",
+        styles: {
+          clever: "🧠 Clever",
+          savage: "🔥 Savage",
+          funny: "😂 Funny",
+          tech: "💻 Tech",
+          random: "🎲 Random"
+        }
+      },
+      es: {
+        subtitle: "Insultos Creativos (Roasts)",
+        chooseStyle: "Elige un estilo:",
+        generate: "Generar",
+        copy: "Copiar",
+        copied: "¡Copiado!",
+        share: "Compartir",
+        shareTitle: "📱 Compartir en Redes Sociales",
+        styles: {
+          clever: "🧠 Inteligente",
+          savage: "🔥 Salvaje",
+          funny: "😂 Gracioso",
+          tech: "💻 Tech",
+          random: "🎲 Aleatorio"
+        }
+      }
+    };
+
+    function updateUI() {
+      const t = translations[currentLang];
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.querySelector("label[for='style']").textContent = t.chooseStyle;
+      document.querySelector("button[onclick='generateRoast()']").textContent = t.generate;
+
+      // Update dropdown options
+      const styleSelect = document.getElementById("style");
+      styleSelect.innerHTML = '';
+      Object.keys(t.styles).forEach(key => {
+        const option = document.createElement('option');
+        option.value = key;
+        option.textContent = t.styles[key];
+        styleSelect.appendChild(option);
+      });
+
+      const nextLang = currentLang === "en" ? "ES" : "EN";
+      document.getElementById("lang-toggle").innerHTML = `🌐 ${nextLang}`;
+    }
+
+    const roasts = {
+      en: {
+        clever: [
+          "You're like a software update. Whenever I see you, I think 'not now'.",
+          "You're not stupid, you just have bad luck thinking.",
+          "I'd explain it to you, but I don't have any crayons with me.",
+          "You're the reason God created the middle finger.",
+          "You're like Monday mornings. Nobody likes you.",
+          "If ignorance is bliss, you must be the happiest person alive.",
+          "You're proof that evolution can go in reverse.",
+          "You're like a participation trophy. Nice, but not really worth much.",
+          "You're the reason shampoo has instructions.",
+          "You're like a cloud. When you disappear, it's a beautiful day.",
+          "You're not the dumbest person in the world, but you better hope they don't die.",
+          "You're like a dictionary. You add meaning to my life... by showing me what not to be.",
+          "You're like a broken clock. Right twice a day, but useless the rest of the time."
+        ],
+        savage: [
+          "You're slower than internet explorer running on Windows 95.",
+          "You have the personality of a wet paper towel.",
+          "You're about as useful as a chocolate teapot.",
+          "You're like a broken pencil - completely pointless.",
+          "You're the human equivalent of a participation award.",
+          "You're as sharp as a bowling ball.",
+          "You have the attention span of a goldfish on energy drinks.",
+          "You're like a screen door on a submarine - useless.",
+          "You're the human version of a software bug.",
+          "You're like a white crayon. Nobody knows why you exist.",
+          "You're as useful as a chocolate fireguard.",
+          "You're like a traffic jam. Everyone's annoyed when they encounter you.",
+          "You're proof that natural selection isn't working."
+        ],
+        funny: [
+          "You're slower than the WiFi at school.",
+          "You have the energy of a dead battery.",
+          "You're like a GPS that always gets lost.",
+          "You're as coordinated as a drunk penguin.",
+          "You have the fashion sense of a scarecrow.",
+          "You're like a solar-powered flashlight.",
+          "You're as organized as a tornado in a trailer park.",
+          "You have the cooking skills of a microwave on fire.",
+          "You're like a balloon without helium - just sad and deflated.",
+          "You're as smooth as sandpaper.",
+          "You're like a unicorn. Magical in theory, but doesn't exist in reality.",
+          "You're as bright as a black hole.",
+          "You're like a rubber ball in a square room - you never go where expected."
+        ],
+        tech: [
+          "Your brain runs on Internet Explorer.",
+          "You're like a 404 error - not found.",
+          "You're buffering at 1% constantly.",
+          "Your intelligence is like dial-up internet.",
+          "You're the human version of a blue screen of death.",
+          "You're like a virus - annoying and hard to get rid of.",
+          "Your logic has more bugs than a beta software.",
+          "You're running on single-core processing power.",
+          "You're like Windows Vista - everyone wants to forget you exist.",
+          "Your WiFi signal is weaker than your personality.",
+          "You're like a pop-up ad - unwanted and blocking everyone's view.",
+          "You're operating on airplane mode permanently.",
+          "You're like a corrupted file - nobody can open you."
+        ]
+      },
+      es: {
+        clever: [
+          "Eres como una actualización de software. Cada vez que te veo, pienso 'ahora no'.",
+          "No eres tonto, solo tienes mala suerte pensando.",
+          "Te lo explicaría, pero no tengo crayones conmigo.",
+          "Eres la razón por la que Dios creó el dedo medio.",
+          "Eres como los lunes por la mañana. Nadie te quiere.",
+          "Si la ignorancia es felicidad, debes ser la persona más feliz del mundo.",
+          "Eres la prueba de que la evolución puede ir en reversa.",
+          "Eres como un trofeo de participación. Bonito, pero no vale mucho.",
+          "Eres la razón por la que el champú tiene instrucciones.",
+          "Eres como una nube. Cuando desapareces, es un día hermoso.",
+          "No eres la persona más tonta del mundo, pero mejor espera que no se muera.",
+          "Eres como un diccionario. Le das sentido a mi vida... mostrándome lo que no debo ser.",
+          "Eres como un reloj roto. Correcto dos veces al día, pero inútil el resto del tiempo."
+        ],
+        savage: [
+          "Eres más lento que Internet Explorer corriendo en Windows 95.",
+          "Tienes la personalidad de una toalla de papel mojada.",
+          "Eres tan útil como una tetera de chocolate.",
+          "Eres como un lápiz roto - completamente sin sentido.",
+          "Eres el equivalente humano de un premio de participación.",
+          "Eres tan afilado como una pelota de bowling.",
+          "Tienes la atención de un pez dorado con bebidas energéticas.",
+          "Eres como una puerta mosquitera en un submarino - inútil.",
+          "Eres la versión humana de un bug de software.",
+          "Eres como un crayón blanco. Nadie sabe por qué existes.",
+          "Eres tan útil como un guardia de chocolate.",
+          "Eres como un atasco de tráfico. Todos se molestan cuando te encuentran.",
+          "Eres la prueba de que la selección natural no funciona."
+        ],
+        funny: [
+          "Eres más lento que el WiFi del instituto.",
+          "Tienes la energía de una batería muerta.",
+          "Eres como un GPS que siempre se pierde.",
+          "Eres tan coordinado como un pingüino borracho.",
+          "Tienes el sentido de la moda de un espantapájaros.",
+          "Eres como una linterna solar.",
+          "Eres tan organizado como un tornado en un parque de casas móviles.",
+          "Tienes las habilidades culinarias de un microondas en llamas.",
+          "Eres como un globo sin helio - solo triste y desinflado.",
+          "Eres tan suave como papel de lija.",
+          "Eres como un unicornio. Mágico en teoría, pero no existe en la realidad.",
+          "Eres tan brillante como un agujero negro.",
+          "Eres como una pelota de goma en un cuarto cuadrado - nunca vas donde se esperaba."
+        ],
+        tech: [
+          "Tu cerebro funciona con Internet Explorer.",
+          "Eres como un error 404 - no encontrado.",
+          "Estás cargando al 1% constantemente.",
+          "Tu inteligencia es como internet de dial-up.",
+          "Eres la versión humana de la pantalla azul de la muerte.",
+          "Eres como un virus - molesto y difícil de eliminar.",
+          "Tu lógica tiene más bugs que un software beta.",
+          "Funcionas con poder de procesamiento de un solo núcleo.",
+          "Eres como Windows Vista - todos quieren olvidar que existes.",
+          "Tu señal WiFi es más débil que tu personalidad.",
+          "Eres como un anuncio emergente - no deseado y bloqueando la vista de todos.",
+          "Estás operando en modo avión permanentemente.",
+          "Eres como un archivo corrupto - nadie puede abrirte."
+        ]
+      }
+    };
+
+    function generateRoast() {
+      const style = document.getElementById("style").value;
+      const set = roasts[currentLang];
+      const options = style === "random"
+        ? [...set.clever, ...set.savage, ...set.funny, ...set.tech]
+        : set[style];
+
+      // Filtrar roasts que NO estén en la lista de recientes
+      const availableOptions = options.filter(roast => !recentRoasts.includes(roast));
+
+      // Si quedan muy pocas opciones disponibles, resetear la memoria
+      if (availableOptions.length < 3) {
+        recentRoasts = [];
+        availableOptions.push(...options);
+      }
+
+      // Seleccionar roast aleatorio de las opciones disponibles
+      const random = availableOptions[Math.floor(Math.random() * availableOptions.length)];
+
+      // Agregar el roast a la lista de recientes
+      recentRoasts.push(random);
+
+      // Mantener solo los últimos MAX_RECENT elementos
+      if (recentRoasts.length > MAX_RECENT) {
+        recentRoasts.shift(); // Remover el más antiguo
+      }
+
+      const t = translations[currentLang];
+      document.getElementById("output").innerHTML = `"${random}"<br><button class="copy-btn" onclick="copyToClipboard('${random}')">${t.copy}</button> <button class="main-share-btn" onclick="toggleShareSection()">${t.share}</button>`;
+
+      // Ocultar sección de compartir al generar nuevo contenido
+      document.getElementById("share-section").style.display = "none";
+    }
+
+    function toggleShareSection() {
+      const shareSection = document.getElementById("share-section");
+      const isVisible = shareSection.style.display !== "none";
+      shareSection.style.display = isVisible ? "none" : "block";
+
+      // Actualizar título según idioma
+      const t = translations[currentLang];
+      document.getElementById("share-title").textContent = t.shareTitle;
+    }
+
+    function shareOnTwitter() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`🔥 ${content} #Namerly #Roasts #Savage`);
+      window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
+    }
+
+    function shareOnInstagram() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      navigator.clipboard.writeText(`🔥 ${content} - Generated by Namerly`);
+      alert("Content copied! Open Instagram and paste it in your story or post.");
+    }
+
+    function shareOnTikTok() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      navigator.clipboard.writeText(`🔥 ${content} #Namerly #Roasts #Savage #Viral`);
+      alert("Content copied! Open TikTok and paste it in your video description.");
+    }
+
+    function shareOnWhatsApp() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`🔥 ${content} - Savage roast!`);
+      window.open(`https://wa.me/?text=${text}`, "_blank");
+    }
+
+    function shareOnTelegram() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`🔥 ${content} - Savage roast!`);
+      window.open(`https://t.me/share/url?text=${text}`, "_blank");
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const t = translations[currentLang];
+        alert(t.copied);
+      });
+    }
+
+    document.getElementById("lang-toggle").addEventListener("click", () => {
+      currentLang = currentLang === "en" ? "es" : "en";
+      localStorage.setItem('namerly-lang', currentLang);
+      updateUI();
+      document.getElementById("output").innerHTML = "🔥";
+      // Limpiar memoria de roasts recientes al cambiar idioma
+      recentRoasts = [];
+      // Ocultar sección de compartir al cambiar idioma
+      document.getElementById("share-section").style.display = "none";
+    });
+
+    updateUI();
+  </script>
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner"
+    style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+    <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+      mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+    <br>
+    <button id="accept-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+      analítica</button>
+    <button id="reject-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+      analítica</button>
+    <button onclick="openCookieSettings()"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+      cookies</button>
+    <a href="/cookie-policy.html"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem;">Política de cookies</a>
+  </div>
+
+  <div id="cookie-settings-modal" class="cookie-settings-modal" style="display:none;">
+    <div class="cookie-settings-content">
+      <h2>Configuración de cookies</h2>
+      <div class="cookie-category">
+        <h3>🍪 Esenciales</h3>
+        <p>Estas cookies son necesarias para el funcionamiento básico del sitio y no se pueden desactivar.</p>
+      </div>
+      <div class="cookie-category">
+        <h3>📊 Analítica</h3>
+        <p>Permiten medir el uso del sitio y mejorar la experiencia. Puedes aceptar o rechazar estas cookies.</p>
+        <div>
+          <label>
+            <input type="checkbox" id="analytics-consent-checkbox" />
+            Permitir cookies de analítica
+          </label>
+        </div>
+      </div>
+      <div class="cookie-settings-buttons">
+        <button onclick="saveCookieSettings()">Guardar</button>
+        <button onclick="closeCookieSettings()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+    function showCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+    function hideCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function openCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'flex';
+      document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+    }
+    function closeCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'none';
+    }
+    function saveCookieSettings() {
+      const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+      setCookie('namerly_analytics_consent', consent, 365);
+      closeCookieSettings();
+      window.location.reload();
+    }
+    document.getElementById('accept-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'accepted', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    document.getElementById('reject-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'rejected', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    window.addEventListener('DOMContentLoaded', function () {
+      var consent = getCookie('namerly_analytics_consent');
+      if (!consent) showCookieBanner();
+      else hideCookieBanner();
+      if (consent === 'accepted') loadAnalytics();
+    });
+    function loadAnalytics() {
+      if (window.gtagLoaded) return;
+      window.gtagLoaded = true;
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21';
+      document.head.appendChild(script);
+      script.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-ZCBGMRHJ21', {
+          cookie_domain: 'namerlygenerator.netlify.app',
+          anonymize_ip: true
+        });
+      };
+    }
+  </script>
+<script type="module" src="../../assets/js/premium-features.js"></script>
+</body>
+
+</html>

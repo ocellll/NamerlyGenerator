@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - NamerlyGenerator | Free Name & Content Generator</title>
+  <meta name="description" content="Learn about NamerlyGenerator - Your go-to free tool for creating viral names, usernames, pickup lines, and social media content. Trusted by thousands of users worldwide.">
+  <meta name="keywords" content="about namerly, name generator, content creator tools, about us">
+  <link rel="canonical" href="https://namerlygenerator.netlify.app/about.html">
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8550109275788235"
+     crossorigin="anonymous"></script>
+  
+  <style>
+    .about-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    .about-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 10px;
+    }
+    
+    .about-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .about-header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+    }
+    
+    .about-section {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      border-left: 4px solid #667eea;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    
+    .about-section h2 {
+      color: #333;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    
+    .about-section p {
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    
+    .about-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .about-section ul li {
+      padding: 0.5rem 0;
+      color: #555;
+      position: relative;
+      padding-left: 2rem;
+    }
+    
+    .about-section ul li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #667eea;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .feature-card {
+      padding: 1.5rem;
+      background: white;
+      border: 2px solid #e1e5e9;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      border-color: #667eea;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .feature-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    
+    .feature-description {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .team-section {
+      text-align: center;
+      margin: 3rem 0;
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 10px;
+    }
+    
+    .contact-cta {
+      text-align: center;
+      margin: 3rem 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 10px;
+    }
+    
+    .contact-cta h2 {
+      margin-bottom: 1rem;
+    }
+    
+    .contact-cta a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 1rem 2rem;
+      background: white;
+      color: #667eea;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-cta a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .about-header h1 {
+        font-size: 2rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="about-container">
+    <a href="index.html" class="back-link">← Back to Home</a>
+    
+    <div class="about-header">
+      <h1>🎯 About NamerlyGenerator</h1>
+      <p>Your trusted free tool for viral names, content, and creative inspiration</p>
+    </div>
+
+    <div class="about-section">
+      <h2>🚀 Our Mission</h2>
+      <p>At NamerlyGenerator, we believe that everyone deserves access to high-quality, creative content generation tools—completely free. Whether you're looking for the perfect Instagram username, a catchy pickup line, or viral YouTube video ideas, we've got you covered.</p>
+      <p>Our mission is to empower content creators, social media enthusiasts, and everyday users with instant access to creative inspiration. No registration required, no credit card needed, just pure creativity at your fingertips.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">19+</div>
+        <div class="stat-label">Free Generators</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">1000s</div>
+        <div class="stat-label">Daily Users</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Languages</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Free Forever</div>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <h2>💡 What We Offer</h2>
+      <ul>
+        <li><strong>19+ Free Generators:</strong> From crush messages to YouTube ideas, we cover it all</li>
+        <li><strong>Bilingual Support:</strong> Full English and Spanish language support</li>
+        <li><strong>AI-Powered Tools:</strong> Advanced AI generators for pickup lines, roasts, and captions</li>
+        <li><strong>No Registration:</strong> Use all features without creating an account</li>
+        <li><strong>Mobile-Friendly:</strong> Optimized for all devices - phone, tablet, desktop</li>
+        <li><strong>Regular Updates:</strong> New generators and features added frequently</li>
+        <li><strong>Privacy-Focused:</strong> We don't store your personal data</li>
+        <li><strong>Ad-Supported:</strong> Free to use, supported by ethical advertising</li>
+      </ul>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <div class="feature-title">Social Media Content</div>
+        <div class="feature-description">Generate Instagram usernames, TikTok captions, bios, and more to boost your social media presence.</div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🎮</div>
+        <div class="feature-title">Gaming & Entertainment</div>
+        <div class="feature-description">Create unique gamer names, WiFi names, and fun content for your online presence.</div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">💕</div>
+        <div class="feature-title">Relationships & Dating</div>
+        <div class="feature-description">Get creative pickup lines, crush messages, and icebreaker questions for any situation.</div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <div class="feature-title">AI Technology</div>
+        <div class="feature-description">Powered by advanced AI for more natural, creative, and contextually relevant content.</div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🎥</div>
+        <div class="feature-title">Content Creator Tools</div>
+        <div class="feature-description">YouTube video ideas, titles, and viral content suggestions for content creators.</div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <div class="feature-title">Global Reach</div>
+        <div class="feature-description">Available in English and Spanish, serving users worldwide with culturally relevant content.</div>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <h2>🎨 Our Story</h2>
+      <p>NamerlyGenerator was created by a team of developers and content creators who recognized a gap in the market for quality, free content generation tools. Frustrated with paid tools that locked essential features behind paywalls, we set out to create something better.</p>
+      <p>What started as a simple name generator has evolved into a comprehensive suite of 19+ creative tools, serving thousands of users daily. We're constantly listening to our community and adding new features based on user feedback.</p>
+    </div>
+
+    <div class="about-section">
+      <h2>🔒 Privacy & Ethics</h2>
+      <p>We take your privacy seriously. Here's what makes us different:</p>
+      <ul>
+        <li><strong>No Data Collection:</strong> We don't require accounts or store personal information</li>
+        <li><strong>Local Storage Only:</strong> Your preferences stay on your device</li>
+        <li><strong>Transparent Advertising:</strong> We use Google AdSense to keep the service free</li>
+        <li><strong>GDPR Compliant:</strong> Full compliance with European data protection regulations</li>
+        <li><strong>Cookie Control:</strong> You choose which cookies to accept</li>
+        <li><strong>Open Communication:</strong> Clear privacy policy and terms of service</li>
+      </ul>
+    </div>
+
+    <div class="about-section">
+      <h2>💰 Why We Use Advertising</h2>
+      <p>NamerlyGenerator is completely free to use, and we want to keep it that way forever. To maintain and improve our services without charging users, we display advertisements through Google AdSense.</p>
+      <p>These ads help us:</p>
+      <ul>
+        <li>Keep all features free for everyone</li>
+        <li>Cover server and development costs</li>
+        <li>Add new generators and features regularly</li>
+        <li>Provide technical support and maintenance</li>
+        <li>Improve performance and user experience</li>
+      </ul>
+      <p>We carefully manage ad placement to ensure they don't disrupt your experience, and you always have control over your ad preferences through Google Ads Settings.</p>
+    </div>
+
+    <div class="team-section">
+      <h2>👥 Our Team</h2>
+      <p>We're a small but passionate team of developers, designers, and content creators dedicated to building the best free content generation tools on the web.</p>
+      <p>Every day, we work to improve NamerlyGenerator based on user feedback and emerging trends in social media and content creation.</p>
+    </div>
+
+    <div class="about-section">
+      <h2>🎯 Future Plans</h2>
+      <p>We're constantly working on new features and improvements. Here's what's coming:</p>
+      <ul>
+        <li>More AI-powered generators</li>
+        <li>Additional language support</li>
+        <li>Enhanced personalization features</li>
+        <li>Mobile app versions</li>
+        <li>Community-suggested generators</li>
+        <li>Integration with social media platforms</li>
+      </ul>
+    </div>
+
+    <div class="contact-cta">
+      <h2>📧 Get in Touch</h2>
+      <p>Have feedback, suggestions, or just want to say hi? We'd love to hear from you!</p>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <hr style="margin: 2rem 0; border: none; border-top: 2px solid #e1e5e9;">
+    
+    <div style="text-align: center; color: #666; font-size: 0.9rem; margin-top: 2rem;">
+      <p>© 2025 NamerlyGenerator. All rights reserved.</p>
+      <p>
+        <a href="privacy-policy.html" style="color: #667eea; text-decoration: none;">Privacy Policy</a> | 
+        <a href="terms-of-service.html" style="color: #667eea; text-decoration: none;">Terms of Service</a> | 
+        <a href="cookie-policy.html" style="color: #667eea; text-decoration: none;">Cookie Policy</a> | 
+        <a href="contact.html" style="color: #667eea; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

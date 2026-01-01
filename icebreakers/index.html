@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Icebreaker Questions Generator | Conversation Starters - Namerly</title>
+  <meta name="description"
+    content="Generate perfect icebreaker questions and conversation starters! Great for dating, networking, meetings, and social situations. Break the ice easily!" />
+  <meta name="keywords"
+    content="icebreaker questions, conversation starters, icebreakers, dating questions, networking questions, social questions, meeting icebreakers" />
+  <meta name="author" content="Namerly" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://namerlygenerator.netlify.app/icebreakers/" />
+  <meta property="og:title" content="Icebreaker Questions Generator | Conversation Starters - Namerly" />
+  <meta property="og:description"
+    content="Generate perfect icebreaker questions and conversation starters! Great for dating, networking, and meetings." />
+  <meta property="og:image" content="https://namerlygenerator.netlify.app/assets/images/icebreakers-og.jpg" />
+  <meta property="og:site_name" content="Namerly" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://namerlygenerator.netlify.app/icebreakers/" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- Google Analytics 4 -->
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      /* Blue Ice Gradient */
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    /* Animated background particles */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/></circle></svg>') repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #title {
+      font-size: 1.8rem;
+      color: white;
+      margin: 0;
+    }
+
+    main {
+      padding: 3rem 2rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .control-section {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    select,
+    button {
+      margin: 0.5rem;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 50px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    button.generate-btn {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+      border: none;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      transition: transform 0.2s;
+    }
+
+    button.generate-btn:hover {
+      transform: scale(1.05);
+    }
+
+    #output {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #333;
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+    }
+
+    .copy-btn {
+      margin-top: 1rem;
+      background: #2563eb;
+      color: white;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      #output {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">❄️ Namerly</h1>
+    <div>
+      <button id="lang-toggle" style="background: rgba(255,255,255,0.2); color: white; border: none;">🌐 ES</button>
+      <a href="../index.html" style="color: white; text-decoration:none; margin-left: 1rem; font-weight: 500;">←
+        Home</a>
+    </div>
+  </header>
+
+  <main>
+    <h2 id="subtitle">Ice Breakers</h2>
+
+    <div class="control-section">
+      <label for="style" style="display: block; margin-bottom: 1rem; font-weight: 600; color: #444;">Choose
+        Category:</label>
+      <select id="style">
+        <option value="deep">🧠 Deep Questions</option>
+        <option value="fun">🎉 Fun & Light</option>
+        <option value="flirty">😉 Flirty</option>
+        <option value="weird">🤪 Weird & Random</option>
+        <option value="random">🎲 Random</option>
+      </select>
+      <br>
+      <button onclick="generateQuestion()" class="generate-btn">
+        <span id="btn-text">Generate</span>
+      </button>
+    </div>
+
+    <div id="output">
+      <span>❄️</span>
+    </div>
+  </main>
+
+  <script>
+    let currentLang = localStorage.getItem('namerly-lang') || (navigator.language.startsWith("es") ? "es" : "en");
+
+    const translations = {
+      en: {
+        subtitle: "Ice Breaker Questions",
+        chooseCategory: "Choose Category:",
+        generate: "Generate",
+        copy: "Copy",
+        copied: "Copied!",
+        categories: {
+          deep: "🧠 Deep Questions",
+          fun: "🎉 Fun & Light",
+          flirty: "😉 Flirty",
+          weird: "🤪 Weird & Random",
+          random: "🎲 Random"
+        }
+      },
+      es: {
+        subtitle: "Preguntas Rompe Hielo",
+        chooseCategory: "Categoría:",
+        generate: "Generar",
+        copy: "Copiar",
+        copied: "¡Copiado!",
+        categories: {
+          deep: "🧠 Profundas",
+          fun: "🎉 Divertidas",
+          flirty: "😏 Coquetas",
+          weird: "🤪 Raras",
+          random: "🎲 Aleatorio"
+        }
+      }
+    };
+
+    const questions = {
+      en: {
+        deep: [
+          "What's one thing you wish you could tell your younger self?", "If you could have dinner with anyone, dead or alive, who would it be?",
+          "What's the most important lesson life has taught you so far?", "If you could change one thing about the world, what would it be?",
+          "What's your biggest fear and why?", "What does success mean to you personally?",
+          "If you had to choose between love and money, which would you pick?", "What's something you're passionate about that not many people know?",
+          "What do you think is the meaning of life?", "If you could live in any time period, when would you choose?",
+          "What's the best advice you've ever received?", "What would you do if you knew you couldn't fail?",
+          "What's something you've always wanted to learn but never had the chance?", "If you could master any skill instantly, what would it be?",
+          "What's the most spontaneous thing you've ever done?", "What do you think your purpose in life is?",
+          "If you could know the truth about any mystery, what would you choose?", "What's something that always makes you smile, no matter what?",
+          "If you had unlimited resources, what would you do first?", "What's the most important quality you look for in a friend?",
+          "What's a belief you held strongly but later changed your mind about?", "If you could relive one day of your life, which would you choose?",
+          "What's something you're grateful for that happened this year?", "If you could have a conversation with your future self, what would you ask?"
+        ],
+        fun: [
+          "If you were a superhero, what would your superpower be?", "What's the weirdest food combination you actually enjoy?",
+          "If you could be any animal for a day, what would you choose?", "What's your go-to karaoke song?",
+          "If you could only eat one food for the rest of your life, what would it be?", "What's the most embarrassing thing that's happened to you recently?",
+          "If you could instantly become an expert in something, what would it be?", "What's your favorite childhood cartoon character?",
+          "If you had a warning label, what would it say?", "What's the strangest compliment you've ever received?",
+          "If you could teleport anywhere right now, where would you go?", "What's your most useless talent?",
+          "If you were famous, what would you be famous for?", "What's the worst fashion trend you've ever participated in?",
+          "If you could bring back any extinct animal, which would you choose?", "What's your favorite way to waste time?",
+          "If you could have any celebrity as your best friend, who would it be?", "What's the weirdest dream you've ever had?",
+          "If you could live in any TV show, which one would you pick?", "What's your most irrational fear?",
+          "If you could rename yourself, what name would you choose?", "What's the funniest joke you know by heart?",
+          "If you could have any fictional character as a roommate, who would it be?", "What's the most ridiculous fact you know?"
+        ],
+        flirty: [
+          "What's your idea of a perfect date?", "What's the most romantic gesture someone could do for you?",
+          "If we were stranded on a desert island together, what would we do?", "What's your biggest turn-on in a person?",
+          "What's something that instantly makes you attracted to someone?", "If you could plan our next adventure, where would we go?",
+          "What's your love language?", "What's the sweetest thing someone has ever done for you?",
+          "If you could describe yourself in three words, what would they be?", "What's your idea of the perfect evening?",
+          "What's something you find irresistibly attractive in a person?", "If we could do anything together right now, what would you want to do?",
+          "What's your favorite way to be surprised?", "What's the most spontaneous romantic thing you've ever done?",
+          "If you could write a love song, what would the first line be?", "What's your biggest romantic fantasy?",
+          "What's something that makes you feel most confident?", "If you could slow dance to any song, what would it be?",
+          "What's your favorite thing about yourself?", "What's the most attractive quality someone can have?",
+          "If we were in a movie together, what genre would it be?", "What's something you've always wanted someone to notice about you?",
+          "What's your definition of chemistry between two people?", "If you could spend an entire day with me, how would we spend it?"
+        ],
+        weird: [
+          "If animals could talk, which species would be the rudest?", "What conspiracy theory do you secretly believe might be true?",
+          "If you could replace your hands with anything, what would you choose?", "What's the weirdest thing you've ever eaten and actually liked?",
+          "If you were a ghost, how would you haunt people?", "What would be the worst superpower to have?",
+          "If you could make one thing illegal, what would it be?", "What's the strangest place you've ever fallen asleep?",
+          "If you could add a 13th month to the year, what would you name it?", "What would your theme song be if you had one?",
+          "If you could communicate with one species of animal, which would you choose?", "What's the most unusual thing you believed as a child?",
+          "If you could live inside any video game, which would you choose?", "What would be your strategy for a zombie apocalypse?",
+          "If you could taste colors, what do you think blue would taste like?", "What's the weirdest thing you do when you're alone?",
+          "If you could make any two animals fight, which would you choose?", "What would you do if you woke up and everyone else had disappeared?",
+          "If you could hear everyone's thoughts for a day, would you want to?", "What's the strangest thing you've ever googled?",
+          "If you could only communicate through song lyrics, which song would you choose?", "What would you do if you discovered you were living in a simulation?",
+          "If you could be any inanimate object for a day, what would you be?", "What's the weirdest thing you've ever done for money?"
+        ]
+      },
+      es: {
+        deep: [
+          "¿Qué es algo que desearías poder decirle a tu yo más joven?", "Si pudieras cenar con cualquier persona, viva o muerta, ¿quién sería?",
+          "¿Cuál es la lección más importante que la vida te ha enseñado hasta ahora?", "Si pudieras cambiar una cosa del mundo, ¿qué sería?",
+          "¿Cuál es tu mayor miedo y por qué?", "¿Qué significa el éxito para ti personalmente?",
+          "Si tuvieras que elegir entre el amor y el dinero, ¿cuál escogerías?", "¿Qué es algo que te apasiona pero poca gente sabe?",
+          "¿Cuál crees que es el sentido de la vida?", "Si pudieras vivir en cualquier época, ¿cuándo elegirías?",
+          "¿Cuál es el mejor consejo que has recibido?", "¿Qué harías si supieras que no puedes fallar?",
+          "¿Qué es algo que siempre has querido aprender pero nunca has tenido la oportunidad?", "Si pudieras dominar cualquier habilidad al instante, ¿cuál sería?",
+          "¿Cuál es la cosa más espontánea que has hecho?", "¿Cuál crees que es tu propósito en la vida?",
+          "Si pudieras conocer la verdad sobre cualquier misterio, ¿cuál elegirías?", "¿Qué es algo que siempre te hace sonreír, sin importar qué?",
+          "Si tuvieras recursos ilimitados, ¿qué harías primero?", "¿Cuál es la cualidad más importante que buscas en un amigo?",
+          "¿Qué es una creencia que tenías fuertemente pero luego cambiaste de opinión?", "Si pudieras revivir un día de tu vida, ¿cuál elegirías?",
+          "¿Qué es algo por lo que estás agradecido que pasó este año?", "Si pudieras tener una conversación con tu yo del futuro, ¿qué le preguntarías?"
+        ],
+        fun: [
+          "Si fueras un superhéroe, ¿cuál sería tu superpoder?", "¿Cuál es la combinación de comida más rara que realmente disfrutas?",
+          "Si pudieras ser cualquier animal por un día, ¿cuál elegirías?", "¿Cuál es tu canción favorita para karaoke?",
+          "Si pudieras comer solo una comida por el resto de tu vida, ¿cuál sería?", "¿Cuál es la cosa más embarazosa que te ha pasado recientemente?",
+          "Si pudieras volverte experto en algo al instante, ¿qué sería?", "¿Cuál es tu personaje de caricatura favorito de la infancia?",
+          "Si tuvieras una etiqueta de advertencia, ¿qué diría?", "¿Cuál es el cumplido más extraño que has recibido?",
+          "Si pudieras teletransportarte a cualquier lugar ahora mismo, ¿a dónde irías?", "¿Cuál es tu talento más inútil?",
+          "Si fueras famoso, ¿por qué serías famoso?", "¿Cuál es la peor tendencia de moda en la que has participado?",
+          "Si pudieras traer de vuelta cualquier animal extinto, ¿cuál elegirías?", "¿Cuál es tu forma favorita de perder el tiempo?",
+          "Si pudieras tener a cualquier celebridad como tu mejor amigo, ¿quién sería?", "¿Cuál es el sueño más raro que has tenido?",
+          "Si pudieras vivir en cualquier programa de TV, ¿cuál elegirías?", "¿Cuál es tu miedo más irracional?",
+          "Si pudieras cambiar tu nombre, ¿qué nombre elegirías?", "¿Cuál es el chiste más gracioso que te sabes de memoria?",
+          "Si pudieras tener a cualquier personaje ficticio como compañero de cuarto, ¿quién sería?", "¿Cuál es el dato más ridículo que conoces?"
+        ],
+        flirty: [
+          "¿Cuál es tu idea de una cita perfecta?", "¿Cuál es el gesto más romántico que alguien podría hacer por ti?",
+          "Si estuviéramos varados en una isla desierta juntos, ¿qué haríamos?", "¿Qué es lo que más te atrae de una persona?",
+          "¿Qué es algo que instantáneamente te hace sentir atraído hacia alguien?", "Si pudieras planear nuestra próxima aventura, ¿a dónde iríamos?",
+          "¿Cuál es tu lenguaje del amor?", "¿Cuál es la cosa más dulce que alguien ha hecho por ti?",
+          "Si pudieras describirse en tres palabras, ¿cuáles serían?", "¿Cuál es tu idea de la noche perfecta?",
+          "¿Qué es algo que encuentras irresistiblemente atractivo en una persona?", "Si pudiéramos hacer cualquier cosa juntos ahora mismo, ¿qué querrías hacer?",
+          "¿Cuál es tu forma favorita de ser sorprendido?", "¿Cuál es la cosa más espontánea y romántica que has hecho?",
+          "Si pudieras escribir una canción de amor, ¿cuál sería la primera línea?", "¿Cuál es tu mayor fantasía romántica?",
+          "¿Qué es algo que te hace sentir más seguro de ti mismo?", "Si pudieras bailar lento con cualquier canción, ¿cuál sería?",
+          "¿Qué es lo que más te gusta de ti mismo?", "¿Cuál es la cualidad más atractiva que alguien puede tener?",
+          "Si estuviéramos en una película juntos, ¿de qué género sería?", "¿Qué es algo que siempre has querido que alguien note sobre ti?",
+          "¿Cuál es tu definición de química entre dos personas?", "Si pudieras pasar un día entero conmigo, ¿cómo lo pasaríamos?"
+        ],
+        weird: [
+          "Si los animales pudieran hablar, ¿qué especie sería la más grosera?", "¿En qué teoría de conspiración secretamente crees que podría ser verdad?",
+          "Si pudieras reemplazar tus manos con cualquier cosa, ¿qué elegirías?", "¿Cuál es la cosa más rara que has comido y realmente te gustó?",
+          "Si fueras un fantasma, ¿cómo asustarías a la gente?", "¿Cuál sería el peor superpoder para tener?",
+          "Si pudieras hacer algo ilegal, ¿qué sería?", "¿Cuál es el lugar más extraño donde te has quedado dormido?",
+          "Si pudieras agregar un mes 13 al año, ¿cómo lo llamarías?", "¿Cuál sería tu canción tema si tuvieras una?",
+          "Si pudieras comunicarte con una especie de animal, ¿cuál elegirías?", "¿Cuál es la cosa más inusual que creías cuando eras niño?",
+          "Si pudieras vivir dentro de cualquier videojuego, ¿cuál elegirías?", "¿Cuál sería tu estrategia para un apocalipsis zombie?",
+          "Si pudieras saborear colores, ¿a qué crees que sabría el azul?", "¿Cuál es la cosa más rara que haces cuando estás solo?",
+          "Si pudieras hacer que dos animales peleen, ¿cuáles elegirías?", "¿Qué harías si te despertaras y todos los demás hubieran desaparecido?",
+          "Si pudieras escuchar los pensamientos de todos por un día, ¿querrías?", "¿Cuál es la cosa más extraña que has buscado en Google?",
+          "Si solo pudieras comunicarte a través de letras de canciones, ¿qué canción elegirías?", "¿Qué harías si descubrieras que estás viviendo en una simulación?",
+          "Si pudieras ser cualquier objeto inanimado por un día, ¿qué serías?", "¿Cuál es la cosa más rara que has hecho por dinero?"
+        ]
+      }
+    };
+
+    function updateUI() {
+      const t = translations[currentLang];
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.querySelector("label[for='style']").textContent = t.chooseCategory;
+      document.getElementById("btn-text").textContent = t.generate;
+
+      // Update options
+      const select = document.getElementById("style");
+      select.innerHTML = "";
+      for (const [key, value] of Object.entries(t.categories)) {
+        const option = document.createElement("option");
+        option.value = key;
+        option.textContent = value;
+        select.appendChild(option);
+      }
+
+      const nextLang = currentLang === "en" ? "ES" : "EN";
+      document.getElementById("lang-toggle").innerHTML = `🌐 ${nextLang}`;
+    }
+
+    function generateQuestion() {
+      const style = document.getElementById("style").value;
+      const set = questions[currentLang];
+      let options = [];
+
+      if (style === "random") {
+        options = [...set.deep, ...set.fun, ...set.flirty, ...set.weird];
+      } else {
+        options = set[style];
+      }
+
+      const random = options[Math.floor(Math.random() * options.length)];
+
+      const t = translations[currentLang];
+      document.getElementById("output").innerHTML = `"${random}" <button class="copy-btn" onclick="copyToClipboard('${random.replace(/'/g, "\\'")}')">${t.copy}</button>`;
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const t = translations[currentLang];
+        alert(t.copied);
+      });
+    }
+
+    document.getElementById("lang-toggle").addEventListener("click", () => {
+      currentLang = currentLang === "en" ? "es" : "en";
+      localStorage.setItem('namerly-lang', currentLang);
+      updateUI();
+    });
+
+    updateUI();
+  </script>
+
+  <!-- Legal Footer -->
+  <footer class="legal-footer"
+    style="padding: 2rem; text-align: center; color: rgba(255,255,255,0.8); position: relative; z-index: 10;">
+    <div class="footer-content">
+      <div class="footer-links" style="margin-bottom: 1rem;">
+        <a href="../privacy-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Privacy
+          Policy</a>
+        <span class="separator">|</span>
+        <a href="../terms-of-service.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Terms of
+          Service</a>
+        <span class="separator">|</span>
+        <a href="../cookie-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Cookie Policy</a>
+        <span class="separator">|</span>
+        <a href="../disclaimer.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Disclaimer</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 Namerly. All rights reserved.</p>
+        <p>🔒 Your privacy is protected. We don't store personal data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner"
+    style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+    <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+      mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+    <br>
+    <button id="accept-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+      analítica</button>
+    <button id="reject-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+      analítica</button>
+    <button onclick="openCookieSettings()"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+      cookies</button>
+    <a href="../cookie-policy.html"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem;">Política de cookies</a>
+  </div>
+
+  <div id="cookie-settings-modal" class="cookie-settings-modal"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:10000; justify-content:center; align-items:center;">
+    <div class="cookie-settings-content"
+      style="background:#fff; padding:2rem; border-radius:8px; max-width:500px; width:90%;">
+      <h2 style="margin-bottom:1rem; color:#333;">Configuración de cookies</h2>
+      <div class="cookie-category" style="margin-bottom:1rem;">
+        <h3 style="color:#e11d48;">🍪 Esenciales</h3>
+        <p style="font-size:0.9rem; color:#666;">Estas cookies son necesarias para el funcionamiento básico del sitio y
+          no se pueden desactivar.</p>
+      </div>
+      <div class="cookie-category" style="margin-bottom:1rem;">
+        <h3 style="color:#e11d48;">📊 Analítica</h3>
+        <p style="font-size:0.9rem; color:#666;">Permiten medir el uso del sitio y mejorar la experiencia. Puedes
+          aceptar o rechazar estas cookies.</p>
+        <div style="margin-top:0.5rem;">
+          <label style="display:flex; align-items:center; cursor:pointer;">
+            <input type="checkbox" id="analytics-consent-checkbox" style="margin-right:8px;" />
+            <span style="color:#333;">Permitir cookies de analítica</span>
+          </label>
+        </div>
+      </div>
+      <div class="cookie-settings-buttons" style="display:flex; justify-content:flex-end; gap:10px; margin-top:1.5rem;">
+        <button onclick="saveCookieSettings()"
+          style="padding:0.5rem 1rem; background:#e11d48; color:white; border:none; border-radius:4px; cursor:pointer;">Guardar</button>
+        <button onclick="closeCookieSettings()"
+          style="padding:0.5rem 1rem; background:#ddd; color:#333; border:none; border-radius:4px; cursor:pointer;">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+    function showCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+    function hideCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function openCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'flex';
+      document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+    }
+    function closeCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'none';
+    }
+    function saveCookieSettings() {
+      const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+      setCookie('namerly_analytics_consent', consent, 365);
+      closeCookieSettings();
+      window.location.reload();
+    }
+    document.getElementById('accept-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'accepted', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    document.getElementById('reject-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'rejected', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    window.addEventListener('DOMContentLoaded', function () {
+      var consent = getCookie('namerly_analytics_consent');
+      if (!consent) showCookieBanner();
+      else hideCookieBanner();
+      if (consent === 'accepted') loadAnalytics();
+    });
+    function loadAnalytics() {
+      if (window.gtagLoaded) return;
+      window.gtagLoaded = true;
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21';
+      document.head.appendChild(script);
+      script.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-ZCBGMRHJ21', {
+          cookie_domain: 'namerlygenerator.netlify.app',
+          anonymize_ip: true
+        });
+      };
+    }
+  </script>
+<script type="module" src="../../assets/js/premium-features.js"></script>
+</body>
+
+</html>

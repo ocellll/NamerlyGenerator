@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://namerlygenerator.netlify.app/sitemap.xml
+
+# Archivos importantes para SEO
+Allow: /index.html
+Allow: /assets/
+Allow: /crush/
+Allow: /whatsapp/
+Allow: /wifi/
+Allow: /pets/
+Allow: /usernames/
+Allow: /pickup/
+Allow: /roasts/
+Allow: /sarcastic/
+Allow: /phrases/
+Allow: /pranks/
+Allow: /social-excuses/
+Allow: /youtube/
+
+# Bloquear archivos innecesarios
+Disallow: /temp_template.html
+Disallow: /update_sharing_system.ps1
+Disallow: /*.ps1
+
+# Crawl-delay para bots pesados
+User-agent: Bingbot
+Crawl-delay: 1

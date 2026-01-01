@@ -1,0 +1,536 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excuse Generator | Creative Excuses for Any Situation - Namerly</title>
+  <meta name="description"
+    content="Generate perfect excuses for work, school, and daily situations. Creative, believable, and funny excuses for when you need them most!" />
+  <meta name="keywords"
+    content="excuse generator, work excuses, school excuses, creative excuses, funny excuses, believable excuses, late excuses, absence excuses" />
+  <meta name="author" content="Namerly" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://namerlygenerator.netlify.app/excuses/" />
+  <meta property="og:title" content="Excuse Generator | Creative Excuses for Any Situation - Namerly" />
+  <meta property="og:description"
+    content="Generate perfect excuses for work, school, and daily situations. Creative and believable!" />
+  <meta property="og:image" content="https://namerlygenerator.netlify.app/assets/images/excuses-og.jpg" />
+  <meta property="og:site_name" content="Namerly" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://namerlygenerator.netlify.app/excuses/" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- Google Analytics 4 -->
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      /* Emerald Gradient */
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    /* Animated background particles */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/></circle></svg>') repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #title {
+      font-size: 1.8rem;
+      color: white;
+      margin: 0;
+    }
+
+    main {
+      padding: 3rem 2rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .control-section {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    select,
+    button {
+      margin: 0.5rem;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 50px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    button.generate-btn {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      border: none;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+      transition: transform 0.2s;
+    }
+
+    button.generate-btn:hover {
+      transform: scale(1.05);
+    }
+
+    #output {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #333;
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+    }
+
+    .copy-btn {
+      margin-top: 1rem;
+      background: #059669;
+      color: white;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      #output {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">🎓 Namerly</h1>
+    <div>
+      <button id="lang-toggle" style="background: rgba(255,255,255,0.2); color: white; border: none;">🌐 ES</button>
+      <a href="../index.html" style="color: white; text-decoration:none; margin-left: 1rem; font-weight: 500;">←
+        Home</a>
+    </div>
+  </header>
+
+  <main>
+    <h2 id="subtitle">School Excuses</h2>
+
+    <div class="control-section">
+      <label for="type" style="display: block; margin-bottom: 1rem; font-weight: 600; color: #444;">Choose Type:</label>
+      <select id="type">
+        <option value="homework">📚 Homework</option>
+        <option value="absence">🏠 Absence</option>
+        <option value="late">⏰ Being Late</option>
+        <option value="project">📝 Project</option>
+        <option value="creative">🎨 Creative</option>
+        <option value="random">🎲 Random</option>
+      </select>
+      <br>
+      <button onclick="generateExcuse()" class="generate-btn">
+        <span id="btn-text">Generate</span>
+      </button>
+    </div>
+
+    <div id="output">
+      <span>🤷</span>
+    </div>
+  </main>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner"
+    style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+    <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+      mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+    <br>
+    <button id="accept-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+      analítica</button>
+    <button id="reject-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+      analítica</button>
+  </div>
+
+  <script>
+    let currentLang = localStorage.getItem('namerly-lang') || (navigator.language.startsWith("es") ? "es" : "en");
+
+    const translations = {
+      en: {
+        subtitle: "School Excuses",
+        chooseType: "Choose Type:",
+        generate: "Generate",
+        copy: "Copy",
+        copied: "Copied!",
+        types: {
+          homework: "📚 Homework",
+          absence: "🏠 Absence",
+          late: "⏰ Being Late",
+          project: "📝 Project",
+          creative: "🎨 Creative",
+          random: "🎲 Random"
+        }
+      },
+      es: {
+        subtitle: "Excusas Escolares",
+        chooseType: "Tipo:",
+        generate: "Generar",
+        copy: "Copiar",
+        copied: "¡Copiado!",
+        types: {
+          homework: "📚 Tarea",
+          absence: "🏠 Ausencia",
+          late: "⏰ Llegar Tarde",
+          project: "📝 Proyecto",
+          creative: "🎨 Creativo",
+          random: "🎲 Aleatorio"
+        }
+      }
+    };
+
+    const excuses = {
+      en: {
+        homework: [
+          "My dog ate my homework (classic but effective)", "My computer crashed and I lost everything",
+          "I left it in my locker and now it's locked", "My little brother used it for his art project",
+          "The power went out last night", "I thought it was due tomorrow",
+          "My printer ran out of ink", "I did it but forgot to bring it",
+          "My WiFi was down all weekend", "I couldn't find the assignment sheet"
+        ],
+        absence: [
+          "I had a doctor's appointment", "I was feeling really sick",
+          "Family emergency came up", "I had food poisoning",
+          "Car broke down on the way", "I overslept because my alarm didn't work",
+          "I had to help my grandma", "There was a family wedding",
+          "I got lost and couldn't find the classroom", "I thought there was no school today"
+        ],
+        late: [
+          "Traffic was really bad today", "My alarm didn't go off",
+          "I had to help my mom with something", "The bus was late",
+          "I couldn't find my backpack", "I stopped to help someone",
+          "My ride was running late", "I had to walk my dog",
+          "I forgot my lunch and had to go back", "There was construction on my usual route"
+        ],
+        project: [
+          "My computer crashed and corrupted the file", "I need one more day to perfect it",
+          "My group partner disappeared", "The presentation software isn't working",
+          "I researched so much that I got overwhelmed", "My printer broke and I need to print visuals",
+          "I want to add more sources to make it better", "The internet was down and I couldn't research",
+          "I accidentally deleted it and need to start over", "I'm waiting for an important interview response"
+        ],
+        creative: [
+          "My homework got abducted by aliens", "I was transported to another dimension",
+          "My cat is holding my assignment hostage", "A tornado hit only my house",
+          "I was recruited by the government for a secret mission", "My homework achieved sentience and ran away",
+          "I was cursed by a witch", "Time travel experiment went wrong",
+          "My evil twin stole my work", "I'm actually a robot and I malfunctioned"
+        ],
+        random: [
+          "I forgot we had school today", "I thought today was Saturday",
+          "My mom made me do chores", "I had to babysit my cousin",
+          "I ran out of gas", "I couldn't find matching socks",
+          "My phone died and I use it as my alarm", "I got locked out of my house",
+          "I had to take my pet to the vet", "I was helping my neighbor"
+        ]
+      },
+      es: {
+        homework: [
+          "Mi perro se comió mi tarea (clásico pero efectivo)", "Mi computadora se dañó y perdí todo",
+          "La dejé en mi locker y ahora está cerrado", "Mi hermano menor la usó para su proyecto de arte",
+          "Se fue la luz anoche", "Pensé que era para mañana",
+          "Mi impresora se quedó sin tinta", "La hice pero se me olvidó traerla",
+          "Se cayó mi WiFi todo el fin de semana", "No pude encontrar la hoja de instrucciones"
+        ],
+        absence: [
+          "Tenía cita médica", "Me sentía muy enfermo/a",
+          "Surgió una emergencia familiar", "Tenía intoxicación alimentaria",
+          "Se dañó el carro en el camino", "Me quedé dormido/a porque no sonó mi alarma",
+          "Tuve que ayudar a mi abuela", "Había una boda familiar",
+          "Me perdí y no pude encontrar el salón", "Pensé que no había clases hoy"
+        ],
+        late: [
+          "El tráfico estaba muy malo hoy", "No sonó mi alarma",
+          "Tuve que ayudar a mi mamá con algo", "El bus se retrasó",
+          "No encontraba mi mochila", "Me detuve a ayudar a alguien",
+          "Mi transporte se retrasó", "Tuve que sacar a pasear a mi perro",
+          "Se me olvidó mi almuerzo y tuve que regresar", "Había construcción en mi ruta usual"
+        ],
+        project: [
+          "Mi computadora se dañó y corrompió el archivo", "Necesito un día más para perfeccionarlo",
+          "Mi compañero de grupo desapareció", "El software de presentación no funciona",
+          "Investigué tanto que me abrumé", "Mi impresora se dañó y necesito imprimir visuales",
+          "Quiero agregar más fuentes para mejorarlo", "Se cayó mi internet y no pude investigar",
+          "Lo borré por accidente y necesito empezar de nuevo", "Estoy esperando respuesta de una entrevista importante"
+        ],
+        creative: [
+          "Los aliens secuestraron mi tarea", "Fui transportado/a a otra dimensión",
+          "Mi gato tiene mi tarea como rehén", "Un tornado golpeó solo mi casa",
+          "El gobierno me reclutó para una misión secreta", "Mi tarea cobró vida y se escapó",
+          "Una bruja me maldijo", "El experimento de viaje en el tiempo salió mal",
+          "Mi gemelo malvado robó mi trabajo", "En realidad soy un robot y me descompuse"
+        ],
+        random: [
+          "Se me olvidó que teníamos clases hoy", "Pensé que hoy era sábado",
+          "Mi mamá me puso a hacer oficios", "Tuve que cuidar a mi primo/a",
+          "Se me acabó la gasolina", "No encontraba calcetines que hicieran juego",
+          "Se me descargó el teléfono y lo uso como alarma", "Me quedé encerrado/a fuera de mi casa",
+          "Tuve que llevar mi mascota al veterinario", "Estaba ayudando a mi vecino/a"
+        ]
+      }
+    };
+
+    function updateUI() {
+      const t = translations[currentLang];
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.querySelector("label[for='type']").textContent = t.chooseType;
+      document.getElementById("btn-text").textContent = t.generate;
+
+      // Update options
+      const select = document.getElementById("type");
+      select.innerHTML = "";
+      for (const [key, value] of Object.entries(t.types)) {
+        const option = document.createElement("option");
+        option.value = key;
+        option.textContent = value;
+        select.appendChild(option);
+      }
+
+      const nextLang = currentLang === "en" ? "ES" : "EN";
+      document.getElementById("lang-toggle").innerHTML = `🌐 ${nextLang}`;
+    }
+
+    function generateExcuse() {
+      const type = document.getElementById("type").value;
+      const set = excuses[currentLang][type];
+
+      const random = set[Math.floor(Math.random() * set.length)];
+
+      const t = translations[currentLang];
+      document.getElementById("output").innerHTML = `"${random}" <button class="copy-btn" onclick="copyToClipboard('${random.replace(/'/g, "\\'")}')">${t.copy}</button>`;
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const t = translations[currentLang];
+        alert(t.copied);
+      });
+    }
+
+    document.getElementById("lang-toggle").addEventListener("click", () => {
+      currentLang = currentLang === "en" ? "es" : "en";
+      localStorage.setItem('namerly-lang', currentLang);
+      updateUI();
+    });
+
+    updateUI();
+  </script>
+
+  <!-- Legal Footer -->
+  <footer class="legal-footer"
+    style="margin-top: 3rem; padding: 2rem; text-align: center; color: rgba(255,255,255,0.8); position: relative; z-index: 10;">
+    <div class="footer-content">
+      <div class="footer-links" style="margin-bottom: 1rem;">
+        <a href="../privacy-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Privacy
+          Policy</a>
+        <span class="separator">|</span>
+        <a href="../terms-of-service.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Terms of
+          Service</a>
+        <span class="separator">|</span>
+        <a href="../cookie-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Cookie Policy</a>
+        <span class="separator">|</span>
+        <a href="../disclaimer.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Disclaimer</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 Namerly. All rights reserved.</p>
+        <p>🔒 Your privacy is protected. We don't store personal data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner"
+    style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+    <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+      mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+    <br>
+    <button id="accept-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+      analítica</button>
+    <button id="reject-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+      analítica</button>
+    <button onclick="openCookieSettings()"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+      cookies</button>
+    <a href="../cookie-policy.html"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem;">Política de cookies</a>
+  </div>
+
+  <div id="cookie-settings-modal" class="cookie-settings-modal"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:10000; justify-content:center; align-items:center;">
+    <div class="cookie-settings-content"
+      style="background:#fff; padding:2rem; border-radius:8px; max-width:500px; width:90%;">
+      <h2 style="margin-bottom:1rem; color:#333;">Configuración de cookies</h2>
+      <div class="cookie-category" style="margin-bottom:1rem;">
+        <h3 style="color:#e11d48;">🍪 Esenciales</h3>
+        <p style="font-size:0.9rem; color:#666;">Estas cookies son necesarias para el funcionamiento básico del sitio y
+          no se pueden desactivar.</p>
+      </div>
+      <div class="cookie-category" style="margin-bottom:1rem;">
+        <h3 style="color:#e11d48;">📊 Analítica</h3>
+        <p style="font-size:0.9rem; color:#666;">Permiten medir el uso del sitio y mejorar la experiencia. Puedes
+          aceptar o rechazar estas cookies.</p>
+        <div style="margin-top:0.5rem;">
+          <label style="display:flex; align-items:center; cursor:pointer;">
+            <input type="checkbox" id="analytics-consent-checkbox" style="margin-right:8px;" />
+            <span style="color:#333;">Permitir cookies de analítica</span>
+          </label>
+        </div>
+      </div>
+      <div class="cookie-settings-buttons" style="display:flex; justify-content:flex-end; gap:10px; margin-top:1.5rem;">
+        <button onclick="saveCookieSettings()"
+          style="padding:0.5rem 1rem; background:#e11d48; color:white; border:none; border-radius:4px; cursor:pointer;">Guardar</button>
+        <button onclick="closeCookieSettings()"
+          style="padding:0.5rem 1rem; background:#ddd; color:#333; border:none; border-radius:4px; cursor:pointer;">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+    function showCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+    function hideCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function openCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'flex';
+      document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+    }
+    function closeCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'none';
+    }
+    function saveCookieSettings() {
+      const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+      setCookie('namerly_analytics_consent', consent, 365);
+      closeCookieSettings();
+      window.location.reload();
+    }
+    document.getElementById('accept-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'accepted', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    document.getElementById('reject-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'rejected', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    window.addEventListener('DOMContentLoaded', function () {
+      var consent = getCookie('namerly_analytics_consent');
+      if (!consent) showCookieBanner();
+      else hideCookieBanner();
+      if (consent === 'accepted') loadAnalytics();
+    });
+    function loadAnalytics() {
+      if (window.gtagLoaded) return;
+      window.gtagLoaded = true;
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21';
+      document.head.appendChild(script);
+      script.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-ZCBGMRHJ21', {
+          cookie_domain: 'namerlygenerator.netlify.app',
+          anonymize_ip: true
+        });
+      };
+    }
+  </script>
+<script type="module" src="../../assets/js/premium-features.js"></script>
+</body>
+
+</html>

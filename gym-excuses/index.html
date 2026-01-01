@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gym Excuse Generator | Funny Workout Excuses - Namerly</title>
+  <meta name="description"
+    content="Generate hilarious excuses to skip the gym! Perfect for when you need a creative reason to avoid working out. Funny and relatable gym excuses!" />
+  <meta name="keywords"
+    content="gym excuses, workout excuses, fitness excuses, funny gym excuses, skip gym excuses, exercise excuses, gym humor" />
+  <meta name="author" content="Namerly" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://namerlygenerator.netlify.app/gym-excuses/" />
+  <meta property="og:title" content="Gym Excuse Generator | Funny Workout Excuses - Namerly" />
+  <meta property="og:description"
+    content="Generate hilarious excuses to skip the gym! Perfect for when you need a creative reason to avoid working out." />
+  <meta property="og:image" content="https://namerlygenerator.netlify.app/assets/images/gym-excuses-og.jpg" />
+  <meta property="og:site_name" content="Namerly" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://namerlygenerator.netlify.app/gym-excuses/" />
+  <meta name="twitter:title" content="Gym Excuse Generator | Funny Workout Excuses - Namerly" />
+  <meta name="twitter:description"
+    content="Generate hilarious excuses to skip the gym! Perfect for when you need a creative reason to avoid working out." />
+  <meta name="twitter:image" content="https://namerlygenerator.netlify.app/assets/images/gym-excuses-og.jpg" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://namerlygenerator.netlify.app/gym-excuses/" />
+
+  <!-- Language alternates -->
+  <link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/gym-excuses/" />
+  <link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/gym-excuses/" />
+  <link rel="alternate" hreflang="x-default" href="https://namerlygenerator.netlify.app/gym-excuses/" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated background particles */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/></circle></svg>') repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    main {
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      letter-spacing: 0.5px;
+    }
+
+    select,
+    button {
+      margin: 1rem;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      border: 2px solid #e2e8f0;
+      border-radius: 15px;
+      background: white;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    select:hover,
+    button:hover {
+      border-color: #ff6b6b;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    }
+
+    button {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+      color: white;
+      border: none;
+      font-weight: 600;
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s;
+    }
+
+    button:hover::before {
+      left: 100%;
+    }
+
+    #output {
+      margin-top: 3rem;
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-family: 'Roboto', 'Inter', sans-serif;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.6;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: all 0.5s ease;
+      font-style: italic;
+    }
+
+    .copy-btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, #7c3aed, #6366f1);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+      font-weight: 500;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(124, 58, 237, 0.4);
+      background: linear-gradient(135deg, #6366f1, #7c3aed);
+    }
+
+    .share-section {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 2px dashed rgba(255, 107, 107, 0.3);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .share-title {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #333;
+      font-size: 1.2rem;
+    }
+
+    .main-share-btn {
+      margin-left: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+      font-weight: 500;
+    }
+
+    .main-share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(255, 107, 107, 0.4);
+      background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+    }
+
+    .share-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .share-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .twitter {
+      background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+      color: white;
+    }
+
+    .instagram {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+    }
+
+    .tiktok {
+      background: linear-gradient(135deg, #000, #333);
+      color: white;
+    }
+
+    .whatsapp {
+      background: linear-gradient(135deg, #25d366, #20c157);
+      color: white;
+    }
+
+    .telegram {
+      background: linear-gradient(135deg, #0088cc, #0066aa);
+      color: white;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      main {
+        padding: 2rem 1rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        letter-spacing: 0.3px;
+      }
+
+      #output {
+        padding: 2rem;
+        font-size: 1.2rem;
+        max-width: 500px;
+      }
+
+      .share-buttons {
+        gap: 10px;
+      }
+
+      .share-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Loading animation */
+    .loading {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Animations */
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .emoji-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">🏋️ Namerly</h1>
+    <div>
+      <button id="lang-toggle"
+        style="margin-right: 1rem; padding: 0.4rem 0.8rem; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">🌐
+        ES</button>
+      <a href="../index.html" style="text-decoration:none;">← Home</a>
+    </div>
+  </header>
+  <main>
+    <h2 id="subtitle">Gym Excuses</h2>
+    <label for="style">Choose a category:</label>
+    <select id="style">
+      <option value="health">🤒 Health Related</option>
+      <option value="time">⏰ Time Issues</option>
+      <option value="funny">😂 Funny Excuses</option>
+      <option value="creative">🎨 Creative Excuses</option>
+      <option value="random">🎲 Random</option>
+    </select>
+    <div class="control-section">
+      <button onclick="generateExcuse()" class="generate-btn"><span id="btn-text">Generate</span></button>
+    </div>
+    <div id="output">🏋️</div>
+    <div id="share-section" style="display: none;">
+      <div class="share-section">
+        <div class="share-title" id="share-title">📱 Share on Social Media</div>
+        <div class="share-buttons">
+          <button class="share-btn twitter" onclick="shareOnTwitter()">🐦 Twitter</button>
+          <button class="share-btn instagram" onclick="shareOnInstagram()">📸 Instagram</button>
+          <button class="share-btn tiktok" onclick="shareOnTikTok()">🎵 TikTok</button>
+          <button class="share-btn whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>
+          <button class="share-btn telegram" onclick="shareOnTelegram()">✈️ Telegram</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    let currentLang = localStorage.getItem('namerly-lang') || (navigator.language.startsWith("es") ? "es" : "en");
+    let recentExcuses = []; // Array para recordar excusas recientes
+    const MAX_RECENT = 8; // Recordar últimos 8 elementos para evitar repeticiones
+
+    const translations = {
+      en: {
+        subtitle: "Gym Excuses",
+        chooseCategory: "Choose a category:",
+        generate: "Generate",
+        copy: "Copy",
+        copied: "Copied!",
+        share: "Share",
+        shareTitle: "📱 Share on Social Media"
+      },
+      es: {
+        subtitle: "Excusas para el Gym",
+        chooseCategory: "Elige una categoría:",
+        generate: "Generar",
+        copy: "Copiar",
+        copied: "¡Copiado!",
+        share: "Compartir",
+        shareTitle: "📱 Compartir en Redes Sociales",
+        health: "🏥 Salud",
+        time: "⏰ Tiempo",
+        funny: "😂 Divertidas",
+        creative: "🎨 Creativas",
+        random: "🎲 Aleatorio"
+      }
+    };
+
+    function updateUI() {
+      const t = translations[currentLang];
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.querySelector("label[for='style']").textContent = t.chooseCategory;
+      document.querySelector("button[onclick='generateExcuse()']").textContent = t.generate;
+
+      // Update select options
+      const select = document.getElementById("style");
+      const options = select.querySelectorAll("option");
+      if (currentLang === "es") {
+        options[0].textContent = t.health;
+        options[1].textContent = t.time;
+        options[2].textContent = t.funny;
+        options[3].textContent = t.creative;
+        options[4].textContent = t.random;
+      } else {
+        options[0].textContent = "🏥 Health Related";
+        options[1].textContent = "⏰ Time Related";
+        options[2].textContent = "😂 Funny";
+        options[3].textContent = "🎨 Creative";
+        options[4].textContent = "🎲 Random";
+      }
+
+      const nextLang = currentLang === "en" ? "ES" : "EN";
+      document.getElementById("lang-toggle").innerHTML = `🌐 ${nextLang}`;
+    }
+
+    const excuses = {
+      en: {
+        health: [
+          "I'm sore from yesterday's workout, need recovery time.",
+          "I pulled a muscle and should rest it.",
+          "I have a headache and exercise would make it worse.",
+          "I didn't sleep well, my body needs rest.",
+          "I'm feeling dizzy and shouldn't exert myself.",
+          "My back is acting up today.",
+          "I have cramps and can't move properly.",
+          "I'm dehydrated and need to focus on hydration first.",
+          "I have a slight fever, shouldn't spread germs.",
+          "My joints are stiff and need to warm up slowly.",
+          "I have allergies and can't breathe properly.",
+          "I'm on medication that makes me feel weak.",
+          "I have a cut/scrape that might get infected.",
+          "I'm feeling nauseous and exercise would worsen it.",
+          "My energy levels are too low today.",
+          "I have a cold and should rest to recover faster.",
+          "My blood pressure feels off today.",
+          "I have vertigo and could fall during exercise.",
+          "I'm experiencing PMS symptoms.",
+          "I have shin splints and running would hurt.",
+          "My wrist/ankle is swollen and needs rest.",
+          "I have a migraine coming on.",
+          "I'm feeling mentally exhausted, need a mental health day.",
+          "I ate too much and feel too full to exercise."
+        ],
+        time: [
+          "I have to work late today and won't have time.",
+          "I have an important meeting that ran over.",
+          "My commute was longer than expected.",
+          "I have family obligations I can't postpone.",
+          "I need to pick up someone from the airport.",
+          "I have a doctor's appointment that got moved.",
+          "I'm waiting for an important delivery.",
+          "I have to help a friend with something urgent.",
+          "I need to catch up on housework.",
+          "I have to study for an exam tomorrow.",
+          "I'm babysitting and can't leave.",
+          "I have car troubles and can't get there.",
+          "I need to grocery shop before stores close.",
+          "I have a conference call with international clients.",
+          "I'm working on a deadline project.",
+          "I have to attend a family dinner.",
+          "I need to take my pet to the vet.",
+          "I'm cooking for a dinner party tonight.",
+          "I have to clean my house for visitors.",
+          "I need to do laundry and have no clean workout clothes.",
+          "I'm helping someone move today.",
+          "I have a job interview and need to prepare.",
+          "I need to file my taxes and it's due soon.",
+          "I have to attend a virtual event/webinar."
+        ],
+        funny: [
+          "I'm allergic to exercise... just kidding, but I really don't want to go.",
+          "My muscles are still sleeping and I don't want to wake them up.",
+          "I've decided to become one with my couch today.",
+          "My workout clothes are dirty and I can't exercise in jeans.",
+          "I'm saving my energy for more important activities like Netflix.",
+          "I already lifted... my coffee cup to my mouth multiple times.",
+          "I'm practicing the ancient art of doing absolutely nothing.",
+          "My gym shoes developed trust issues with treadmills.",
+          "I'm on a strict 'no sweating' diet today.",
+          "I think I pulled my motivation muscle.",
+          "I'm conserving energy for when the zombie apocalypse happens.",
+          "My inner athlete is taking a personal day.",
+          "I'm afraid of running into my ex at the gym.",
+          "I already did mental gymnastics trying to convince myself to go.",
+          "I'm having an intense relationship with my bed right now.",
+          "I forgot how to walk, so running is definitely out.",
+          "I'm participating in the Olympic sport of procrastination.",
+          "My fitness tracker died and I can't exercise without tracking it.",
+          "I'm allergic to Mondays/Tuesdays/any day ending in 'y'.",
+          "I'm training to be a professional couch potato.",
+          "I already burned calories thinking about exercising.",
+          "I'm waiting for motivation to knock on my door.",
+          "I'm in a committed relationship with unhealthy food today.",
+          "I decided to give my gym membership a break so it doesn't get tired."
+        ],
+        creative: [
+          "I'm conducting a scientific experiment on what happens when you don't exercise.",
+          "My astrologer said Mercury is in retrograde and I shouldn't make sudden movements.",
+          "I'm conserving my energy to help fight climate change.",
+          "I'm training to become a professional nap-taker.",
+          "My spiritual advisor told me to listen to my body, and it's saying 'stay home'.",
+          "I'm participating in a social experiment about modern laziness.",
+          "I'm method acting for a role as a couch potato.",
+          "I'm on a mission to discover the perfect ratio of pizza to happiness.",
+          "I'm documenting my journey from fit to 'I sit'.",
+          "I'm waiting for exercise to become obsolete due to technological advances.",
+          "I'm testing if willpower alone can maintain muscle mass.",
+          "I'm exploring the philosophical question: 'If nobody sees me skip the gym, did I really skip it?'",
+          "I'm practicing mindfulness by being mindful of how much I don't want to exercise.",
+          "I'm in training to become a professional excuse-maker.",
+          "I'm studying the ancient art of energy conservation.",
+          "I'm channeling my inner sloth for a wildlife documentary.",
+          "I'm conducting research on the correlation between comfort and happiness.",
+          "I'm preparing for a future where robots do all our physical activities.",
+          "I'm practicing the Zen art of not doing anything.",
+          "I'm investing my time in becoming a motivational speaker for lazy people.",
+          "I'm exploring alternative forms of exercise, like reaching for the TV remote.",
+          "I'm building up my excuse repertoire for future use.",
+          "I'm testing the limits of human inactivity for science.",
+          "I'm developing a new fitness program called 'Imaginary Workouts'."
+        ]
+      },
+      es: {
+        health: [
+          "Me duele del entrenamiento de ayer, necesito tiempo de recuperación.",
+          "Me lastimé un músculo y debería descansar.",
+          "Tengo dolor de cabeza y el ejercicio lo empeoraría.",
+          "No dormí bien, mi cuerpo necesita descanso.",
+          "Me siento mareado y no debería esforzarme.",
+          "Me duele la espalda hoy.",
+          "Tengo calambres y no puedo moverme bien.",
+          "Estoy deshidratado y necesito enfocarme en hidratarme primero.",
+          "Tengo un poco de fiebre, no debería contagiar gérmenes.",
+          "Tengo las articulaciones rígidas y necesito calentarme lentamente.",
+          "Tengo alergias y no puedo respirar bien.",
+          "Estoy tomando medicamentos que me hacen sentir débil.",
+          "Tengo una cortada/raspón que podría infectarse.",
+          "Me siento con náuseas y el ejercicio lo empeoraría.",
+          "Mis niveles de energía están muy bajos hoy.",
+          "Tengo gripe y debería descansar para recuperarme más rápido.",
+          "Siento rara la presión arterial hoy.",
+          "Tengo vértigo y podría caerme durante el ejercicio.",
+          "Estoy experimentando síntomas de SPM.",
+          "Tengo dolor en las espinillas y correr dolería.",
+          "Tengo la muñeca/tobillo hinchado y necesita descanso.",
+          "Se me viene una migraña.",
+          "Me siento mentalmente agotado, necesito un día de salud mental.",
+          "Comí demasiado y me siento muy lleno para ejercitarme."
+        ],
+        time: [
+          "Tengo que trabajar hasta tarde hoy y no tendré tiempo.",
+          "Tengo una reunión importante que se alargó.",
+          "Mi viaje fue más largo de lo esperado.",
+          "Tengo obligaciones familiares que no puedo posponer.",
+          "Necesito recoger a alguien del aeropuerto.",
+          "Tengo una cita médica que se movió.",
+          "Estoy esperando una entrega importante.",
+          "Tengo que ayudar a un amigo con algo urgente.",
+          "Necesito ponerme al día con los quehaceres domésticos.",
+          "Tengo que estudiar para un examen mañana.",
+          "Estoy cuidando niños y no puedo irme.",
+          "Tengo problemas con el auto y no puedo llegar.",
+          "Necesito hacer compras antes de que cierren las tiendas.",
+          "Tengo una llamada de conferencia con clientes internacionales.",
+          "Estoy trabajando en un proyecto con fecha límite.",
+          "Tengo que asistir a una cena familiar.",
+          "Necesito llevar a mi mascota al veterinario.",
+          "Estoy cocinando para una cena esta noche.",
+          "Tengo que limpiar mi casa para visitantes.",
+          "Necesito lavar ropa y no tengo ropa limpia de ejercicio.",
+          "Estoy ayudando a alguien a mudarse hoy.",
+          "Tengo una entrevista de trabajo y necesito prepararme.",
+          "Necesito hacer mis impuestos y vence pronto.",
+          "Tengo que asistir a un evento virtual/webinar."
+        ],
+        funny: [
+          "Soy alérgico al ejercicio... es broma, pero realmente no quiero ir.",
+          "Mis músculos todavía están durmiendo y no quiero despertarlos.",
+          "He decidido hacerme uno con mi sofá hoy.",
+          "Mi ropa de ejercicio está sucia y no puedo ejercitarme en jeans.",
+          "Estoy ahorrando mi energía para actividades más importantes como Netflix.",
+          "Ya levanté... mi taza de café a mi boca múltiples veces.",
+          "Estoy practicando el arte ancestral de no hacer absolutamente nada.",
+          "Mis zapatos deportivos desarrollaron problemas de confianza con las caminadoras.",
+          "Estoy en una dieta estricta de 'no sudar' hoy.",
+          "Creo que me lastimé el músculo de la motivación.",
+          "Estoy conservando energía para cuando pase el apocalipsis zombie.",
+          "Mi atleta interior se tomó un día personal.",
+          "Tengo miedo de toparme con mi ex en el gym.",
+          "Ya hice gimnasia mental tratando de convencerme de ir.",
+          "Estoy teniendo una relación intensa con mi cama ahora mismo.",
+          "Olvidé cómo caminar, así que correr definitivamente está fuera.",
+          "Estoy participando en el deporte olímpico de la procrastinación.",
+          "Se murió mi monitor de fitness y no puedo ejercitarme sin rastrearlo.",
+          "Soy alérgico a los lunes/martes/cualquier día que termine en vocal.",
+          "Estoy entrenando para ser papa profesional del sofá.",
+          "Ya quemé calorías pensando en ejercitarme.",
+          "Estoy esperando a que la motivación toque mi puerta.",
+          "Estoy en una relación seria con comida no saludable hoy.",
+          "Decidí darle un descanso a mi membresía del gym para que no se canse."
+        ],
+        creative: [
+          "Estoy conduciendo un experimento científico sobre qué pasa cuando no te ejercitas.",
+          "Mi astrólogo dijo que Mercurio está retrógrado y no debería hacer movimientos bruscos.",
+          "Estoy conservando mi energía para ayudar a combatir el cambio climático.",
+          "Estoy entrenando para convertirme en tomador profesional de siestas.",
+          "Mi consejero espiritual me dijo que escuche a mi cuerpo, y está diciendo 'quédate en casa'.",
+          "Estoy participando en un experimento social sobre la pereza moderna.",
+          "Estoy actuando método para un papel como papa del sofá.",
+          "Estoy en una misión para descubrir la proporción perfecta de pizza a felicidad.",
+          "Estoy documentando mi viaje de fit a 'me siento'.",
+          "Estoy esperando a que el ejercicio se vuelva obsoleto debido a avances tecnológicos.",
+          "Estoy probando si la fuerza de voluntad sola puede mantener masa muscular.",
+          "Estoy explorando la pregunta filosófica: '¿Si nadie me ve saltarme el gym, realmente me lo salté?'",
+          "Estoy practicando mindfulness siendo consciente de cuánto no quiero ejercitarme.",
+          "Estoy en entrenamiento para convertirme en creador profesional de excusas.",
+          "Estoy estudiando el arte ancestral de la conservación de energía.",
+          "Estoy canalizando mi perezoso interior para un documental de vida silvestre.",
+          "Estoy conduciendo investigación sobre la correlación entre comodidad y felicidad.",
+          "Me estoy preparando para un futuro donde los robots hacen todas nuestras actividades físicas.",
+          "Estoy practicando el arte Zen de no hacer nada.",
+          "Estoy invirtiendo mi tiempo en convertirme en orador motivacional para gente perezosa.",
+          "Estoy explorando formas alternativas de ejercicio, como alcanzar el control remoto.",
+          "Estoy construyendo mi repertorio de excusas para uso futuro.",
+          "Estoy probando los límites de la inactividad humana para la ciencia.",
+          "Estoy desarrollando un nuevo programa de fitness llamado 'Entrenamientos Imaginarios'."
+        ]
+      }
+    };
+
+    function generateExcuse() {
+      const style = document.getElementById("style").value;
+      const set = excuses[currentLang];
+      const options = style === "random"
+        ? [...set.health, ...set.time, ...set.funny, ...set.creative]
+        : set[style];
+
+      // Filtrar excusas que NO estén en la lista de recientes
+      const availableOptions = options.filter(excuse => !recentExcuses.includes(excuse));
+
+      // Si quedan muy pocas opciones disponibles, resetear la memoria
+      if (availableOptions.length < 3) {
+        recentExcuses = [];
+        availableOptions.push(...options);
+      }
+
+      // Seleccionar excusa aleatoria de las opciones disponibles
+      const random = availableOptions[Math.floor(Math.random() * availableOptions.length)];
+
+      // Agregar la excusa a la lista de recientes
+      recentExcuses.push(random);
+
+      // Mantener solo los últimos MAX_RECENT elementos
+      if (recentExcuses.length > MAX_RECENT) {
+        recentExcuses.shift(); // Remover el más antiguo
+      }
+
+      const t = translations[currentLang];
+      document.getElementById("output").innerHTML = `"${random}"<br><button class="copy-btn" onclick="copyToClipboard('${random}')">${t.copy}</button> <button class="main-share-btn" onclick="toggleShareSection()">${t.share}</button>`;
+
+      // Ocultar sección de compartir al generar nuevo contenido
+      document.getElementById("share-section").style.display = "none";
+    }
+
+    function toggleShareSection() {
+      const shareSection = document.getElementById("share-section");
+      const isVisible = shareSection.style.display !== "none";
+      shareSection.style.display = isVisible ? "none" : "block";
+
+      // Actualizar título según idioma
+      const t = translations[currentLang];
+      document.getElementById("share-title").textContent = t.shareTitle;
+    }
+
+    function shareOnTwitter() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`🏋️ Gym excuse: ${content} #GymExcuses #Fitness #Relatable #Namerly`);
+      window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
+    }
+
+    function shareOnInstagram() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      navigator.clipboard.writeText(`🏋️ ${content} - Generated by Namerly`);
+      alert("Content copied! Open Instagram and paste it in your story or post.");
+    }
+
+    function shareOnTikTok() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      navigator.clipboard.writeText(`${content} #GymExcuses #Fitness #Relatable #Namerly`);
+      alert("Content copied! Open TikTok and paste it in your video description.");
+    }
+
+    function shareOnWhatsApp() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`🏋️ Perfect gym excuse: ${content}`);
+      window.open(`https://wa.me/?text=${text}`, "_blank");
+    }
+
+    function shareOnTelegram() {
+      const content = document.getElementById("output").textContent.split("Copy")[0].trim();
+      const text = encodeURIComponent(`🏋️ Perfect gym excuse: ${content}`);
+      window.open(`https://t.me/share/url?text=${text}`, "_blank");
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const t = translations[currentLang];
+        alert(t.copied);
+      });
+    }
+
+    document.getElementById("lang-toggle").addEventListener("click", () => {
+      currentLang = currentLang === "en" ? "es" : "en";
+      localStorage.setItem('namerly-lang', currentLang);
+      updateUI();
+      document.getElementById("output").innerHTML = "🏋️";
+      // Limpiar memoria de excusas recientes al cambiar idioma
+      recentExcuses = [];
+      // Ocultar sección de compartir al cambiar idioma
+      document.getElementById("share-section").style.display = "none";
+    });
+
+    updateUI();
+  </script>
+
+  <!-- Legal Footer -->
+  <footer class="legal-footer"
+    style="padding: 2rem; text-align: center; color: rgba(255,255,255,0.8); position: relative; z-index: 10;">
+    <div class="footer-content">
+      <div class="footer-links" style="margin-bottom: 1rem;">
+        <a href="../privacy-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Privacy
+          Policy</a>
+        <span class="separator">|</span>
+        <a href="../terms-of-service.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Terms of
+          Service</a>
+        <span class="separator">|</span>
+        <a href="../cookie-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Cookie Policy</a>
+        <span class="separator">|</span>
+        <a href="../disclaimer.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Disclaimer</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 Namerly. All rights reserved.</p>
+        <p>🔒 Your privacy is protected. We don't store personal data.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner"
+    style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+    <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+      mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+    <br>
+    <button id="accept-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+      analítica</button>
+    <button id="reject-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+      analítica</button>
+    <button onclick="openCookieSettings()"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+      cookies</button>
+    <a href="/cookie-policy.html"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem;">Política de cookies</a>
+  </div>
+
+  <div id="cookie-settings-modal" class="cookie-settings-modal" style="display:none;">
+    <div class="cookie-settings-content">
+      <h2>Configuración de cookies</h2>
+      <div class="cookie-category">
+        <h3>🍪 Esenciales</h3>
+        <p>Estas cookies son necesarias para el funcionamiento básico del sitio y no se pueden desactivar.</p>
+      </div>
+      <div class="cookie-category">
+        <h3>📊 Analítica</h3>
+        <p>Permiten medir el uso del sitio y mejorar la experiencia. Puedes aceptar o rechazar estas cookies.</p>
+        <div>
+          <label>
+            <input type="checkbox" id="analytics-consent-checkbox" />
+            Permitir cookies de analítica
+          </label>
+        </div>
+      </div>
+      <div class="cookie-settings-buttons">
+        <button onclick="saveCookieSettings()">Guardar</button>
+        <button onclick="closeCookieSettings()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+    function showCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+    function hideCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function openCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'flex';
+      document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+    }
+    function closeCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'none';
+    }
+    function saveCookieSettings() {
+      const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+      setCookie('namerly_analytics_consent', consent, 365);
+      closeCookieSettings();
+      window.location.reload();
+    }
+    document.getElementById('accept-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'accepted', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    document.getElementById('reject-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'rejected', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    window.addEventListener('DOMContentLoaded', function () {
+      var consent = getCookie('namerly_analytics_consent');
+      if (!consent) showCookieBanner();
+      else hideCookieBanner();
+      if (consent === 'accepted') loadAnalytics();
+    });
+    function loadAnalytics() {
+      if (window.gtagLoaded) return;
+      window.gtagLoaded = true;
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21';
+      document.head.appendChild(script);
+      script.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-ZCBGMRHJ21', {
+          cookie_domain: 'namerlygenerator.netlify.app',
+          anonymize_ip: true
+        });
+      };
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,907 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarcastic Comments Generator | Witty & Funny Responses - Namerly</title>
+  <meta name="description"
+    content="Generate witty sarcastic comments and clever responses! Perfect for social media, comebacks, and adding humor to any conversation." />
+  <meta name="keywords"
+    content="sarcastic comments, witty responses, funny comebacks, sarcasm generator, clever replies, humorous comments, witty remarks" />
+  <meta name="author" content="Namerly" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://namerlygenerator.netlify.app/sarcastic/" />
+  <meta property="og:title" content="Sarcastic Comments Generator | Witty & Funny Responses - Namerly" />
+  <meta property="og:description"
+    content="Generate witty sarcastic comments and clever responses! Perfect for social media and comebacks." />
+  <meta property="og:image" content="https://namerlygenerator.netlify.app/assets/images/sarcastic-og.jpg" />
+  <meta property="og:site_name" content="Namerly" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://namerlygenerator.netlify.app/sarcastic/" />
+  <meta name="twitter:title" content="Sarcastic Comments Generator | Witty & Funny Responses - Namerly" />
+  <meta name="twitter:description"
+    content="Generate witty sarcastic comments and clever responses! Perfect for social media and comebacks." />
+  <meta name="twitter:image" content="https://namerlygenerator.netlify.app/assets/images/sarcastic-og.jpg" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://namerlygenerator.netlify.app/sarcastic/" />
+
+  <!-- Language alternates -->
+  <link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/sarcastic/" />
+  <link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/sarcastic/" />
+  <link rel="alternate" hreflang="x-default" href="https://namerlygenerator.netlify.app/sarcastic/" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated background particles */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/></circle></svg>') repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    main {
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      letter-spacing: 0.5px;
+    }
+
+    .control-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    label {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    select {
+      width: 100%;
+      max-width: 300px;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      border: 2px solid #e2e8f0;
+      border-radius: 15px;
+      background: white;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    select:hover {
+      border-color: #8b5cf6;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #8b5cf6;
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+    }
+
+    .generate-btn {
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+      color: white;
+      border: none;
+      padding: 1.2rem 3rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+      margin-top: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .generate-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s;
+    }
+
+    .generate-btn:hover::before {
+      left: 100%;
+    }
+
+    .generate-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(139, 92, 246, 0.5);
+    }
+
+    .generate-btn:active {
+      transform: translateY(-1px);
+    }
+
+    #output {
+      margin-top: 3rem;
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-family: 'Roboto', 'Inter', sans-serif;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.6;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: all 0.5s ease;
+    }
+
+    #output.has-content {
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .phrase-text {
+      font-size: 1.4rem;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      color: #1a202c;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      line-height: 1.7;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+      font-family: 'Roboto', 'Inter', sans-serif;
+      text-align: center;
+    }
+
+    .copy-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, #17a2b8, #138496);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(23, 162, 184, 0.3);
+      margin: 0.5rem;
+      font-weight: 500;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(23, 162, 184, 0.4);
+      background: linear-gradient(135deg, #138496, #17a2b8);
+    }
+
+    .share-section {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 2px dashed rgba(139, 92, 246, 0.3);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .share-title {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #333;
+      font-size: 1.2rem;
+    }
+
+    .main-share-btn {
+      margin-left: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+      margin: 0.5rem;
+      font-weight: 500;
+    }
+
+    .main-share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(16, 185, 129, 0.4);
+      background: linear-gradient(135deg, #059669, #10b981);
+    }
+
+    .share-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .share-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .twitter {
+      background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+      color: white;
+    }
+
+    .instagram {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+    }
+
+    .tiktok {
+      background: linear-gradient(135deg, #000, #333);
+      color: white;
+    }
+
+    .whatsapp {
+      background: linear-gradient(135deg, #25d366, #20c157);
+      color: white;
+    }
+
+    .telegram {
+      background: linear-gradient(135deg, #0088cc, #0066aa);
+      color: white;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      main {
+        padding: 2rem 1rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        letter-spacing: 0.3px;
+      }
+
+      .control-section {
+        padding: 1.5rem;
+      }
+
+      #output {
+        padding: 2rem;
+        font-size: 1.2rem;
+      }
+
+      .phrase-text {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        font-weight: 400;
+        font-family: 'Roboto', 'Inter', sans-serif;
+      }
+
+      .share-buttons {
+        gap: 10px;
+      }
+
+      .share-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Loading animation */
+    .loading {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Emoji animation */
+    .emoji-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">😈 Namerly</h1>
+    <div>
+      <button id="lang-toggle"
+        style="margin-right: 1rem; padding: 0.4rem 0.8rem; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">🌐
+        ES</button>
+      <a href="../index.html" style="text-decoration:none;">← Home</a>
+    </div>
+  </header>
+  <main>
+    <h2 id="subtitle">Sarcastic Responses</h2>
+    <div class="control-section">
+      <label for="category">Choose a category:</label>
+      <select id="category">
+        <option value="classic">🎭 Classic</option>
+        <option value="work">💼 Work</option>
+        <option value="dating">💕 Dating</option>
+        <option value="social">🎉 Social</option>
+        <option value="random">🎲 Random</option>
+      </select>
+      <button onclick="generateResponse()" class="generate-btn"><span id="btn-text">Generate</span></button>
+    </div>
+    <div id="output">😏</div>
+    <div id="share-section" style="display: none;">
+      <div class="share-section">
+        <div class="share-title" id="share-title">📱 Share on Social Media</div>
+        <div class="share-buttons">
+          <a href="#" class="share-btn twitter" onclick="shareTwitter()" id="twitter-btn">🐦 Twitter</a>
+          <a href="#" class="share-btn instagram" onclick="shareInstagram()" id="instagram-btn">📸 Instagram</a>
+          <a href="#" class="share-btn tiktok" onclick="shareTikTok()" id="tiktok-btn">🎵 TikTok</a>
+          <a href="#" class="share-btn whatsapp" onclick="shareWhatsApp()" id="whatsapp-btn">💬 WhatsApp</a>
+          <a href="#" class="share-btn telegram" onclick="shareTelegram()" id="telegram-btn">✈️ Telegram</a>
+        </div>
+      </div>
+      <button class="copy-btn" onclick="copyToClipboard()">📋 Copy</button>
+    </div>
+  </main>
+
+  <!-- Legal Footer -->
+  <footer class="legal-footer"
+    style="padding: 2rem; text-align: center; color: rgba(255,255,255,0.8); position: relative; z-index: 10;">
+    <div class="footer-content">
+      <div class="footer-links" style="margin-bottom: 1rem;">
+        <a href="../privacy-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Privacy
+          Policy</a>
+        <span class="separator">|</span>
+        <a href="../terms-of-service.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Terms of
+          Service</a>
+        <span class="separator">|</span>
+        <a href="../cookie-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Cookie Policy</a>
+        <span class="separator">|</span>
+        <a href="../disclaimer.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Disclaimer</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 Namerly. All rights reserved.</p>
+        <p>🔒 Your privacy is protected. We don't store personal data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let currentLanguage = 'en';
+    let recentResponses = [];
+    const MAX_RECENT = 8;
+
+    const translations = {
+      en: {
+        title: "😈 Namerly",
+        subtitle: "Sarcastic Responses",
+        generate: "Generate",
+        copy: "📋 Copy",
+        copied: "✅ Copied!",
+        shareTitle: "📱 Share on Social Media",
+        categories: {
+          classic: "🎭 Classic",
+          work: "💼 Work",
+          dating: "💕 Dating",
+          social: "🎉 Social",
+          random: "🎲 Random"
+        }
+      },
+      es: {
+        title: "😈 Namerly",
+        subtitle: "Respuestas Sarcásticas",
+        generate: "Generar",
+        copy: "📋 Copiar",
+        copied: "✅ ¡Copiado!",
+        shareTitle: "📱 Compartir en Redes",
+        categories: {
+          classic: "🎭 Clásico",
+          work: "💼 Trabajo",
+          dating: "💕 Citas",
+          social: "🎉 Social",
+          random: "🎲 Aleatorio"
+        }
+      }
+    };
+
+    const responses = {
+      en: {
+        classic: [
+          "Oh wow, I'm so impressed! 🙄",
+          "That's... absolutely fascinating 😴",
+          "Really? Tell me more about how amazing you are 🎭",
+          "I'm sure that's exactly what happened 😏",
+          "What a unique and original thought! 🤡",
+          "Thanks for that groundbreaking observation 🧠",
+          "I'm on the edge of my seat with excitement 😐",
+          "How did you come up with something so brilliant? 💡",
+          "That's definitely worth interrupting for 📢",
+          "I've been waiting my whole life to hear that 🕰️",
+          "What a shocking plot twist 🎬",
+          "I'm absolutely riveted by this conversation 😪",
+          "Your intellectual depth astounds me 🤓",
+          "Thank you for that life-changing revelation 🌟",
+          "I'm sure that's a completely unbiased opinion 🎯"
+        ],
+        work: [
+          "Great, another meeting that could've been an email 📧",
+          "I love doing other people's work for them 💼",
+          "Sure, I'll drop everything for your 'urgent' request 🏃‍♀️",
+          "Thanks for the feedback I definitely didn't ask for 🙏",
+          "I'm so glad you shared your expert opinion 🎯",
+          "Another brilliant idea from management 💡",
+          "I live for these last-minute changes 🔄",
+          "Of course the deadline moved up again ⏰",
+          "I love explaining the same thing multiple times 🔁",
+          "Thanks for including me in this disaster 🔥",
+          "I'm sure this will definitely work this time 🎪",
+          "What a perfectly reasonable request at 5:59 PM 🕕",
+          "I love when people schedule meetings during lunch 🍕",
+          "Thanks for waiting until the last second to tell me 📅",
+          "Your micromanagement skills are truly inspiring 🔍"
+        ],
+        dating: [
+          "You must be really popular with that attitude 😍",
+          "I bet you say that to all the girls/guys 💕",
+          "What a charming and original pickup line 🎭",
+          "I'm swooning over your incredible wit 😵‍💫",
+          "Thanks for blessing me with your presence 👑",
+          "I'm sure your ex really misses you 💔",
+          "What a catch you are! 🎣",
+          "I love a person who knows their worth... allegedly 💎",
+          "You're definitely relationship material 📝",
+          "I'm impressed by your humble confidence 🏆",
+          "Your dating profile must be comedy gold 📱",
+          "I'm sure you have women/men lining up 👥",
+          "What a romantic gesture... for someone else 🌹",
+          "Your emotional intelligence is breathtaking 🧠",
+          "I love how you make ghosting an art form 👻"
+        ],
+        social: [
+          "Thanks for sharing that riveting story 📖",
+          "I'm so glad social media exists for moments like this 📱",
+          "What would we do without your constant updates? 📢",
+          "I love hearing about your perfect life 🌟",
+          "Thanks for the life advice I never requested 🎯",
+          "Your humility is truly inspiring 🙏",
+          "I'm sure everyone needed to know that 📣",
+          "What an interesting way to spend your time ⏰",
+          "Thanks for keeping us all entertained 🎪",
+          "I love how you make everything about yourself 🎭",
+          "Your vague posting skills are unmatched 🌫️",
+          "I'm sure that totally happened 📚",
+          "What a thoughtful and necessary comment 💭",
+          "Your oversharing brings us all such joy 📺",
+          "I love how you humble-brag so subtly 🏅"
+        ],
+        random: [
+          "Congratulations on stating the obvious 🏆",
+          "What a revolutionary concept 🚀",
+          "I'm sure that's exactly how it works 🔧",
+          "Thanks for that unsolicited wisdom 🧙‍♂️",
+          "I love your creative interpretation of reality 🎨",
+          "What an absolutely shocking revelation 😱",
+          "I'm impressed by your confidence in being wrong 💪",
+          "Thanks for solving a problem nobody had 🔧",
+          "What would we do without your expertise? 🎓",
+          "I'm sure that's a completely factual statement 📊",
+          "Your logic is truly unassailable 🧩",
+          "I love how you make assumptions so confidently 🎯",
+          "What a delightfully naive perspective 🌈",
+          "Your ability to miss the point is impressive 🎪",
+          "Thanks for that completely relevant tangent 🌪️"
+        ]
+      },
+      es: {
+        classic: [
+          "¡Oh vaya, estoy tan impresionado! 🙄",
+          "Eso es... absolutamente fascinante 😴",
+          "¿En serio? Cuéntame más sobre lo increíble que eres 🎭",
+          "Estoy seguro de que eso fue exactamente lo que pasó 😏",
+          "¡Qué pensamiento tan único y original! 🤡",
+          "Gracias por esa observación revolucionaria 🧠",
+          "Estoy al borde de mi asiento de la emoción 😐",
+          "¿Cómo se te ocurrió algo tan brillante? 💡",
+          "Eso definitivamente vale la pena interrumpir 📢",
+          "He estado esperando toda mi vida para escuchar eso 🕰️",
+          "Qué giro tan impactante de la trama 🎬",
+          "Estoy absolutamente cautivado por esta conversación 😪",
+          "Tu profundidad intelectual me asombra 🤓",
+          "Gracias por esa revelación que cambió mi vida 🌟",
+          "Estoy seguro de que es una opinión completamente imparcial 🎯"
+        ],
+        work: [
+          "Genial, otra reunión que podría haber sido un email 📧",
+          "Me encanta hacer el trabajo de otros 💼",
+          "Claro, dejaré todo por tu petición 'urgente' 🏃‍♀️",
+          "Gracias por el feedback que definitivamente no pedí 🙏",
+          "Me alegra tanto que compartieras tu opinión experta 🎯",
+          "Otra idea brillante de la gerencia 💡",
+          "Vivo para estos cambios de último minuto 🔄",
+          "Por supuesto que la fecha límite se adelantó otra vez ⏰",
+          "Me encanta explicar lo mismo varias veces 🔁",
+          "Gracias por incluirme en este desastre 🔥",
+          "Estoy seguro de que esta vez definitivamente funcionará 🎪",
+          "Qué petición tan perfectamente razonable a las 5:59 PM 🕕",
+          "Me encanta cuando programan reuniones durante el almuerzo 🍕",
+          "Gracias por esperar hasta el último segundo para decirme 📅",
+          "Tus habilidades de microgestión son verdaderamente inspiradoras 🔍"
+        ],
+        dating: [
+          "Debes ser muy popular con esa actitud 😍",
+          "Apuesto a que le dices eso a todas/os 💕",
+          "Qué línea de conquista tan encantadora y original 🎭",
+          "Me desmayo por tu increíble ingenio 😵‍💫",
+          "Gracias por bendecirme con tu presencia 👑",
+          "Estoy seguro de que tu ex realmente te extraña 💔",
+          "¡Qué partidazo eres! 🎣",
+          "Me encanta alguien que conoce su valor... supuestamente 💎",
+          "Definitivamente eres material de relación 📝",
+          "Estoy impresionado por tu humilde confianza 🏆",
+          "Tu perfil de citas debe ser oro puro de comedia 📱",
+          "Estoy seguro de que tienes mujeres/hombres haciendo cola 👥",
+          "Qué gesto tan romántico... para otra persona 🌹",
+          "Tu inteligencia emocional es impresionante 🧠",
+          "Me encanta cómo conviertes el ghosting en una forma de arte 👻"
+        ],
+        social: [
+          "Gracias por compartir esa historia fascinante 📖",
+          "Me alegra tanto que existan las redes sociales para momentos así 📱",
+          "¿Qué haríamos sin tus actualizaciones constantes? 📢",
+          "Me encanta escuchar sobre tu vida perfecta 🌟",
+          "Gracias por el consejo de vida que nunca pedí 🎯",
+          "Tu humildad es verdaderamente inspiradora 🙏",
+          "Estoy seguro de que todos necesitaban saber eso 📣",
+          "Qué forma tan interesante de pasar tu tiempo ⏰",
+          "Gracias por mantenernos a todos entretenidos 🎪",
+          "Me encanta cómo haces que todo se trate de ti 🎭",
+          "Tus habilidades de posteo vago son incomparables 🌫️",
+          "Estoy seguro de que eso totalmente pasó 📚",
+          "Qué comentario tan reflexivo y necesario 💭",
+          "Tu exceso de información nos trae tanta alegría 📺",
+          "Me encanta cómo presumes tan sutilmente 🏅"
+        ],
+        random: [
+          "Felicidades por decir lo obvio 🏆",
+          "Qué concepto tan revolucionario 🚀",
+          "Estoy seguro de que así es exactamente como funciona 🔧",
+          "Gracias por esa sabiduría no solicitada 🧙‍♂️",
+          "Me encanta tu interpretación creativa de la realidad 🎨",
+          "Qué revelación absolutamente impactante 😱",
+          "Estoy impresionado por tu confianza en estar equivocado 💪",
+          "Gracias por resolver un problema que no tenía nadie 🔧",
+          "¿Qué haríamos sin tu experiencia? 🎓",
+          "Estoy seguro de que es una declaración completamente fáctica 📊",
+          "Tu lógica es verdaderamente inexpugnable 🧩",
+          "Me encanta cómo haces suposiciones tan confiadamente 🎯",
+          "Qué perspectiva tan deliciosamente ingenua 🌈",
+          "Tu habilidad para no entender el punto es impresionante 🎪",
+          "Gracias por esa tangente completamente relevante 🌪️"
+        ]
+      }
+    };
+
+    function generateResponse() {
+      const category = document.getElementById('category').value;
+      const categoryResponses = responses[currentLanguage][category];
+
+      let availableResponses = categoryResponses.filter(response => !recentResponses.includes(response));
+
+      if (availableResponses.length === 0) {
+        recentResponses = [];
+        availableResponses = categoryResponses;
+      }
+
+      const randomResponse = availableResponses[Math.floor(Math.random() * availableResponses.length)];
+
+      recentResponses.push(randomResponse);
+      if (recentResponses.length > MAX_RECENT) {
+        recentResponses.shift();
+      }
+
+      document.getElementById('output').textContent = randomResponse;
+      document.getElementById('share-section').style.display = 'block';
+    }
+
+    function copyToClipboard() {
+      const text = document.getElementById('output').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const button = document.querySelector('.copy-btn');
+        const originalText = button.textContent;
+        button.textContent = translations[currentLanguage].copied;
+        setTimeout(() => button.textContent = originalText, 2000);
+      });
+    }
+
+    function shareTwitter() {
+      const text = document.getElementById('output').textContent;
+      const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text + " #Sarcastic #Namerly #Viral")}`;
+      window.open(url, '_blank');
+    }
+
+    function shareInstagram() {
+      const text = document.getElementById('output').textContent;
+      navigator.clipboard.writeText(text + " #Sarcastic #Namerly #Viral").then(() => {
+        alert(currentLanguage === 'en' ? 'Text copied! Paste it in Instagram' : '¡Texto copiado! Pégalo en Instagram');
+      });
+    }
+
+    function shareTikTok() {
+      const text = document.getElementById('output').textContent;
+      navigator.clipboard.writeText(text + " #Sarcastic #Namerly #Viral").then(() => {
+        alert(currentLanguage === 'en' ? 'Text copied! Use it in your TikTok' : '¡Texto copiado! Úsalo en tu TikTok');
+      });
+    }
+
+    function shareWhatsApp() {
+      const text = document.getElementById('output').textContent;
+      const url = `https://wa.me/?text=${encodeURIComponent(text + " #Sarcastic #Namerly")}`;
+      window.open(url, '_blank');
+    }
+
+    function shareTelegram() {
+      const text = document.getElementById('output').textContent;
+      const url = `https://t.me/share/url?text=${encodeURIComponent(text + " #Sarcastic #Namerly")}`;
+      window.open(url, '_blank');
+    }
+
+    function toggleLanguage() {
+      currentLanguage = currentLanguage === 'en' ? 'es' : 'en';
+      updateUI();
+    }
+
+    function updateUI() {
+      const lang = translations[currentLanguage];
+      document.getElementById('title').textContent = lang.title;
+      document.getElementById('subtitle').textContent = lang.subtitle;
+      document.querySelector('button[onclick="generateResponse()"]').textContent = lang.generate;
+      document.querySelector('.copy-btn').textContent = lang.copy;
+      document.getElementById('share-title').textContent = lang.shareTitle;
+      document.getElementById('lang-toggle').textContent = currentLanguage === 'en' ? '🌐 ES' : '🌐 EN';
+
+      const select = document.getElementById('category');
+      for (let option of select.options) {
+        option.textContent = lang.categories[option.value];
+      }
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
+    document.addEventListener('DOMContentLoaded', updateUI);
+  </script>
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner"
+    style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+    <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+      mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+    <br>
+    <button id="accept-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+      analítica</button>
+    <button id="reject-analytics"
+      style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+      analítica</button>
+    <button onclick="openCookieSettings()"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+      cookies</button>
+    <a href="/cookie-policy.html"
+      style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem;">Política de cookies</a>
+  </div>
+
+  <div id="cookie-settings-modal" class="cookie-settings-modal" style="display:none;">
+    <div class="cookie-settings-content">
+      <h2>Configuración de cookies</h2>
+      <div class="cookie-category">
+        <h3>🍪 Esenciales</h3>
+        <p>Estas cookies son necesarias para el funcionamiento básico del sitio y no se pueden desactivar.</p>
+      </div>
+      <div class="cookie-category">
+        <h3>📊 Analítica</h3>
+        <p>Permiten medir el uso del sitio y mejorar la experiencia. Puedes aceptar o rechazar estas cookies.</p>
+        <div>
+          <label>
+            <input type="checkbox" id="analytics-consent-checkbox" />
+            Permitir cookies de analítica
+          </label>
+        </div>
+      </div>
+      <div class="cookie-settings-buttons">
+        <button onclick="saveCookieSettings()">Guardar</button>
+        <button onclick="closeCookieSettings()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+    function showCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+    function hideCookieBanner() {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function openCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'flex';
+      document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+    }
+    function closeCookieSettings() {
+      document.getElementById('cookie-settings-modal').style.display = 'none';
+    }
+    function saveCookieSettings() {
+      const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+      setCookie('namerly_analytics_consent', consent, 365);
+      closeCookieSettings();
+      window.location.reload();
+    }
+    document.getElementById('accept-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'accepted', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    document.getElementById('reject-analytics').onclick = function () {
+      setCookie('namerly_analytics_consent', 'rejected', 365);
+      hideCookieBanner();
+      window.location.reload();
+    };
+    window.addEventListener('DOMContentLoaded', function () {
+      var consent = getCookie('namerly_analytics_consent');
+      if (!consent) showCookieBanner();
+      else hideCookieBanner();
+      if (consent === 'accepted') loadAnalytics();
+    });
+    function loadAnalytics() {
+      if (window.gtagLoaded) return;
+      window.gtagLoaded = true;
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21';
+      document.head.appendChild(script);
+      script.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-ZCBGMRHJ21', {
+          cookie_domain: 'namerlygenerator.netlify.app',
+          anonymize_ip: true
+        });
+      };
+    }
+  </script>
+<script type="module" src="../../assets/js/premium-features.js"></script>
+</body>
+
+</html>

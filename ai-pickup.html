@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>AI Pickup Lines Generator - Free Smart Flirty Lines | Namerly</title>
+  <meta name="description"
+    content="Generate AI-powered pickup lines instantly! Smart, creative, personalized flirty lines for dating apps. Free AI content generator. Perfect for Tinder and Bumble!" />
+  <meta name="keywords"
+    content="AI pickup lines, pickup line generator, AI flirting, dating app lines, smart pickup lines, creative pickup lines, tinder lines, bumble opener" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Pickup Lines Generator - Smart Flirty Lines" />
+  <meta property="og:description"
+    content="Generate personalized AI pickup lines instantly! Perfect for dating apps and social situations." />
+  <meta property="og:type" content="website" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI Pickup Lines Generator",
+    "description": "Generate AI-powered pickup lines instantly! Smart, creative, personalized flirty lines for dating apps.",
+    "url": "https://namerlygenerator.netlify.app/ai-pickup.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/ai-pages.css" />
+  <link rel="stylesheet" href="assets/css/adsense.css" />
+
+  <!-- Google Analytics 4 -->
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-ZCBGMRHJ21', {
+      cookie_domain: 'namerlygenerator.netlify.app',
+      custom_map: { 'custom_parameter_1': 'page_category' }
+    });
+  </script>
+
+  <script src="assets/js/ai-common.js"></script>
+  <script src="assets/js/adsense-manager.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h1><a href="index.html" style="text-decoration: none; color: inherit;">🔥 Namerly</a></h1>
+    </div>
+    <nav>
+      <button onclick="toggleLanguage()" class="lang-btn" id="langBtn">ES</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="ai-container ai-pickup">
+      <div class="ai-badge">🤖 AI POWERED</div>
+
+      <h1 id="title">AI Pickup Lines Generator</h1>
+      <p id="subtitle">Generate personalized, smart pickup lines using artificial intelligence</p>
+
+      <div class="input-group">
+        <label for="situation" id="situationLabel">Situation/Context:</label>
+        <select id="situation">
+          <option value="general" data-en="General/Any situation" data-es="General/Cualquier situación">General/Any
+            situation</option>
+          <option value="dating-app" data-en="Dating app (Tinder/Bumble)" data-es="App de citas (Tinder/Bumble)">Dating
+            app (Tinder/Bumble)</option>
+          <option value="coffee-shop" data-en="Coffee shop/Café" data-es="Cafetería/Café">Coffee shop/Café</option>
+          <option value="gym" data-en="Gym/Fitness center" data-es="Gimnasio/Centro fitness">Gym/Fitness center</option>
+          <option value="party" data-en="Party/Social event" data-es="Fiesta/Evento social">Party/Social event</option>
+          <option value="work" data-en="Work/Professional" data-es="Trabajo/Profesional">Work/Professional</option>
+          <option value="beach" data-en="Beach/Vacation" data-es="Playa/Vacaciones">Beach/Vacation</option>
+          <option value="bookstore" data-en="Bookstore/Library" data-es="Librería/Biblioteca">Bookstore/Library</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="style" id="styleLabel">Style:</label>
+        <select id="style">
+          <option value="funny" data-en="Funny/Humorous" data-es="Divertido/Con humor">Funny/Humorous</option>
+          <option value="smooth" data-en="Smooth/Confident" data-es="Suave/Confiado">Smooth/Confident</option>
+          <option value="cute" data-en="Cute/Sweet" data-es="Tierno/Dulce">Cute/Sweet</option>
+          <option value="clever" data-en="Clever/Witty" data-es="Inteligente/Ingenioso">Clever/Witty</option>
+          <option value="direct" data-en="Direct/Bold" data-es="Directo/Atrevido">Direct/Bold</option>
+          <option value="nerdy" data-en="Nerdy/Geeky" data-es="Nerd/Geek">Nerdy/Geeky</option>
+          <option value="romantic" data-en="Romantic/Poetic" data-es="Romántico/Poético">Romantic/Poetic</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="topic" id="topicLabel">Topic/Interest (optional):</label>
+        <input type="text" id="topic" placeholder="e.g., coffee, books, travel, fitness..."
+          data-placeholder-en="e.g., coffee, books, travel, fitness..."
+          data-placeholder-es="ej., café, libros, viajes, fitness..." />
+      </div>
+
+      <button class="generate-btn" onclick="generateAIPickupLine()" id="generateBtn">
+        Generate AI Pickup Line ✨
+      </button>
+
+      <div class="loading" id="loading">
+        <p>AI is crafting your perfect line...</p>
+      </div>
+
+      <div class="result-container" id="resultContainer">
+        <div class="result-text" id="resultText"></div>
+
+        <div class="social-share">
+          <h3 id="shareTitle">Share Your AI Line</h3>
+          <div class="share-buttons">
+            <button onclick="shareToTwitter()" class="share-btn twitter">Twitter</button>
+            <button onclick="shareToInstagram()" class="share-btn instagram">Instagram</button>
+            <button onclick="shareToTikTok()" class="share-btn tiktok">TikTok</button>
+            <button onclick="shareToWhatsApp()" class="share-btn whatsapp">WhatsApp</button>
+            <button onclick="copyToClipboard()" class="share-btn copy">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="usage-limit" id="usageLimit">
+        <p>🎯 <span id="remainingUses">5</span> AI generations remaining today</p>
+        <p>Reset at midnight • Free tier</p>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="index.html">← Back to All Generators</a>
+    </div>
+  </main>
+
+  <!-- Legal Footer -->
+  <footer class="legal-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+        <span class="separator">|</span>
+        <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+        <span class="separator">|</span>
+        <a href="cookie-policy.html" class="footer-link">Cookie Policy</a>
+        <span class="separator">|</span>
+        <a href="disclaimer.html" class="footer-link">Disclaimer</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 Namerly. All rights reserved.</p>
+        <p>🔒 Your privacy is protected. We don't store personal data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize language system
+    currentLanguage = initializeLanguage();
+
+    let currentResult = '';
+    const category = 'aiPickup';
+    const MAX_DAILY_USES = 3;
+
+    // Get usage data
+    const { dailyUses } = getDailyUsage(category);
+    let remainingUses = Math.max(0, MAX_DAILY_USES - dailyUses);
+
+    // Update UI
+    if (remainingUses === 0) {
+      document.getElementById('generateBtn').disabled = true;
+    }
+
+    // Translations for this specific page
+    const translations = {
+      en: {
+        title: 'AI Pickup Lines Generator',
+        subtitle: 'Generate personalized, smart pickup lines using artificial intelligence',
+        situationLabel: 'Situation/Context:',
+        styleLabel: 'Style:',
+        topicLabel: 'Topic/Interest (optional):',
+        generateBtn: 'Generate AI Pickup Line ✨',
+        shareTitle: 'Share Your AI Line'
+      },
+      es: {
+        title: 'Generador IA de Frases para Ligar',
+        subtitle: 'Genera frases para ligar personalizadas e inteligentes usando inteligencia artificial',
+        situationLabel: 'Situación/Contexto:',
+        styleLabel: 'Estilo:',
+        topicLabel: 'Tema/Interés (opcional):',
+        generateBtn: 'Generar Frase IA ✨',
+        shareTitle: 'Comparte Tu Frase IA'
+      }
+    };
+
+    async function generateAIPickupLine() {
+      if (!checkUsageOrShowReward(category, MAX_DAILY_USES)) {
+        return;
+      }
+
+      const situation = document.getElementById('situation').value;
+      const style = document.getElementById('style').value;
+      const topic = document.getElementById('topic').value;
+
+      // Show loading with dynamic text
+      const loadingEl = document.getElementById('loading');
+      loadingEl.style.display = 'block';
+      loadingEl.querySelector('p').textContent = commonTranslations[currentLanguage].loadingTexts.pickup;
+      document.getElementById('resultContainer').style.display = 'none';
+      document.getElementById('generateBtn').disabled = true;
+
+      try {
+        // Create AI prompt based on current language
+        let prompt;
+        if (currentLanguage === 'es') {
+          prompt = `Genera un piropo ${style} para ${situation}`;
+          if (topic) prompt += ` sobre ${topic}`;
+          prompt += '. Hazlo creativo, atractivo y apropiado. Responde solo en español.';
+        } else {
+          prompt = `Generate a ${style} pickup line for ${situation}`;
+          if (topic) prompt += ` about ${topic}`;
+          prompt += '. Make it creative, engaging, and appropriate. Respond only in English.';
+        }
+
+        // Use optimized API call
+        const apiResult = await callAIAPI(prompt, 50);
+        let result = apiResult || generateFallbackPickupLine(situation, style, topic, currentLanguage);
+
+        // Clean and format result
+        if (apiResult) {
+          currentResult = cleanAIResult(apiResult);
+          document.getElementById('resultText').innerHTML = `<strong>✨ Gemini AI Says:</strong><br>${currentResult}`;
+        } else {
+          console.warn("Gemini API failed or was blocked. Using fallback.");
+          currentResult = generateFallbackPickupLine(situation, style, topic, currentLanguage);
+          document.getElementById('resultText').textContent = currentResult;
+        }
+
+        document.getElementById('resultContainer').style.display = 'block';
+
+        // Update button
+        if (newUses >= MAX_DAILY_USES) {
+          const t = commonTranslations[currentLanguage];
+          document.getElementById('generateBtn').textContent = t.limitReached;
+        } else {
+          document.getElementById('generateBtn').disabled = false;
+        }
+
+      } catch (error) {
+        // Fallback to generated content on error
+        currentResult = generateFallbackPickupLine(situation, style, topic, currentLanguage);
+        document.getElementById('resultText').textContent = currentResult;
+        document.getElementById('resultContainer').style.display = 'block';
+        document.getElementById('generateBtn').disabled = false;
+      }
+
+      document.getElementById('loading').style.display = 'none';
+    }
+
+    function generateFallbackPickupLine(situation, style, topic, language = 'en') {
+      const fallbackLines = {
+        funny: [
+          "Are you WiFi? Because I'm feeling a connection! 📶",
+          "Do you have a map? I keep getting lost in your eyes! 🗺️",
+          "Are you a parking ticket? Because you've got FINE written all over you! 🎫",
+          "Is your name Google? Because you have everything I've been searching for! 🔍"
+        ],
+        smooth: [
+          "I must be a snowflake, because I've fallen for you ❄️",
+          "If you were a vegetable, you'd be a cute-cumber 🥒",
+          "Do you believe in love at first sight, or should I walk by again? 👀",
+          "Are you made of copper and tellurium? Because you're Cu-Te! ⚗️"
+        ],
+        cute: [
+          "If you were a cat, you'd purr-fect! 🐱",
+          "Are you a magician? Because whenever I look at you, everyone else disappears! ✨",
+          "Do you have a Band-Aid? Because I just scraped my knee falling for you! 🩹",
+          "Is your dad a baker? Because you're a cutie pie! 🥧"
+        ],
+        clever: [
+          "Are you a 45-degree angle? Because you're acute-y! 📐",
+          "If you were a triangle, you'd be acute one! 📊",
+          "Are you a time traveler? Because I see you in my future! ⏰",
+          "Do you have 11 protons? Because you're sodium fine! 🧪"
+        ],
+        direct: [
+          "I'm not a photographer, but I can picture us together 📸",
+          "Your hand looks heavy—can I hold it for you? 🤝",
+          "I think you're suffering from a lack of vitamin ME! 💊",
+          "Are you accepting applications for a boyfriend? 📝"
+        ],
+        nerdy: [
+          "Are you the square root of -1? Because you can't be real! 🤓",
+          "You must be made of uranium and iodine, because all I can see is U and I! ⚛️",
+          "Are you a 90-degree angle? Because you're looking right! 📐",
+          "If you were a programming language, you'd be Python—simple and beautiful! 💻"
+        ],
+        romantic: [
+          "In a sea of people, my eyes will always search for you 🌊",
+          "If I could rearrange the alphabet, I'd put U and I together 💕",
+          "You're like a sunset—beautiful and worth waiting for 🌅",
+          "Every moment with you feels like a fairytale ✨"
+        ]
+      };
+
+      const spanishLines = {
+        funny: [
+          "¿Eres WiFi? ¡Porque siento una conexión! 📶",
+          "¿Tienes un mapa? Me sigo perdiendo en tus ojos 🗺️",
+          "¿Eres una multa? ¡Porque tienes HERMOSA escrito por todas partes! 🎫",
+          "¿Te llamas Google? ¡Porque tienes todo lo que busco! 🔍"
+        ],
+        smooth: [
+          "Debo ser un copo de nieve, porque me he caído por ti ❄️",
+          "Si fueras una verdura, serías una linda-horia 🥒",
+          "¿Crees en el amor a primera vista, o paso otra vez? 👀",
+          "¿Estás hecha de cobre y telurio? ¡Porque eres Cu-Te! ⚗️"
+        ],
+        cute: [
+          "Si fueras un gato, serías purr-fecto! 🐱",
+          "¿Eres maga? ¡Porque cuando te miro, todos los demás desaparecen! ✨",
+          "¿Tienes una curita? ¡Me raspé la rodilla cayendo por ti! 🩹",
+          "¿Tu papá es panadero? ¡Porque eres un pastelito! 🥧"
+        ],
+        clever: [
+          "¿Eres un ángulo de 45 grados? ¡Porque eres acu-ta! 📐",
+          "Si fueras un triángulo, serías acu-ta! 📊",
+          "¿Eres viajera del tiempo? ¡Porque te veo en mi futuro! ⏰",
+          "¿Tienes 11 protones? ¡Porque estás so-dio buena! 🧪"
+        ],
+        direct: [
+          "No soy fotógrafo, pero nos veo juntos 📸",
+          "Tu mano se ve pesada, ¿puedo sostenerla? 🤝",
+          "Creo que sufres de falta de vitamina YO! 💊",
+          "¿Aceptas aplicaciones para novio? 📝"
+        ],
+        nerdy: [
+          "¿Eres la raíz cuadrada de -1? ¡Porque no puedes ser real! 🤓",
+          "Debes estar hecha de uranio y yodo, ¡porque solo veo U y I! ⚛️",
+          "¿Eres un ángulo de 90 grados? ¡Porque te ves perfecta! 📐",
+          "Si fueras lenguaje de programación, serías Python—simple y hermoso! 💻"
+        ],
+        romantic: [
+          "En un mar de personas, mis ojos siempre te buscarán 🌊",
+          "Si pudiera reorganizar el alfabeto, pondría U e I juntas 💕",
+          "Eres como un atardecer—hermosa y vale la pena esperar 🌅",
+          "Cada momento contigo se siente como un cuento de hadas ✨"
+        ]
+      };
+
+      const selectedLines = language === 'es' ? spanishLines : fallbackLines;
+      const lines = selectedLines[style] || selectedLines.funny;
+      const randomLine = lines[Math.floor(Math.random() * lines.length)];
+
+      const prefix = language === 'es' ? '🤖 IA Generó: ' : '🤖 AI Generated: ';
+      return prefix + randomLine;
+    }
+
+    function cleanAIResult(text) {
+      // Clean and format AI response
+      return text.replace(/^(Generated|Output|Result):?\s*/i, '')
+        .replace(/["\[\]]/g, '')
+        .trim();
+    }
+
+    // Social sharing functions (optimized)
+    function shareToTwitter() {
+      const text = `Check out this AI-generated pickup line: "${currentResult}" 🤖💕 #AIPickupLines #Namerly`;
+      shareToSocial('twitter', text);
+    }
+
+    function shareToInstagram() {
+      copyToClipboard(currentResult);
+      alert(currentLanguage === 'en' ?
+        'Pickup line copied! Open Instagram and paste it in your story or post 📸' :
+        '¡Frase copiada! Abre Instagram y pégala en tu historia o post 📸');
+    }
+
+    function shareToTikTok() {
+      copyToClipboard(currentResult);
+      alert(currentLanguage === 'en' ?
+        'Pickup line copied! Use it in your TikTok video or comment 🎵' :
+        '¡Frase copiada! Úsala en tu video de TikTok o comentario 🎵');
+    }
+
+    function shareToWhatsApp() {
+      const text = `Check out this AI pickup line: "${currentResult}" 🤖💕 Generated with Namerly!`;
+      shareToSocial('whatsapp', text);
+    }
+
+    function copyToClipboard() {
+      copyToClipboard(currentResult);
+    }
+
+    // Language toggle - now uses the shared system
+    function toggleLanguage() {
+      toggleLanguageShared(); // Call the shared function
+      updateLanguage();
+    }
+
+    function updateLanguage() {
+      const t = translations[currentLanguage];
+      document.getElementById('title').textContent = t.title;
+      document.getElementById('subtitle').textContent = t.subtitle;
+      document.getElementById('situationLabel').textContent = t.situationLabel;
+      document.getElementById('styleLabel').textContent = t.styleLabel;
+      document.getElementById('topicLabel').textContent = t.topicLabel;
+      document.getElementById('shareTitle').textContent = t.shareTitle;
+
+      // Update dropdown options using optimized function
+      updateDropdownOptions('situation', currentLanguage);
+      updateDropdownOptions('style', currentLanguage);
+
+      // Update placeholders using optimized function
+      updatePlaceholders(currentLanguage);
+
+      const remainingUses = MAX_DAILY_USES - getDailyUsage(category).dailyUses;
+      if (remainingUses <= 0) {
+        const commonT = commonTranslations[currentLanguage];
+        document.getElementById('generateBtn').textContent = commonT.limitReached;
+      } else {
+        document.getElementById('generateBtn').textContent = t.generateBtn;
+      }
+    }
+
+    // Initialize
+    updateLanguage();
+  </script>
+</body>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner"
+  style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+  <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+    mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+  <br>
+  <button id="accept-analytics"
+    style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+    analítica</button>
+  <button id="reject-analytics"
+    style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+    analítica</button>
+  <button onclick="openCookieSettings()"
+    style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+    cookies</button>
+  <a href="/cookie-policy.html"
+    style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem;">Política de cookies</a>
+</div>
+
+<div id="cookie-settings-modal" class="cookie-settings-modal" style="display:none;">
+  <div class="cookie-settings-content">
+    <h2>Configuración de cookies</h2>
+    <div class="cookie-category">
+      <h3>🍪 Esenciales</h3>
+      <p>Estas cookies son necesarias para el funcionamiento básico del sitio y no se pueden desactivar.</p>
+    </div>
+    <div class="cookie-category">
+      <h3>📊 Analítica</h3>
+      <p>Permiten medir el uso del sitio y mejorar la experiencia. Puedes aceptar o rechazar estas cookies.</p>
+      <div>
+        <label>
+          <input type="checkbox" id="analytics-consent-checkbox" />
+          Permitir cookies de analítica
+        </label>
+      </div>
+    </div>
+    <div class="cookie-settings-buttons">
+      <button onclick="saveCookieSettings()">Guardar</button>
+      <button onclick="closeCookieSettings()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      const date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  }
+  function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+  function showCookieBanner() {
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+  function hideCookieBanner() {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+  function openCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'flex';
+    document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+  }
+  function closeCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'none';
+  }
+  function saveCookieSettings() {
+    const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+    setCookie('namerly_analytics_consent', consent, 365);
+    closeCookieSettings();
+    window.location.reload();
+  }
+  document.getElementById('accept-analytics').onclick = function () {
+    setCookie('namerly_analytics_consent', 'accepted', 365);
+    hideCookieBanner();
+    window.location.reload();
+  };
+  document.getElementById('reject-analytics').onclick = function () {
+    setCookie('namerly_analytics_consent', 'rejected', 365);
+    hideCookieBanner();
+    window.location.reload();
+  };
+  window.addEventListener('DOMContentLoaded', function () {
+    var consent = getCookie('namerly_analytics_consent');
+    if (!consent) showCookieBanner();
+    else hideCookieBanner();
+    if (consent === 'accepted') loadAnalytics();
+  });
+  function loadAnalytics() {
+    if (window.gtagLoaded) return;
+    window.gtagLoaded = true;
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21';
+    document.head.appendChild(script);
+    script.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-ZCBGMRHJ21', {
+        cookie_domain: 'namerlygenerator.netlify.app',
+        anonymize_ip: true
+      });
+    };
+  }
+</script>
+
+</html>

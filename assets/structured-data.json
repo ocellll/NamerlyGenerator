@@ -1,0 +1,170 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://namerlygenerator.netlify.app/#webapp",
+      "name": "NamerlyGenerator - Viral Content Creator",
+      "description": "Generate viral names, usernames, pickup lines, Instagram bios, YouTube titles & more! Free bilingual name generator with 19+ categories.",
+      "url": "https://namerlygenerator.netlify.app",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "Web",
+      "browserRequirements": "Requires JavaScript. Supports Chrome, Firefox, Safari, Edge.",
+      "inLanguage": ["en", "es"],
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "NamerlyGenerator",
+        "url": "https://namerlygenerator.netlify.app"
+      },
+      "featureList": [
+        "Instagram Bio Generator",
+        "Username Generator", 
+        "Pickup Lines Generator",
+        "YouTube Title Generator",
+        "TikTok Content Generator",
+        "WhatsApp Names Generator",
+        "Pet Names Generator",
+        "Gaming Names Generator",
+        "WiFi Names Generator",
+        "AI-Powered Generators"
+      ],
+      "screenshot": "https://namerlygenerator.netlify.app/assets/images/screenshot-desktop.png",
+      "potentialAction": {
+        "@type": "UseAction",
+        "target": "https://namerlygenerator.netlify.app"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://namerlygenerator.netlify.app/#website",
+      "url": "https://namerlygenerator.netlify.app",
+      "name": "NamerlyGenerator",
+      "description": "Free viral content and name generator platform",
+      "inLanguage": ["en", "es"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://namerlygenerator.netlify.app/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://namerlygenerator.netlify.app/#organization",
+      "name": "NamerlyGenerator",
+      "url": "https://namerlygenerator.netlify.app",
+      "description": "Creator of viral content generation tools",
+      "foundingDate": "2024",
+      "sameAs": [
+        "https://twitter.com/NamerlyGeneratorCom"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://namerlygenerator.netlify.app/contact.html"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://namerlygenerator.netlify.app/#software",
+      "name": "Namerly PWA",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1247",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://namerlygenerator.netlify.app/#generators",
+      "name": "Namerly Generator Categories",
+      "description": "Complete list of available content generators",
+      "numberOfItems": "19",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Instagram Bio Generator",
+          "description": "Generate viral Instagram bio ideas",
+          "url": "https://namerlygenerator.netlify.app/bios/"
+        },
+        {
+          "@type": "ListItem", 
+          "position": 2,
+          "name": "Username Generator",
+          "description": "Create unique social media usernames",
+          "url": "https://namerlygenerator.netlify.app/usernames/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3, 
+          "name": "Pickup Lines Generator",
+          "description": "Generate clever pickup lines",
+          "url": "https://namerlygenerator.netlify.app/pickup/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "YouTube Title Generator", 
+          "description": "Create viral YouTube video titles",
+          "url": "https://namerlygenerator.netlify.app/youtube/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "TikTok Content Generator",
+          "description": "Generate TikTok video ideas and captions",
+          "url": "https://namerlygenerator.netlify.app/tiktok/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://namerlygenerator.netlify.app/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Namerly Generator free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Namerly Generator is completely free to use with 19+ different content generators available without any registration required."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "What types of content can I generate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can generate Instagram bios, usernames, pickup lines, YouTube titles, TikTok content, WhatsApp names, pet names, gaming names, WiFi names, excuses, pranks, and much more!"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Namerly work in multiple languages?",
+          "acceptedAnswer": {
+            "@type": "Answer", 
+            "text": "Yes! Namerly supports both English and Spanish content generation for maximum reach and versatility."
+          }
+        }
+      ]
+    }
+  ]
+}

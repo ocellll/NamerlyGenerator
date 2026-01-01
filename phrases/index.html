@@ -1,0 +1,1120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inspirational Quotes Generator | Motivational Phrases - Namerly</title>
+  <meta name="description"
+    content="Generate inspiring quotes and motivational phrases! Perfect for social media posts, daily motivation, and uplifting content. Find your daily dose of inspiration!" />
+  <meta name="keywords"
+    content="inspirational quotes, motivational phrases, daily quotes, inspiring phrases, motivational quotes, positive quotes, uplifting quotes" />
+  <meta name="author" content="Namerly" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://namerlygenerator.netlify.app/phrases/" />
+  <meta property="og:title" content="Inspirational Quotes Generator | Motivational Phrases - Namerly" />
+  <meta property="og:description"
+    content="Generate inspiring quotes and motivational phrases! Perfect for social media and daily motivation." />
+  <meta property="og:image" content="https://namerlygenerator.netlify.app/assets/images/quotes-og.jpg" />
+  <meta property="og:site_name" content="Namerly" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://namerlygenerator.netlify.app/phrases/" />
+  <meta name="twitter:title" content="Inspirational Quotes Generator | Motivational Phrases - Namerly" />
+  <meta name="twitter:description"
+    content="Generate inspiring quotes and motivational phrases! Perfect for social media and daily motivation." />
+  <meta name="twitter:image" content="https://namerlygenerator.netlify.app/assets/images/quotes-og.jpg" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://namerlygenerator.netlify.app/phrases/" />
+
+  <!-- Language alternates -->
+  <link rel="alternate" hreflang="en" href="https://namerlygenerator.netlify.app/phrases/" />
+  <link rel="alternate" hreflang="es" href="https://namerlygenerator.netlify.app/phrases/" />
+  <link rel="alternate" hreflang="x-default" href="https://namerlygenerator.netlify.app/phrases/" />
+
+  <!-- Google Analytics 4 removed (loaded via cookie consent) -->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated background particles */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/></circle></svg>') repeat;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    main {
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      letter-spacing: 0.5px;
+    }
+
+    .control-section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    label {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    select {
+      width: 100%;
+      max-width: 300px;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      border: 2px solid #e2e8f0;
+      border-radius: 15px;
+      background: white;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    select:hover {
+      border-color: #667eea;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    }
+
+    .generate-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 1.2rem 3rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+      margin-top: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .generate-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s;
+    }
+
+    .generate-btn:hover::before {
+      left: 100%;
+    }
+
+    .generate-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+    }
+
+    .generate-btn:active {
+      transform: translateY(-1px);
+    }
+
+    #output {
+      margin-top: 3rem;
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-family: 'Roboto', 'Inter', sans-serif;
+      font-weight: 400;
+      color: #333;
+      line-height: 1.6;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: all 0.5s ease;
+    }
+
+    #output.has-content {
+      animation: slideInUp 0.6s ease-out;
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .phrase-text {
+      font-size: 1.4rem;
+      font-style: normal;
+      margin-bottom: 1.5rem;
+      color: #1a202c;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      line-height: 1.7;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+      font-family: 'Roboto', 'Inter', sans-serif;
+      text-align: center;
+    }
+
+    .copy-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, #17a2b8, #138496);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(23, 162, 184, 0.3);
+      margin: 0.5rem;
+      font-weight: 500;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(23, 162, 184, 0.4);
+      background: linear-gradient(135deg, #138496, #17a2b8);
+    }
+
+    .share-section {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 2px dashed rgba(102, 126, 234, 0.3);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .share-title {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #333;
+      font-size: 1.2rem;
+    }
+
+    .main-share-btn {
+      margin-left: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+      margin: 0.5rem;
+      font-weight: 500;
+    }
+
+    .main-share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(16, 185, 129, 0.4);
+      background: linear-gradient(135deg, #059669, #10b981);
+    }
+
+    .share-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .share-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .twitter {
+      background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+      color: white;
+    }
+
+    .instagram {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+    }
+
+    .tiktok {
+      background: linear-gradient(135deg, #000, #333);
+      color: white;
+    }
+
+    .whatsapp {
+      background: linear-gradient(135deg, #25d366, #20c157);
+      color: white;
+    }
+
+    .telegram {
+      background: linear-gradient(135deg, #0088cc, #0066aa);
+      color: white;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      main {
+        padding: 2rem 1rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        letter-spacing: 0.3px;
+      }
+
+      .control-section {
+        padding: 1.5rem;
+      }
+
+      #output {
+        padding: 2rem;
+        font-size: 1.2rem;
+      }
+
+      .phrase-text {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        font-weight: 400;
+        font-family: 'Roboto', 'Inter', sans-serif;
+      }
+
+      .share-buttons {
+        gap: 10px;
+      }
+
+      .share-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Loading animation */
+    .loading {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Emoji animation */
+    .emoji-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Cookie Modal Styles */
+    .cookie-settings-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cookie-settings-content {
+      background-color: white;
+      margin: auto;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 500px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .cookie-category {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 10px;
+    }
+
+    .cookie-category h3 {
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .cookie-settings-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      margin-top: 2rem;
+    }
+
+    .cookie-settings-buttons button {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .cookie-settings-buttons button:first-child {
+      background: #667eea;
+      color: white;
+    }
+
+    .cookie-settings-buttons button:last-child {
+      background: #e2e8f0;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="title">💭 Namerly</h1>
+    <div>
+      <button id="lang-toggle"
+        style="margin-right: 1rem; padding: 0.4rem 0.8rem; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">🌐
+        ES</button>
+      <a href="../index.html" style="text-decoration:none;">← Home</a>
+    </div>
+  </header>
+  <main>
+    <h2 id="subtitle" class="emoji-float">✨ Random Phrases</h2>
+    <p
+      style="color: #ffffff; font-size: 1.1rem; margin-bottom: 2rem; font-weight: 400; text-shadow: 0 1px 4px rgba(0,0,0,0.4); letter-spacing: 0.3px;">
+      Discover inspiring quotes that will motivate, entertain, and make you think
+    </p>
+
+    <div class="control-section">
+      <label for="category">🎯 Choose your vibe:</label>
+      <select id="category">
+        <option value="motivational">✨ Motivational</option>
+        <option value="funny">😂 Funny</option>
+        <option value="deep">🤔 Deep</option>
+        <option value="viral">🔥 Viral</option>
+        <option value="random">🎲 Random</option>
+      </select>
+      <br>
+      <button onclick="generatePhrase()" class="generate-btn">
+        <span id="btn-text">Generate Phrase</span>
+      </button>
+    </div>
+
+    <div id="output">
+      <div class="emoji-float" style="font-size: 3rem; margin-bottom: 1rem;">💭</div>
+      <p
+        style="color: #4a5568; font-family: 'Inter', 'Roboto', sans-serif; font-style: normal; font-weight: 500; font-size: 1.1rem; letter-spacing: 0.2px;">
+        Click "Generate Phrase" to discover your next favorite quote!
+      </p>
+    </div>
+
+    <div id="share-section" style="display: none;">
+      <div class="share-section">
+        <div class="share-title" id="share-title">📱 Share on Social Media</div>
+        <div class="share-buttons">
+          <button class="share-btn twitter" onclick="shareOnTwitter()">🐦 Twitter</button>
+          <button class="share-btn instagram" onclick="shareOnInstagram()">📸 Instagram</button>
+          <button class="share-btn tiktok" onclick="shareOnTikTok()">🎵 TikTok</button>
+          <button class="share-btn whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>
+          <button class="share-btn telegram" onclick="shareOnTelegram()">✈️ Telegram</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let currentLang = localStorage.getItem('namerly-lang') || (navigator.language.startsWith("es") ? "es" : "en");
+
+    const translations = {
+      en: {
+        subtitle: "✨ Random Phrases",
+        chooseCategory: "🎯 Choose your vibe:",
+        generate: "Generate Phrase",
+        copy: "Copy",
+        copied: "Copied!",
+        share: "Share",
+        shareTitle: "📱 Share on Social Media",
+        description: "Discover inspiring quotes that will motivate, entertain, and make you think",
+        placeholder: "Click \"Generate Phrase\" to discover your next favorite quote!",
+        categories: {
+          motivational: "✨ Motivational",
+          funny: "😂 Funny",
+          deep: "🤔 Deep",
+          viral: "🔥 Viral",
+          random: "🎲 Random"
+        }
+      },
+      es: {
+        subtitle: "✨ Frases Aleatorias",
+        chooseCategory: "🎯 Elige tu vibra:",
+        generate: "Generar Frase",
+        copy: "Copiar",
+        copied: "¡Copiado!",
+        share: "Compartir",
+        shareTitle: "📱 Compartir en Redes Sociales",
+        description: "Descubre frases inspiradoras que te motivarán, entretendrán y te harán reflexionar",
+        placeholder: "¡Haz clic en \"Generar Frase\" para descubrir tu próxima cita favorita!",
+        categories: {
+          motivational: "✨ Motivacional",
+          funny: "😂 Gracioso",
+          deep: "🤔 Profundo",
+          viral: "🔥 Viral",
+          random: "🎲 Aleatorio"
+        }
+      }
+    };
+
+    function updateUI() {
+      const t = translations[currentLang];
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.querySelector("label[for='category']").textContent = t.chooseCategory;
+      document.getElementById("btn-text").textContent = t.generate;
+
+      // Update description
+      const description = document.querySelector('main p');
+      description.textContent = t.description;
+
+      // Update placeholder
+      const output = document.getElementById("output");
+      if (!output.classList.contains('has-content')) {
+        output.innerHTML = `
+          <div class="emoji-float" style="font-size: 3rem; margin-bottom: 1rem;">💭</div>
+          <p style="color: #4a5568; font-family: 'Inter', 'Roboto', sans-serif; font-style: normal; font-weight: 500; font-size: 1.1rem; letter-spacing: 0.2px;">
+            ${t.placeholder}
+          </p>
+        `;
+      }
+
+      // Update dropdown options
+      const categorySelect = document.getElementById("category");
+      categorySelect.innerHTML = '';
+      Object.keys(t.categories).forEach(key => {
+        const option = document.createElement('option');
+        option.value = key;
+        option.textContent = t.categories[key];
+        categorySelect.appendChild(option);
+      });
+
+      document.getElementById("share-title").textContent = t.shareTitle;
+
+      const nextLang = currentLang === "en" ? "ES" : "EN";
+      document.getElementById("lang-toggle").innerHTML = `🌐 ${nextLang}`;
+    }
+
+    const phrases = {
+      en: {
+        motivational: [
+          "The best time to plant a tree was 20 years ago. The second best time is now.",
+          "Your limitation—it's only your imagination.",
+          "Push yourself, because no one else is going to do it for you.",
+          "Great things never come from comfort zones.",
+          "Dream it. Wish it. Do it.",
+          "Success doesn't just find you. You have to go out and get it.",
+          "The harder you work for something, the greater you'll feel when you achieve it.",
+          "Dream bigger. Do bigger.",
+          "Don't stop when you're tired. Stop when you're done.",
+          "Wake up with determination. Go to bed with satisfaction."
+        ],
+        funny: [
+          "I'm not arguing, I'm just explaining why I'm right.",
+          "I'm not lazy, I'm just in energy-saving mode.",
+          "I don't need anger management. I need people to stop pissing me off.",
+          "I'm not short, I'm fun-sized.",
+          "I'm not weird, I'm a limited edition.",
+          "I don't have a bad handwriting, I have my own font.",
+          "I'm not clumsy, I'm just testing gravity.",
+          "I'm not procrastinating, I'm prioritizing my fun.",
+          "I don't need a therapist, I have my playlist.",
+          "I'm not antisocial, I'm selectively social.",
+          "I'm on a seafood diet. I see food and I eat it.",
+          "I followed my heart, and it led me to the fridge.",
+          "I'm not a morning person. I'm a coffee person."
+        ],
+        deep: [
+          "We are not human beings having a spiritual experience. We are spiritual beings having a human experience.",
+          "The cave you fear to enter holds the treasure you seek.",
+          "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+          "The only way to make sense out of change is to plunge into it, move with it, and join the dance.",
+          "Yesterday is history, tomorrow is a mystery, today is a gift.",
+          "In the end, we will remember not the words of our enemies, but the silence of our friends.",
+          "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+          "Life is what happens to you while you're busy making other plans.",
+          "The purpose of our lives is to be happy.",
+          "Life is 10% what happens to you and 90% how you react to it.",
+          "The two most important days in your life are the day you are born and the day you find out why.",
+          "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+          "The unexamined life is not worth living."
+        ],
+        viral: [
+          "That awkward moment when you wave back at someone who wasn't waving at you.",
+          "Me: I'll go to bed early tonight. Also me at 3 AM:",
+          "When someone asks if I'm okay but I'm clearly not:",
+          "POV: You're the main character in your own story.",
+          "Tell me you're Gen Z without telling me you're Gen Z.",
+          "This hits different at 2 AM.",
+          "No one: Absolutely no one: Me:",
+          "It's giving main character energy.",
+          "Why is this so accurate though?",
+          "Not me reading this in my head with attitude.",
+          "The category is: ...",
+          "It's the ... for me.",
+          "Understood the assignment."
+        ],
+        random: [
+          "Coffee: because adulting is hard.",
+          "Silence is better than unnecessary drama.",
+          "Collect moments, not things.",
+          "Be yourself; everyone else is already taken.",
+          "Life's too short to wear boring clothes.",
+          "Good vibes only.",
+          "Stay wild, moon child.",
+          "Create your own sunshine.",
+          "Adventure awaits.",
+          "Just breathe.",
+          "Salty but sweet.",
+          "Chasing sunsets.",
+          "Less perfection, more authenticity."
+        ]
+      },
+      es: {
+        motivational: [
+          "El mejor momento para plantar un árbol fue hace 20 años. El segundo mejor momento es ahora.",
+          "Tu limitación solo existe en tu imaginación.",
+          "Empújate a ti mismo, porque nadie más lo va a hacer por ti.",
+          "Las grandes cosas nunca vienen de zonas de confort.",
+          "Sueña. Desea. Hazlo.",
+          "El éxito no te encuentra. Tienes que salir y conseguirlo.",
+          "Mientras más duro trabajes por algo, mejor te sentirás cuando lo logres.",
+          "Sueña más grande. Haz más grande.",
+          "No te detengas cuando estés cansado. Detente cuando hayas terminado.",
+          "Despierta con determinación. Vete a dormir con satisfacción.",
+          "Nunca es tarde para empezar a perseguir tus sueños.",
+          "La vida es como una bicicleta. Para mantener el equilibrio, debes seguir moviéndote.",
+          "Cree que puedes y ya estarás a medio camino."
+        ],
+        funny: [
+          "No estoy discutiendo, solo estoy explicando por qué tengo razón.",
+          "No soy perezoso, estoy en modo de ahorro de energía.",
+          "No necesito terapia de ira. Necesito que la gente deje de molestarme.",
+          "No soy bajo, soy de tamaño divertido.",
+          "No soy raro, soy una edición limitada.",
+          "No tengo mala letra, tengo mi propia fuente.",
+          "No soy torpe, solo estoy probando la gravedad.",
+          "No estoy procrastinando, estoy priorizando mi diversión.",
+          "No necesito un terapeuta, tengo mi lista de reproducción.",
+          "No soy antisocial, soy socialmente selectivo.",
+          "Hago la dieta del marisco. Veo marisco y me lo como.",
+          "Seguí a mi corazón y me llevó a la nevera.",
+          "No soy una persona mañanera. Soy una persona de café."
+        ],
+        deep: [
+          "No somos seres humanos teniendo una experiencia espiritual. Somos seres espirituales teniendo una experiencia humana.",
+          "La cueva a la que temes entrar contiene el tesoro que buscas.",
+          "Lo que yace detrás de nosotros y lo que yace ante nosotros son asuntos pequeños en comparación con lo que yace dentro de nosotros.",
+          "La única forma de dar sentido al cambio es sumergirse en él, moverse con él y unirse a la danza.",
+          "El ayer es historia, el mañana es un misterio, el hoy es un regalo.",
+          "Al final, no recordaremos las palabras de nuestros enemigos, sino el silencio de nuestros amigos.",
+          "La mayor gloria de vivir no consiste en no caer nunca, sino en levantarnos cada vez que caemos.",
+          "La vida es lo que te pasa mientras estás ocupado haciendo otros planes.",
+          "El propósito de nuestras vidas es ser felices.",
+          "La vida es 10% lo que te sucede y 90% cómo reaccionas a ello.",
+          "Los dos días más importantes de tu vida son el día en que naces y el día en que descubres por qué.",
+          "Ser tú mismo en un mundo que constantemente intenta convertirte en otra cosa es el mayor logro.",
+          "Una vida sin examinar no vale la pena ser vivida."
+        ],
+        viral: [
+          "Ese momento incómodo cuando le devuelves el saludo a alguien que no te estaba saludando a ti.",
+          "Yo: Me iré a la cama temprano esta noche. También yo a las 3 AM:",
+          "Cuando alguien pregunta si estoy bien pero claramente no lo estoy:",
+          "POV: Eres el personaje principal de tu propia historia.",
+          "Dime que eres Gen Z sin decirme que eres Gen Z.",
+          "Esto se siente diferente a las 2 AM.",
+          "Nadie: Absolutamente nadie: Yo:",
+          "Vibras de personaje principal.",
+          "¿Por qué es esto tan preciso?",
+          "No yo leyéndome esto en mi cabeza con actitud.",
+          "La categoría es: ...",
+          "Es el ... para mí.",
+          "Entendió la tarea."
+        ],
+        random: [
+          "Café: porque ser adulto es difícil.",
+          "El silencio es mejor que el drama innecesario.",
+          "Colecciona momentos, no cosas.",
+          "Sé tú mismo; todos los demás ya están ocupados.",
+          "La vida es demasiado corta para llevar ropa aburrida.",
+          "Solo buenas vibras.",
+          "Mantente salvaje, hijo de la luna.",
+          "Crea tu propio sol.",
+          "La aventura espera.",
+          "Solo respira.",
+          "Salado pero dulce.",
+          "Persiguiendo atardeceres.",
+          "Menos perfección, más autenticidad.",
+          "No necesito un terapeuta, tengo mi playlist.",
+          "No soy antisocial, soy selectivamente social.",
+          "No estoy procrastinando, estoy priorizando mi diversión."
+        ]
+      }
+    };
+
+    // Anti-repetition system
+    const MAX_RECENT = 10;
+    let recentItems = JSON.parse(localStorage.getItem('namerly-phrases-recent')) || [];
+
+    function generatePhrase() {
+      const category = document.getElementById("category").value;
+      const phrasesArray = phrases[currentLang][category];
+
+      // Show loading state
+      const output = document.getElementById("output");
+      const btnText = document.getElementById("btn-text");
+      const originalBtnText = btnText.textContent;
+
+      btnText.textContent = currentLang === "en" ? "Generating..." : "Generando...";
+      output.classList.add('loading');
+      output.innerHTML = `
+        <div class="emoji-float" style="font-size: 3rem; margin-bottom: 1rem;">⏳</div>
+        <p style="color: #4a5568; font-family: 'Inter', 'Roboto', sans-serif; font-style: normal; font-weight: 500; font-size: 1.1rem; letter-spacing: 0.2px;">
+          ${currentLang === "en" ? "Finding the perfect phrase..." : "Encontrando la frase perfecta..."}
+        </p>
+      `;
+
+      // Simulate loading for better UX
+      setTimeout(() => {
+        // Filter out recently used phrases
+        const availablePhrases = phrasesArray.filter(phrase => !recentItems.includes(phrase));
+
+        // If all phrases were used recently, clear the recent list
+        let selectedPhrase;
+        if (availablePhrases.length === 0) {
+          recentItems = [];
+          selectedPhrase = phrasesArray[Math.floor(Math.random() * phrasesArray.length)];
+        } else {
+          selectedPhrase = availablePhrases[Math.floor(Math.random() * availablePhrases.length)];
+        }
+
+        // Add to recent items
+        recentItems.unshift(selectedPhrase);
+
+        // Keep only the most recent items
+        if (recentItems.length > MAX_RECENT) {
+          recentItems = recentItems.slice(0, MAX_RECENT);
+        }
+
+        // Save to localStorage
+        localStorage.setItem('namerly-phrases-recent', JSON.stringify(recentItems));
+
+        // Display the phrase with animation
+        output.classList.remove('loading');
+        output.classList.add('has-content');
+        output.innerHTML = `
+          <div class="phrase-text">"${selectedPhrase}"</div>
+          <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+            <button class="copy-btn" onclick="copyToClipboard('${selectedPhrase.replace(/'/g, "\\'")}')">
+              ${translations[currentLang].copy}
+            </button>
+            <button class="main-share-btn" onclick="toggleShareSection()">
+              ${translations[currentLang].share}
+            </button>
+          </div>
+        `;
+
+        // Show the share section
+        document.getElementById("share-section").style.display = "block";
+
+        // Reset button text
+        btnText.textContent = originalBtnText;
+      }, 1000);
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.target;
+        const originalText = btn.textContent;
+        const originalBg = btn.style.background;
+
+        // Visual feedback
+        btn.textContent = translations[currentLang].copied;
+        btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+        btn.style.transform = 'scale(1.05)';
+
+        // Create success particle effect
+        createParticleEffect(btn);
+
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = originalBg;
+          btn.style.transform = 'translateY(-2px)';
+        }, 2000);
+      }).catch(() => {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        const btn = event.target;
+        const originalText = btn.textContent;
+        btn.textContent = translations[currentLang].copied;
+        setTimeout(() => {
+          btn.textContent = originalText;
+        }, 2000);
+      });
+    }
+
+    function createParticleEffect(element) {
+      const rect = element.getBoundingClientRect();
+      const particles = [];
+
+      for (let i = 0; i < 6; i++) {
+        const particle = document.createElement('div');
+        particle.style.position = 'fixed';
+        particle.style.left = rect.left + rect.width / 2 + 'px';
+        particle.style.top = rect.top + rect.height / 2 + 'px';
+        particle.style.width = '6px';
+        particle.style.height = '6px';
+        particle.style.background = '#10b981';
+        particle.style.borderRadius = '50%';
+        particle.style.pointerEvents = 'none';
+        particle.style.zIndex = '9999';
+        particle.style.transition = 'all 0.6s ease-out';
+        document.body.appendChild(particle);
+
+        particles.push(particle);
+
+        setTimeout(() => {
+          const angle = (Math.PI * 2 * i) / 6;
+          const distance = 50;
+          particle.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`;
+          particle.style.opacity = '0';
+        }, 10);
+
+        setTimeout(() => {
+          document.body.removeChild(particle);
+        }, 600);
+      }
+    }
+
+    function toggleShareSection() {
+      const shareSection = document.getElementById("share-section");
+      shareSection.style.display = shareSection.style.display === "none" ? "block" : "none";
+    }
+
+    function shareOnTwitter() {
+      const phrase = document.getElementById("output").textContent.split('\n')[0].replace(/"/g, '');
+      const text = `"${phrase}" #Namerly #RandomPhrases #Quotes`;
+      window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    function shareOnInstagram() {
+      const phrase = document.getElementById("output").textContent.split('\n')[0].replace(/"/g, '');
+      navigator.clipboard.writeText(`"${phrase}" #Namerly #RandomPhrases #Quotes`);
+      alert('Phrase copied! Now paste it on Instagram.');
+    }
+
+    function shareOnTikTok() {
+      const phrase = document.getElementById("output").textContent.split('\n')[0].replace(/"/g, '');
+      navigator.clipboard.writeText(`"${phrase}" #Namerly #RandomPhrases #Quotes`);
+      alert('Phrase copied! Now paste it on TikTok.');
+    }
+
+    function shareOnWhatsApp() {
+      const phrase = document.getElementById("output").textContent.split('\n')[0].replace(/"/g, '');
+      const text = `"${phrase}" 💭✨ Generated with Namerly`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    function shareOnTelegram() {
+      const phrase = document.getElementById("output").textContent.split('\n')[0].replace(/"/g, '');
+      const text = `"${phrase}" 💭✨ Generated with Namerly`;
+      window.open(`https://t.me/share/url?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    // Language toggle
+    document.getElementById("lang-toggle").addEventListener("click", () => {
+      currentLang = currentLang === "en" ? "es" : "en";
+      localStorage.setItem('namerly-lang', currentLang);
+      updateUI();
+
+      // Reset output with animation
+      const output = document.getElementById("output");
+      output.classList.remove('has-content');
+      const t = translations[currentLang];
+      output.innerHTML = `
+        <div class="emoji-float" style="font-size: 3rem; margin-bottom: 1rem;">💭</div>
+        <p style="color: #4a5568; font-family: 'Inter', 'Roboto', sans-serif; font-style: normal; font-weight: 500; font-size: 1.1rem; letter-spacing: 0.2px;">
+          ${t.placeholder}
+        </p>
+      `;
+
+      // Hide share section when changing language
+      document.getElementById("share-section").style.display = "none";
+    });
+
+    // Initialize UI
+    updateUI();
+  </script>
+
+
+<script type="module" src="../../assets/js/premium-features.js"></script>
+</body>
+
+</html> <!-- Legal Footer -->
+<footer class="legal-footer"
+  style="padding: 2rem; text-align: center; color: rgba(255,255,255,0.8); position: relative; z-index: 10;">
+  <div class="footer-content">
+    <div class="footer-links" style="margin-bottom: 1rem;">
+      <a href="../privacy-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Privacy Policy</a>
+      <span class="separator">|</span>
+      <a href="../terms-of-service.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Terms of
+        Service</a>
+      <span class="separator">|</span>
+      <a href="../cookie-policy.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Cookie Policy</a>
+      <span class="separator">|</span>
+      <a href="../disclaimer.html" style="color: white; text-decoration: none; margin: 0 0.5rem;">Disclaimer</a>
+    </div>
+    <div class="footer-info">
+      <p>&copy; 2025 Namerly. All rights reserved.</p>
+      <p>🔒 Your privacy is protected. We don't store personal data.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner"
+  style="display:none; position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:2px solid #e11d48; box-shadow:0 -2px 10px rgba(0,0,0,0.07); z-index:9999; padding:1.2rem 0; text-align:center; font-size:1rem;">
+  <span style="color:#222;">Este sitio usa cookies <b>esenciales</b> para funcionar y cookies de <b>analítica</b> para
+    mejorar la experiencia. ¿Aceptas las cookies de analítica?</span>
+  <br>
+  <button id="accept-analytics"
+    style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#e11d48; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Aceptar
+    analítica</button>
+  <button id="reject-analytics"
+    style="margin:0.7rem 0.5rem; padding:0.5rem 1.2rem; background:#ddd; color:#222; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Rechazar
+    analítica</button>
+  <button onclick="openCookieSettings()"
+    style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem; background:none; border:none; cursor:pointer;">Configurar
+    cookies</button>
+  <a href="/cookie-policy.html"
+    style="margin-left:1.2rem; color:#e11d48; text-decoration:underline; font-size:0.95rem;">Política de cookies</a>
+</div>
+
+<div id="cookie-settings-modal" class="cookie-settings-modal" style="display:none;">
+  <div class="cookie-settings-content">
+    <h2>Configuración de cookies</h2>
+    <div class="cookie-category">
+      <h3>🍪 Esenciales</h3>
+      <p>Estas cookies son necesarias para el funcionamiento básico del sitio y no se pueden desactivar.</p>
+    </div>
+    <div class="cookie-category">
+      <h3>📊 Analítica</h3>
+      <p>Permiten medir el uso del sitio y mejorar la experiencia. Puedes aceptar o rechazar estas cookies.</p>
+      <div>
+        <label>
+          <input type="checkbox" id="analytics-consent-checkbox" />
+          Permitir cookies de analítica
+        </label>
+      </div>
+    </div>
+    <div class="cookie-settings-buttons">
+      <button onclick="saveCookieSettings()">Guardar</button>
+      <button onclick="closeCookieSettings()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      const date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  }
+  function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+  function showCookieBanner() {
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+  function hideCookieBanner() {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+  function openCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'flex';
+    document.getElementById('analytics-consent-checkbox').checked = getCookie('namerly_analytics_consent') === 'accepted';
+  }
+  function closeCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'none';
+  }
+  function saveCookieSettings() {
+    const consent = document.getElementById('analytics-consent-checkbox').checked ? 'accepted' : 'rejected';
+    setCookie('namerly_analytics_consent', consent, 365);
+    closeCookieSettings();
+    window.location.reload();
+  }
+  document.getElementById('accept-analytics').onclick = function () {
+    setCookie('namerly_analytics_consent', 'accepted', 365);
+    hideCookieBanner();
+    window.location.reload();
+  };
+  document.getElementById('reject-analytics').onclick = function () {
+    setCookie('namerly_analytics_consent', 'rejected', 365);
+    hideCookieBanner();
+    window.location.reload();
+  };
+  window.addEventListener('DOMContentLoaded', function () {
+    var consent = getCookie('namerly_analytics_consent');
+    if (!consent) showCookieBanner();
+    else hideCookieBanner();
+    if (consent === 'accepted') loadAnalytics();
+  });
+  function loadAnalytics() {
+    if (window.gtagLoaded) return;
+    window.gtagLoaded = true;
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCBGMRHJ21';
+    document.head.appendChild(script);
+    script.onload = function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-ZCBGMRHJ21', {
+        cookie_domain: 'namerlygenerator.netlify.app',
+        anonymize_ip: true
+      });
+    };
+  }
+</script>
+<script type="module" src="../../assets/js/premium-features.js"></script>
+</body>
+
+</html>
